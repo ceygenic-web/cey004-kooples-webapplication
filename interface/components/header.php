@@ -9,9 +9,9 @@
             </div>
             <div class="d-flex gap-3">
                 <div class="d-flex gap-2">
-                    <i class="bi bi-instagram"></i>
-                    <i class="bi bi-facebook"></i>
-                    <i class="bi bi-linkedin"></i>
+                    <i class="bi cey-cursor-pointer bi-instagram"></i>
+                    <i class="bi cey-cursor-pointer bi-facebook"></i>
+                    <i class="bi cey-cursor-pointer bi-linkedin"></i>
                 </div>
                 <div>
                     <div class="dropdown open p-0 currency-changer">
@@ -30,7 +30,9 @@
     </nav>
     <nav class="main-navbar">
         <div class="container d-flex justify-content-between py-3">
-            <div class="logo"></div>
+            <a href="index.php">
+                <div class="logo"></div>
+            </a>
             <div class="main-navbar-navigations d-flex align-items-center">
                 <ul class="mt-2">
                     <li>HOME</li>
