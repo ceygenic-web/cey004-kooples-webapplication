@@ -19,9 +19,9 @@
     <div class="d-flex justify-content-end">
         <div class="gap-3 d-flex">
             <div class="d-flex gap-2">
-                <i class="bi cey-cursor-pointer bi-instagram"></i>
-                <i class="bi cey-cursor-pointer bi-facebook"></i>
-                <i class="bi cey-cursor-pointer bi-linkedin"></i>
+                <a href="https://www.instagram.com/kooplesclothing/" class="cey-text-white"><i class="bi cey-cursor-pointer bi-instagram"></i></a>
+                <a href="https://web.facebook.com/profile.php?id=100067952630177" class="cey-text-white"><i class="bi cey-cursor-pointer bi-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/kooples-clothing/" class="cey-text-white"><i class="bi cey-cursor-pointer bi-linkedin"></i></a>
             </div>
             <div>
                 <div class="dropdown open p-0 currency-changer">
@@ -51,9 +51,9 @@
             </div>
             <div class="gap-3 d-none d-md-flex">
                 <div class="d-flex gap-2">
-                    <i class="bi cey-cursor-pointer bi-instagram"></i>
-                    <i class="bi cey-cursor-pointer bi-facebook"></i>
-                    <i class="bi cey-cursor-pointer bi-linkedin"></i>
+                    <a href="https://www.instagram.com/kooplesclothing/" class="cey-text-white"><i class="bi cey-cursor-pointer bi-instagram"></i></a>
+                    <a href="https://web.facebook.com/profile.php?id=100067952630177" class="cey-text-white"><i class="bi cey-cursor-pointer bi-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/kooples-clothing/" class="cey-text-white"><i class="bi cey-cursor-pointer bi-linkedin"></i></a>
                 </div>
                 <div>
                     <div class="dropdown open p-0 currency-changer">
@@ -72,7 +72,7 @@
     </nav>
     <nav class="main-navbar">
         <div class="container d-flex justify-content-between align-items-center py-1 py-md-2 py-lg-3">
-            <div class="d-flex align-items-center gap-2">
+            <div class="d-flex align-items-center gap-3">
                 <i class="bi bi-list fs-1 d-block d-md-none cey-text-white sidebar-toggle"></i>
                 <a href="index.php">
                     <div class="logo"></div>
