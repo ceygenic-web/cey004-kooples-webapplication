@@ -10,6 +10,8 @@
   display: flex;
   gap: 15px;
   font-size: var(--font-p-lg);
+  max-height: 25px;
+  overflow: hidden;
 }
 
 .currency-changer-toggle {
@@ -76,4 +78,16 @@
 
 .main-navbar-navigation-icons i:hover {
   color: var(--primary-light);
+}
+
+/* sidebar */
+.sidebar {
+  background-color: var(--dark);
+  padding: 20px;
+  width: 40%;
+  height: 100vh;
+  position: absolute;
+  display: none;
+  transition: ease-in 1s;
+  animation: sliderMoveIn 1s forwards;
 }

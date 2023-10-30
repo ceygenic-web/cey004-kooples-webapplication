@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.large.css">
+    <link rel="stylesheet" href="css/style.medium.css">
+    <link rel="stylesheet" href="css/style.small.css">
 
     <!-- script -->
     <script defer src="js/bootstrap.bundle.js"></script>

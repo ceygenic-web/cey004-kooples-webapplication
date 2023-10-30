@@ -1,0 +1,28 @@
+@media (max-width: 767px) {
+  /* sidebar */
+  .sidebar {
+    width: 60%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: ease-in 1s;
+    animation: sliderMoveIn 1s forwards;
+  }
+
+  .sidebar-navigations ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+  }
+}
+
+@keyframes sliderMoveIn {
+  0% {
+    translate: -50% 0;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
