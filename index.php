@@ -10,6 +10,7 @@
 
     <!-- css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/style.css">
@@ -18,8 +19,10 @@
     <link rel="stylesheet" href="css/style.small.css">
 
     <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="js/bootstrap.bundle.js"></script>
     <script defer src="js/main.js"></script>
+    <script defer src="js/landing.js"></script>
 </head>
 
 <body>
@@ -58,6 +61,37 @@
                 </div>
                 <div class="w-25">
                     <h3 class="text-end">00:00:00</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 3 - latests -->
+    <section class="lp-s3 cey-bg-white">
+        <div class="container py-3">
+            <h3>LATEST COLLECTIONS</h3>
+            <div class="swiper">
+                <div class="swiper lpLatestProductSwiper">
+                    <div class="lp-s3-controls w-100 d-flex justify-content-between position-absolute p-3 h-100 align-items-center">
+                        <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-left fs-1 cey-text-white bi bi-arrow-left-circle"></i></div>
+                        <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div>
+                    </div>
+                    <div class="swiper-wrapper py-5">
+                        <?php
+
+                        for ($i = 0; $i < 6; $i++) {
+                        ?>
+                            <div class="swiper-slide cey-product-item-card cey-shadow-light">
+                                <img src="resources/images/hero.jpg" height="100%" width="100%">
+                                <h6 class="fw-bold">Porduct Title</h6>
+                                <p>product descriptino of small content will be here and it will be very short...</p>
+                                <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
+                            </div>
+                        <?php
+                        }
+
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>

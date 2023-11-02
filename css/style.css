@@ -150,3 +150,9 @@
   font-weight: 200;
   font-size: var(--font-h2-lg);
 }
+
+/* section 3 - latest product slider */
+.lp-s3-swiper-control {
+  z-index: 1000;
+  cursor: pointer;
+}

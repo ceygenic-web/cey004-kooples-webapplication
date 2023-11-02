@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
 const closeNavigationSidebar = () => {
   const sidebar = document.querySelector(".sidebar");
   if (window.getComputedStyle(sidebar).display == "flex") {
