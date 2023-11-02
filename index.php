@@ -29,11 +29,22 @@
     include("interface/components/header.php");
     ?>
 
-    <!-- content -->
-    <section class="cey-bg-dark">
-        <div class="container">
-            <div class="w-100">
-
+    <!-- section1 - hero section -->
+    <section class="cey-bg-dark lp-s1 d-flex align-items-center">
+        <div class="container h-100">
+            <div class="w-100 h-100 d-flex gap-3 justify-content-center align-items-center flex-column">
+                <div class="d-flex fw-bold gap-2 lp-s1-branding-quotes justify-content-center align-items-center">
+                    <div>GRACE</div>
+                    <div class="lp-s1-dot"></div>
+                    <div>DIGNITY</div>
+                    <div class="lp-s1-dot"></div>
+                    <div>IDENTITY</div>
+                </div>
+                <h1 class="cey-text-white">FIRST HEADING GOES HERE</h1>
+                <div class="lp-s1-searchbar">
+                    <input type="text" placeholder="search your dream saree....">
+                    <i class="fs-2 bi bi-search"></i>
+                </div>
             </div>
         </div>
     </section>

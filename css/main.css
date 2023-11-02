@@ -44,6 +44,7 @@
   --rounded-large: 50px;
   --rounded-mid: 25px;
   --rounded-small: 15px;
+  --rounded-circle: 1000px;
 }
 
 * {
