@@ -31,4 +31,9 @@
     text-align: center;
     font-size: var(--font-h3);
   }
+
+  /* section 2 - countdown section */
+  .lp-s2 * {
+    font-size: var(--font-h4);
+  }
 }

@@ -49,6 +49,20 @@
         </div>
     </section>
 
+    <!-- section2 - new product countdown section -->
+    <section class="lp-s2 cey-bg-darker">
+        <div class="container h-100">
+            <div class="w-100 h-100 py-3 d-flex justify-content-between align-items-center">
+                <div class="w-75">
+                    <h3>NEW ARRAIVAL RELATED TEXT...</h3>
+                </div>
+                <div class="w-25">
+                    <h3 class="text-end">00:00:00</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!--  footer -->
     <?php
     include("interface/components/footer.php");

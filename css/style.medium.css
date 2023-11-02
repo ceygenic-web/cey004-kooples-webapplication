@@ -20,6 +20,11 @@
     width: 112px;
     height: 30px;
   }
+
+   /* section 2 - countdown section */
+   .lp-s2 * {
+    font-size: var(--font-h3);
+  }
 }
 
 @keyframes sliderMoveIn {
