@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   window.addEventListener("resize", () => {
     if (window.innerWidth > 767 && SidebarToggleClicked) {
+      
       sidebar.style.display = "none";
     } else if (window.innerWidth <= 767 && SidebarToggleClicked) {
       sidebar.style.display = "flex";

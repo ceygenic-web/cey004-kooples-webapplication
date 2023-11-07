@@ -166,6 +166,20 @@
   font-size: var(--font-h3-lg);
 }
 
+.lp-s4-card {
+  cursor: pointer;
+  transition: var(--transition2);
+}
+
+.lp-s4-card * {
+  transition: var(--transition2);
+}
+
+.lp-s4-card:hover * {
+  scale: 105%;
+  transition: var(--transition2);
+}
+
 .lp-s4-large-card {
   flex-grow: 1;
   height: 400px;
