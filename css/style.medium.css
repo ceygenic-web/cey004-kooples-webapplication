@@ -25,6 +25,21 @@
    .lp-s2 * {
     font-size: var(--font-h3);
   }
+
+  
+/* section 3 - category pallete section */
+.lp-s4 h4 {
+  font-size: var(--font-h3-md);  
+}
+
+.lp-s4-large-card {
+  height: 200px;
+}
+
+
+.lp-s4-small-card {
+  height: 150px;
+}
 }
 
 @keyframes sliderMoveIn {

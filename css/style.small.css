@@ -36,4 +36,9 @@
   .lp-s2 * {
     font-size: var(--font-h4);
   }
+
+  /* section 3 - category pallete section */
+  .lp-s4 h4 {
+    font-size: var(--font-h5);
+  }
 }

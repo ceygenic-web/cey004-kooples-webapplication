@@ -156,3 +156,32 @@
   z-index: 1000;
   cursor: pointer;
 }
+
+/* section 3 - category pallete section */
+.lp-s4 h3 {
+  color: var(--white);
+}
+
+.lp-s4 h4 {
+  font-size: var(--font-h3-lg);
+}
+
+.lp-s4-large-card {
+  flex-grow: 1;
+  height: 400px;
+  background-color: var(--primary-light);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.lp-s4-small-card {
+  flex-grow: 1;
+  height: 200px;
+  background-color: var(--white);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
