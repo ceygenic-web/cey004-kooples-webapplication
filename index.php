@@ -106,13 +106,13 @@
                     <div class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category1.jpg');">
                         <div class="d-flex flex-column">
                             <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
-                            <p class="cey-text-white d-block">EXPLORE -></p>
+                            <p class="cey-text-white">EXPLORE -></p>
                         </div>
                     </div>
                     <div class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
                         <div class="d-flex flex-column">
                             <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
-                            <p class="cey-text-white d-none">EXPLORE -></p>
+                            <p class="cey-text-white">EXPLORE -></p>
                         </div>
                     </div>
                 </div>
@@ -120,32 +120,32 @@
                     <div class="col-6 col-md-3 lp-s4-card d-flex align-items-end p-4 lp-s4-small-card" style="background-image: url('resources/images/category3.jpg');">
                         <div class="d-flex flex-column">
                             <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
-                            <p class="cey-text-white d-none">EXPLORE -></p>
+                            <p class="cey-text-white">EXPLORE -></p>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 lp-s4-card d-flex align-items-end p-4 lp-s4-small-card" style="background-image: url('resources/images/category4.jpg');">
                         <div class="d-flex flex-column">
                             <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
-                            <p class="cey-text-white d-none">EXPLORE -></p>
+                            <p class="cey-text-white">EXPLORE -></p>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 lp-s4-card d-flex align-items-end p-4 lp-s4-small-card" style="background-image: url('resources/images/category5.jpg');">
                         <div class="d-flex flex-column">
                             <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
-                            <p class="cey-text-white d-none">EXPLORE -></p>
+                            <p class="cey-text-white">EXPLORE -></p>
                         </div>
                     </div>
                     <div class="col-6 col-md-3 lp-s4-card d-flex align-items-end p-4 lp-s4-small-card" style="background-image: url('resources/images/category6.jpg');">
                         <div class="d-flex flex-column">
                             <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
-                            <p class="cey-text-white d-none">EXPLORE -></p>
+                            <p class="cey-text-white">EXPLORE -></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+                        
     <!--  footer -->
     <?php
     include("interface/components/footer.php");

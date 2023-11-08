@@ -175,9 +175,17 @@
   transition: var(--transition2);
 }
 
-.lp-s4-card:hover * {
-  scale: 105%;
-  transition: var(--transition2);
+.lp-s4-card:hover h4 {
+  translate: 0 -100%;
+}
+
+.lp-s4-card p {
+  position: absolute;
+  opacity: 0%;
+}
+
+.lp-s4-card:hover p {
+  opacity: 100%;
 }
 
 .lp-s4-large-card {
