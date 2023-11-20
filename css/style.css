@@ -207,3 +207,22 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* section 5 - promotion section */
+.lp-s5-promotion {
+  flex-grow: 1;
+  background-image: url("../resources/images/promotion.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.lp-s5-shop-btn {
+  border: none;
+  outline: var(--primary-light);
+  width: 170px;
+  height: 250px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

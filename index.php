@@ -145,7 +145,18 @@
             </div>
         </div>
     </section>
-                        
+
+    <!-- section 3 - promotion -->
+    <section class="lp-s5 cey-bg-white">
+        <div class="container py-5">
+            <h3>PROMOTION</h3>
+            <div class="d-flex flex-column flex-md-row w-100">
+                <div class="lp-s5-promotion"></div>
+                <button class="lp-s5-shop-btn cey-bg-dark cey-text-white">SHOP NOW</button>
+            </div>
+        </div>
+    </section>
+
     <!--  footer -->
     <?php
     include("interface/components/footer.php");

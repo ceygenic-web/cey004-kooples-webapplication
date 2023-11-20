@@ -21,25 +21,34 @@
     height: 30px;
   }
 
-   /* section 2 - countdown section */
-   .lp-s2 * {
+  /* section 2 - countdown section */
+  .lp-s2 * {
     font-size: var(--font-h3);
   }
 
-  
-/* section 3 - category pallete section */
-.lp-s4 h4 {
-  font-size: var(--font-h3-md);  
-}
+  /* section 3 - category pallete section */
+  .lp-s4 h4 {
+    font-size: var(--font-h3-md);
+  }
 
-.lp-s4-large-card {
-  height: 200px;
-}
+  .lp-s4-large-card {
+    height: 200px;
+  }
 
+  .lp-s4-small-card {
+    height: 150px;
+  }
 
-.lp-s4-small-card {
-  height: 150px;
-}
+  /* section 5 - promotion section */
+
+  .lp-s5-shop-btn {
+    width: 100%;
+    height: 50px;
+  }
+
+  .lp-s5-promotion {
+    height: 250px;
+  }
 }
 
 @keyframes sliderMoveIn {
