@@ -226,3 +226,16 @@
   justify-content: center;
   align-items: center;
 }
+
+/* section 6 - blogs section */
+.lp-s5-card {
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  height: 350px;
+  padding: 10px 20px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

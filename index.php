@@ -146,13 +146,32 @@
         </div>
     </section>
 
-    <!-- section 3 - promotion -->
+    <!-- section 5 - promotion -->
     <section class="lp-s5 cey-bg-white">
         <div class="container py-5">
             <h3>PROMOTION</h3>
             <div class="d-flex flex-column flex-md-row w-100">
                 <div class="lp-s5-promotion"></div>
                 <button class="lp-s5-shop-btn cey-bg-dark cey-text-white">SHOP NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 6 - blogs -->
+    <section class="lp-s5 cey-bg-dark">
+        <div class="container py-5">
+            <h3 class="text-white">OUR BLOGS</h3>
+            <div class="d-flex flex-column flex-md-row">
+                <div style="background-image: url('resources/images/blog1.png');" class="lp-s5-card">
+                    <h5 class="fw-bold"><a href="#" class="text-white text-decoration-none">Blog Title</a></h5>
+                    <p>this part consists of small part of the actual blog content and it should not be
+                        longer than 2 lines</p>
+                </div>
+                <div style="background-image: url('resources/images/blog2.png');" class="lp-s5-card">
+                    <h5 class="fw-bold"><a href="#" class="text-white text-decoration-none">Blog Title</a></h5>
+                    <p>this part consists of small part of the actual blog content and it should not be
+                        longer than 2 lines</p>
+                </div>
             </div>
         </div>
     </section>
