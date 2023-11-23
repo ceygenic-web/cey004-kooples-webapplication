@@ -176,6 +176,28 @@
         </div>
     </section>
 
+    <!-- section 7 - handloom -->
+    <section class="lp-s7 cey-bg-white">
+        <div class="cey-text-white container h-100 d-flex flex-column justify-content-center align-items-center py-5 text-center">
+            <h3 class="py-3">HANDLOOM INDUSTRY</h3>
+            <p class="lp-s7-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam in ab mollitia aliquam repudiandae, labore doloribus ipsam nisi ipsa dolores assumenda quae ut recusandae consectetur et dolor error qui velit!</p>
+            <button class="cey-btn-box lp-s7-btn">LEARN MORE</button>
+        </div>
+    </section>
+
+    <!-- section 8 - our story -->
+    <section class="lp-s8 cey-bg-white">
+        <div class="h-100 d-flex flex-column flex-lg-row">
+            <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-left.png');"></div>
+            <div class="lp-s8-section p-3 lp-s8-middle-box">
+                <h3>OUR STORY</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt labore a tenetur.</p>
+                <button class="cey-btn-box">ABOUT US</button>
+            </div>
+            <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-right.png');"></div>
+        </div>
+    </section>
+
     <!--  footer -->
     <?php
     include("interface/components/footer.php");

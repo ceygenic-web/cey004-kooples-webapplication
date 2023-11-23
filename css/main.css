@@ -91,26 +91,26 @@ body {
 
 /* background color */
 .cey-bg-darker {
-  background-color: var(--darker);
+  background-color: var(--darker) !important;
 }
 
 .cey-bg-dark {
-  background-color: var(--dark);
+  background-color: var(--dark) !important;
 }
 
 .cey-bg-primary {
-  background-color: var(--primary);
+  background-color: var(--primary) !important;
 }
 
 .cey-bg-primary-light {
-  background-color: var(--primary-light);
+  background-color: var(--primary-light) !important;
 }
 .cey-bg-primary-light {
-  background-color: var(--primary-light);
+  background-color: var(--primary-light) !important;
 }
 
 .cey-bg-white {
-  background-color: var(--white);
+  background-color: var(--white) !important;
 }
 
 /* text-color */
@@ -152,7 +152,7 @@ body {
 
 /* shadow */
 .cey-shadow-light {
-  box-shadow: rgba( 0, 0, 0, 0.7) 0px 0px 20px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 20px;
 }
 
 /* button */

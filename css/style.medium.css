@@ -54,6 +54,11 @@
     width: 100%;
     height: 250px;
   }
+
+  /* section 7 - handloom */
+  .lp-s7-description {
+    width: 300px;
+  }
 }
 
 @keyframes sliderMoveIn {

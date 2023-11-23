@@ -239,3 +239,43 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+/* section 7 - handloom section */
+.lp-s7 {
+  height: 400px;
+  background-image: url("../resources/images/handloom.png");
+  background-size: cover;
+}
+
+.lp-s7-description {
+  width: 600px;
+}
+
+.lp-s7-btn {
+  border: none;
+  outline: none;
+  color: var(--white);
+  background-color: var(--dark);
+}
+
+/* section 7 - handloom section */
+.lp-s8-section {
+  flex-grow: 1;
+  height: 400px;
+}
+
+.lp-s8-sides {
+  background-size: cover;
+}
+
+.lp-s8-middle-box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  background-color: var(--dark);
+  width: 30px;
+  gap: 20px;
+}
