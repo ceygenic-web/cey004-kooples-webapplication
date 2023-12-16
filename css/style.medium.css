@@ -1,0 +1,72 @@
+@media (max-width: 767px) {
+  /* sidebar */
+  .sidebar {
+    width: 60%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: ease-in 1s;
+    animation: sliderMoveIn 1s forwards;
+  }
+
+  .sidebar-navigations ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+  }
+
+  .logo {
+    width: 112px;
+    height: 30px;
+  }
+
+  /* section 2 - countdown section */
+  .lp-s2 * {
+    font-size: var(--font-h3);
+  }
+
+  /* section 3 - category pallete section */
+  .lp-s4 h4 {
+    font-size: var(--font-h3-md);
+  }
+
+  .lp-s4-large-card {
+    height: 200px;
+  }
+
+  .lp-s4-small-card {
+    height: 150px;
+  }
+
+  /* section 5 - promotion section */
+  .lp-s5-shop-btn {
+    width: 100%;
+    height: 50px;
+  }
+
+  .lp-s5-promotion {
+    height: 250px;
+  }
+
+  /* section 6 - blogs section */
+  .lp-s5-card {
+    width: 100%;
+    height: 250px;
+  }
+
+  /* section 7 - handloom */
+  .lp-s7-description {
+    width: 300px;
+  }
+}
+
+@keyframes sliderMoveIn {
+  0% {
+    translate: -50% 0;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}

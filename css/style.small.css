@@ -1,0 +1,46 @@
+@media (max-width: 425px) {
+  /* sidebar */
+  .sidebar {
+    width: 100%;
+  }
+
+  .logo {
+    width: 75px;
+    height: 20px;
+  }
+
+  .main-navbar-navigation-icons {
+    font-size: 18px;
+  }
+
+  /* section 1 - hero section */
+  .lp-s1 {
+    min-height: 500px;
+    background-position: 70%;
+  }
+
+  .lp-s1-branding-quotes * {
+    font-size: var(--font-h6);
+  }
+
+  .lp-s1-searchbar {
+    width: 270px;
+  }
+
+  .lp-s1 h1 {
+    text-align: center;
+    font-size: var(--font-h3);
+  }
+
+  /* section 2 - countdown section */
+  .lp-s2 * {
+    font-size: var(--font-h4);
+  }
+
+  /* section 3 - category pallete section */
+  .lp-s4 h4 {
+    font-size: var(--font-h5);
+  }
+
+  
+}
