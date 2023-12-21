@@ -59,6 +59,15 @@
   .lp-s7-description {
     width: 300px;
   }
+
+  /* section 8 - our story section */
+  .lp-s8-sides {
+    height: 200px;
+  }
+
+  .lp-s8-middle-box {
+    width: 100%;
+  }
 }
 
 @keyframes sliderMoveIn {

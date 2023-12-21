@@ -116,6 +116,7 @@
   height: 5px;
   border-radius: 50px;
   background-color: var(--white);
+  translate: 0 100%;
 }
 
 .lp-s1-searchbar {
@@ -258,7 +259,7 @@
   background-color: var(--dark);
 }
 
-/* section 7 - handloom section */
+/* section 8 - our story section */
 .lp-s8-section {
   flex-grow: 1;
   height: 400px;
@@ -266,6 +267,8 @@
 
 .lp-s8-sides {
   background-size: cover;
+  width: 30%;
+  background-position-y: 60%;
 }
 
 .lp-s8-middle-box {
@@ -276,6 +279,6 @@
   align-items: center;
   color: var(--white);
   background-color: var(--dark);
-  width: 30px;
+  width: 35%;
   gap: 20px;
 }

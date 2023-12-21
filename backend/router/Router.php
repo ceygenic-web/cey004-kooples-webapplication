@@ -28,6 +28,10 @@ final class Router extends Controller
                 $this->view("landing", "Kooples Sri Lanka", ["landing"], ["landing"]);
                 break;
 
+            case "home":
+                $this->view("landing", "Kooples Sri Lanka", ["landing"], ["landing"]);
+                break;
+
             case 'shop':
                 $this->view("shop", "Kooples Sri Lanka | Shop");
                 break;

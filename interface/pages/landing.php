@@ -3,15 +3,15 @@
     <div class="container h-100">
         <div class="w-100 h-100 d-flex gap-3 justify-content-center align-items-center flex-column">
             <div class="d-flex fw-bold gap-2 lp-s1-branding-quotes justify-content-center align-items-center">
-                <div>GRACE</div>
+                <div class="cey-main-font-light">GRACE</div>
                 <div class="lp-s1-dot"></div>
-                <div>DIGNITY</div>
+                <div class="cey-main-font-light">DIGNITY</div>
                 <div class="lp-s1-dot"></div>
-                <div>IDENTITY</div>
+                <div class="cey-main-font-light">IDENTITY</div>
             </div>
-            <h1 class="cey-text-white">FIRST HEADING GOES HERE</h1>
+            <h1 class="cey-text-white cey-main-font">FIRST HEADING GOES HERE</h1>
             <div class="lp-s1-searchbar">
-                <input type="text" placeholder="search your dream saree....">
+                <input class="py-2" type="text" placeholder="search your dream saree....">
                 <i class="fs-2 bi bi-search"></i>
             </div>
         </div>
@@ -23,10 +23,10 @@
     <div class="container h-100">
         <div class="w-100 h-100 py-3 d-flex justify-content-between align-items-center">
             <div class="w-75">
-                <h3>NEW ARRAIVAL RELATED TEXT...</h3>
+                <h3 class="cey-main-font-light">NEW ARRAIVAL RELATED TEXT...</h3>
             </div>
             <div class="w-25">
-                <h3 class="text-end">00:00:00</h3>
+                <h3 class="text-end cey-main-font-light">00:00:00</h3>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
 <!-- section 3 - latests -->
 <section class="lp-s3 cey-bg-white">
     <div class="container py-3">
-        <h3>LATEST COLLECTIONS</h3>
+        <h3 class="cey-main-font">LATEST COLLECTIONS</h3>
         <div class="swiper">
             <div class="swiper lpLatestProductSwiper">
                 <div class="lp-s3-controls w-100 d-flex justify-content-between position-absolute p-3 h-100 align-items-center">
@@ -66,7 +66,7 @@
 <!-- section 4 - categories -->
 <section class="lp-s4 cey-bg-dark">
     <div class="container py-5">
-        <h3>LATEST COLLECTIONS</h3>
+        <h3 class="cey-main-font">LATEST COLLECTIONS</h3>
         <div class="d-flex flex-column">
             <div class="d-flex flex-wrap">
                 <div class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category1.jpg');">
@@ -115,7 +115,7 @@
 <!-- section 5 - promotion -->
 <section class="lp-s5 cey-bg-white">
     <div class="container py-5">
-        <h3>PROMOTION</h3>
+        <h3 class="cey-main-font">PROMOTION</h3>
         <div class="d-flex flex-column flex-md-row w-100">
             <div class="lp-s5-promotion"></div>
             <button class="lp-s5-shop-btn cey-bg-dark cey-text-white">SHOP NOW</button>
@@ -126,7 +126,7 @@
 <!-- section 6 - blogs -->
 <section class="lp-s5 cey-bg-dark">
     <div class="container py-5">
-        <h3 class="text-white">OUR BLOGS</h3>
+        <h3 class="text-white cey-main-font">OUR BLOGS</h3>
         <div class="d-flex flex-column flex-md-row">
             <div style="background-image: url('resources/images/blog1.png');" class="lp-s5-card">
                 <h5 class="fw-bold"><a href="#" class="text-white text-decoration-none">Blog Title</a></h5>
@@ -145,7 +145,7 @@
 <!-- section 7 - handloom -->
 <section class="lp-s7 cey-bg-white">
     <div class="cey-text-white container h-100 d-flex flex-column justify-content-center align-items-center py-5 text-center">
-        <h3 class="py-3">HANDLOOM INDUSTRY</h3>
+        <h3 class="py-3 cey-main-font">HANDLOOM INDUSTRY</h3>
         <p class="lp-s7-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam in ab mollitia aliquam repudiandae, labore doloribus ipsam nisi ipsa dolores assumenda quae ut recusandae consectetur et dolor error qui velit!</p>
         <button class="cey-btn-box lp-s7-btn">LEARN MORE</button>
     </div>
@@ -158,8 +158,23 @@
         <div class="lp-s8-section p-3 lp-s8-middle-box">
             <h3>OUR STORY</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt labore a tenetur.</p>
-            <button class="cey-btn-box">ABOUT US</button>
+            <button class="cey-btn-box cey-main-font">ABOUT US</button>
         </div>
         <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-right.png');"></div>
+    </div>
+</section>
+
+
+<!-- section 9 - vision mission -->
+<section class="lp-s9 cey-bg-darker p-5">
+    <div class="h-100 d-flex flex-column flex-lg-row container text-center">
+        <div class="p-5 cey-bg-dark col-12 col-lg-6 lp-vision d-flex flex-column gap-2 cey-text-white">
+            <h3 class="cey-main-font">VISION</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni suscipit praesentium animi id! Omnis cumque nesciunt reprehenderit eaque repellendus cum porro quos consequuntur reiciendis a earum corrupti, exercitationem, esse qui!</p>
+        </div>
+        <div class="p-5 cey-bg-white col-12 col-lg-6 lp-mission d-flex flex-column gap-2">
+            <h3 class="cey-main-font">MISSION</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni suscipit praesentium animi id! Omnis cumque nesciunt reprehenderit eaque repellendus cum porro quos consequuntur reiciendis a earum corrupti, exercitationem, esse qui!</p>
+        </div>
     </div>
 </section>

@@ -1,2 +1,14 @@
 @media (max-width: 1440px) {
+  /* section 8 - our story section */
+  .lp-s8-section {
+    height: 400px;
+  }
+
+  .lp-s8-sides {
+    width: 100%;
+  }
+
+  .lp-s8-middle-box {
+    width: 100%;
+  }
 }

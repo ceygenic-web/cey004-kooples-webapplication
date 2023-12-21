@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "incompleeta";
+  src: url("../resources/fonts/IncompleetaRegular.ttf");
+}
+
+@font-face {
+  font-family: "incompleeta-reveal";
+  src: url("../resources/fonts/IncompleetaRegularReveal.ttf");
+}
+
+@font-face {
+  font-family: "incompleeta-light";
+  src: url("../resources/fonts/IncompleetaLightReveal.ttf");
+}
+
 :root {
   /* color */
   --darker: #090d14;
@@ -40,6 +55,11 @@
   --font-p-md: 13px;
   --font-p: 12px;
 
+  /* font family */
+  --main-font: "incompleeta";
+  --main-font-reveal: "incompleeta-reveal";
+  --main-font-light: "incompleeta-light";
+
   /* radius */
   --rounded-large: 50px;
   --rounded-mid: 25px;
@@ -51,12 +71,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family:  "Roboto", sans-serif;
 }
 
 body {
   background-color: var(--darker);
 }
+
+p, li, a,h6, h5, h4, h3, div {
+  letter-spacing: .05em;
+}
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -80,6 +105,14 @@ body {
 }
 
 /* utitlity */
+.cey-main-font {
+  font-family: var(--main-font);
+}
+
+.cey-main-font-light {
+  font-family: var(--main-font-light) !important;
+}
+
 .btn-style-remover {
   outline: none;
   border: none;
