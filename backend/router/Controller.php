@@ -27,7 +27,7 @@ class Controller
 
         $apiName = $apiCall[1];
         switch ($apiName) {
-            case 'cart':
+            case 'product':
                 $this->callApi($apiName, $apiCall);
                 break;
 

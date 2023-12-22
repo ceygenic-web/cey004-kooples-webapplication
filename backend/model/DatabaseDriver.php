@@ -1,5 +1,5 @@
 <?php
-class database_driver
+class DatabaseDriver
 {
 
     private $connection;
@@ -7,10 +7,10 @@ class database_driver
     // Constructor that takes in connection details and establishes a connection to the database
     public function __construct()
     {
-        $host = 'localhost';
-        $user = 'root';
-        $password = 'JanithNirmal12#$'; // janith
-        $database = 'cey004_db';
+        $host = DB_SERVER;
+        $user = DB_USERNAME;
+        $password = DB_PASSWORD; // janith
+        $database = DB_DATABASE;
 
         // Connect to the database using mysqli
         $this->connection = new mysqli($host, $user, $password, $database);
@@ -37,7 +37,7 @@ class database_driver
         // return $stmt;
 
         // Return an associative array containing the statement and the result
-        return ['stmt' => $stmt, 'result' => $stmt->get_result()];
+        return $stmt->get_result();
     }
 
 

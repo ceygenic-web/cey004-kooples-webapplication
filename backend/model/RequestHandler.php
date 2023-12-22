@@ -1,5 +1,4 @@
 <?php
-
 class RequestHandler
 {
     // validate the request methods

@@ -8,7 +8,7 @@
 ## --  name
 ## --  password
 
-final class data_validator
+final class DataValidator
 {
 
     private $data;

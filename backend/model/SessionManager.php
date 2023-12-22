@@ -2,7 +2,7 @@
 
 class SessionManager
 {
-    private $sessionVariable = "alg005_user";
+    private $sessionVariable = "cey004_user";
 
     public function __construct()
     {
