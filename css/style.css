@@ -45,6 +45,14 @@
   background-color: var(--dark);
 }
 
+.main-navbar a {
+  text-decoration: none;
+}
+
+.sidebar {
+  text-decoration: none;
+}
+
 .main-navbar-navigations {
   font-weight: bold;
   border: none;
