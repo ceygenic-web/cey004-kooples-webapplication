@@ -1,0 +1,56 @@
+/* section 1 - category banner */
+.sp-s1 {
+  height: 250px;
+  background-image: url(../resources/images/promotion.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sp-s2-dropdown {
+  cursor: pointer;
+}
+
+.sp-s2-dropdown-btn {
+  z-index: 200;
+}
+
+.sp-s2-dropdown:hover ul {
+  animation: dropdown 1s forwards;
+  top: 50px;
+  transition: 500ms;
+}
+
+.sp-s2-dropdown-list {
+  display: flex;
+  align-items: flex-start;
+  z-index: 100;
+  opacity: 0;
+}
+
+.sp-s2-dropdown-list li {
+  text-align: start;
+  width: 100%;
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+.sp-s2-dropdown-list li:hover {
+  background-color: var(--primary);
+}
+
+@keyframes dropdown {
+  0% {
+    display: flex;
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+/*section 3 -  products section */
+.sp-s3-main-container {
+    min-height: 678px;
+}

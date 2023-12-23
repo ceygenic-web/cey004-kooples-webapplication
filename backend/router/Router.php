@@ -33,7 +33,7 @@ final class Router extends Controller
                 break;
 
             case 'shop':
-                $this->view("shop", "Kooples Sri Lanka | Shop");
+                $this->view("shop", "Kooples Sri Lanka | Shop", [], ["shop"]);
                 break;
 
             default:
