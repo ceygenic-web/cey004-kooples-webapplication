@@ -2,7 +2,7 @@
     <div class="container">
         <div class="footer-main-box text-white ">
             <div>
-                <div class="pb">CONTACT US</div>
+                <div class="pb-lg-3 pb-md-3">CONTACT US</div>
                 <hr class="footer-hr">
                 <div class="d-flex gap-2 pb-2 footer-contact">
                     <i class="bi bi-telephone-fill mx-1"></i>
