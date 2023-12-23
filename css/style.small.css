@@ -36,11 +36,32 @@
   .lp-s2 * {
     font-size: var(--font-h4);
   }
-
+  
   /* section 3 - category pallete section */
   .lp-s4 h4 {
     font-size: var(--font-h5);
   }
-
+  /* section 11 - conatcts */
+  .ls-s11-contacts{
+    font-size: var(--font-p);
+    
+  }
+  .ls-s11 h6{
+    font-size: var(--font-p);
+    
+  }
+  .ls-s11-icon{
+    font-size: 2em;
+  }
   
+  
+  /* section 12 - subscription */
+  .ls-s12 h5{
+    font-size: var(--font-h6);
+
+  }
+  .ls-s12-input-box{
+    flex-direction: column;
+  }
+
 }

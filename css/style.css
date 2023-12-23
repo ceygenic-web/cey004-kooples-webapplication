@@ -282,3 +282,56 @@
   width: 35%;
   gap: 20px;
 }
+
+
+/* section 11 - conatcts */
+.ls-s11-detail-box{
+  display: flex;
+  
+}
+
+.ls-s11-left-box{
+  flex-grow: 1;
+}
+.ls-s11-right-box{
+  flex-grow: 1;
+}
+.ls-s11-icon{
+  font-size: 3em;
+}
+
+/* section 12 - subscription */
+.ls-s12-input-box{
+  display: flex;
+  flex-direction: row;
+}
+.ls-s12-textbox{
+  width: 280px;
+  height: 56px;
+}
+
+
+
+/* footer */
+.footer-main-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.footer-contact{
+  font-size: var(--font-p);
+}
+.footer-terms{
+  display: flex;
+  align-items: end;
+  font-size: var(--font-p);
+}
+.footer-icon{
+  font-size: 23px;
+}
+.footer-develop{
+  font-size: var(--font-p);
+}
+.footer-hr{
+  display: none;
+}
