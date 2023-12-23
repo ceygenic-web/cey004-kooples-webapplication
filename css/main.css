@@ -71,17 +71,23 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:  "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   background-color: var(--darker);
 }
 
-p, li, a,h6, h5, h4, h3, div {
-  letter-spacing: .05em;
+p,
+li,
+a,
+h6,
+h5,
+h4,
+h3,
+div {
+  letter-spacing: 0.05em;
 }
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -168,6 +174,37 @@ p, li, a,h6, h5, h4, h3, div {
 
 .cey-text-white {
   color: var(--white);
+}
+
+/* border */
+.cey-border-dark {
+  border: var(--dark) 2px solid;
+}
+
+.cey-border-primary {
+  border: var(--primary) 2px solid;
+}
+
+.cey-border-light {
+  border: var(--primary-light) 2px solid;
+}
+
+.cey-border-white {
+  border: var(--white) 2px solid;
+}
+
+/* outline */
+.cey-outline-dark {
+  outline: var(--dark) 2px solid;
+}
+.cey-outline-primary {
+  outline: var(--primary) 2px solid;
+}
+.cey-outline-light {
+  outline: var(--primary-light) 2px solid;
+}
+.cey-outline-white {
+  outline: var(--primary-white) 2px solid;
 }
 
 /* border radius */

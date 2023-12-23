@@ -7,11 +7,21 @@
         <div>
             <div class="main-navbar-navigations sidebar-navigations align-items-center d-flex">
                 <ul class="mt-2">
-                    <li>HOME</li>
-                    <li>SHOP</li>
-                    <li>HANDLOOM</li>
-                    <li>ABOUT</li>
-                    <li>CONTACTS</li>
+                    <a href="home">
+                        <li>HOME</li>
+                    </a>
+                    <a href="shop">
+                        <li>SHOP</li>
+                    </a>
+                    <a href="handloom">
+                        <li>HANDLOOM</li>
+                    </a>
+                    <a href="about">
+                        <li>ABOUT</li>
+                    </a>
+                    <a href="contacts">
+                        <li>CONTACTS</li>
+                    </a>
                 </ul>
             </div>
         </div>
@@ -80,11 +90,21 @@
             </div>
             <div class="main-navbar-navigations d-none align-items-center d-md-flex">
                 <ul class="mt-2">
-                    <li>HOME</li>
-                    <li>SHOP</li>
-                    <li>HANDLOOM</li>
-                    <li>ABOUT</li>
-                    <li>CONTACTS</li>
+                    <a href="home">
+                        <li>HOME</li>
+                    </a>
+                    <a href="shop">
+                        <li>SHOP</li>
+                    </a>
+                    <a href="handloom">
+                        <li>HANDLOOM</li>
+                    </a>
+                    <a href="about">
+                        <li>ABOUT</li>
+                    </a>
+                    <a href="contacts">
+                        <li>CONTACTS</li>
+                    </a>
                 </ul>
             </div>
             <div class="main-navbar-navigation-icons">
@@ -97,4 +117,3 @@
 </header>
 
 <?php
-
