@@ -29,8 +29,21 @@
 
 <!-- section 3 - products section -->
 <section class="sp-s3 cey-bg-white">
-    <div class="sp-s3-main-container container p-5">
-
+    <div id="mainProductContainer" class="sp-s3-main-container container p-5 d-flex flex-wrap gap-5 justify-content-between">
+        <?php
+        for ($i = 0; $i < 6; $i++) {
+        ?>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 d-flex justify-content-center align-items-center">
+                <div class="cey-product-item-card cey-shadow-light">
+                    <img src="../../resources/images/category2.jpg" height="100%" width="100%">
+                    <h6 class="fw-bold">Porduct Title</h6>
+                    <p>product descriptino of small content will be here and it will be very short...</p>
+                    <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
+                </div>
+            </div>
+        <?php
+        }
+        ?>
     </div>
     <div class="sp-s3-pagination-container d-flex justify-content-center py-4">
         <div class="cey-bg-primary-light d-flex">
