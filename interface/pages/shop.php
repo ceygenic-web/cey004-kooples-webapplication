@@ -29,9 +29,9 @@
 
 <!-- section 3 - products section -->
 <section class="sp-s3 cey-bg-white">
-    <div id="mainProductContainer" class="sp-s3-main-container container p-5 d-flex flex-wrap gap-5 justify-content-between">
+    <div id="mainProductContainer" class="sp-s3-main-container container px-5 py-1 d-flex flex-wrap gap-5 justify-content-between">
         <?php
-        for ($i = 0; $i < 6; $i++) {
+        for ($i = 0; $i < 0; $i++) {
         ?>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 d-flex justify-content-center align-items-center">
                 <div class="cey-product-item-card cey-shadow-light">

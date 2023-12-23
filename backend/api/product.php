@@ -37,8 +37,8 @@ class Product extends Api
 
     public function view($method = null)
     {
-        $results = $this->getData("SELECT * FROM `product` ");
-        return $results;
+        $results = $this->getData("SELECT * FROM `product` INNER JOIN `category` ON `product`.`category_category_id` = `category`.`category_id`  ");
+        return (object)["status" => "success", "results" => $results];
     }
 
     public  function add()
