@@ -84,7 +84,7 @@
         <div class="container d-flex justify-content-between align-items-center py-1 py-md-2 py-lg-3">
             <div class="d-flex align-items-center gap-3">
                 <i class="bi bi-list fs-1 d-block d-md-none cey-text-white sidebar-toggle"></i>
-                <a href="index.php">
+                <a href="home">
                     <div class="logo"></div>
                 </a>
             </div>
