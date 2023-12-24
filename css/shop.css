@@ -52,5 +52,6 @@
 
 /*section 3 -  products section */
 .sp-s3-main-container {
-    min-height: 678px;
+    min-height: max-content;
 }
+

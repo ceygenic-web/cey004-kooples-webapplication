@@ -255,7 +255,7 @@ div {
 
 /* components */
 .cey-product-item-card {
-  background-color: gray;
+  /* background-color: gray; */
   color: var(--white);
   position: relative;
   width: 300px;
@@ -271,6 +271,10 @@ div {
   position: absolute;
   translate: -15px 15px;
   object-fit: cover;
-  object-position: 80%;
-  z-index: -1;
+  object-position: center 80%;
+  z-index: 10;
+}
+
+.cey-product-item-card .content {
+  z-index: 20;
 }

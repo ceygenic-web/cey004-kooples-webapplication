@@ -49,9 +49,11 @@
                     ?>
                         <div class="swiper-slide cey-product-item-card cey-shadow-light">
                             <img src="resources/images/hero.jpg" height="100%" width="100%">
-                            <h6 class="fw-bold">Porduct Title</h6>
-                            <p>product descriptino of small content will be here and it will be very short...</p>
-                            <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
+                            <div class="content">
+                                <h6 class="fw-bold">Porduct Title</h6>
+                                <p>product descriptino of small content will be here and it will be very short...</p>
+                                <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
+                            </div>
                         </div>
                     <?php
                     }
@@ -219,11 +221,11 @@
 <!-- section 12 - subscription  -->
 <section class="ls-s12 p-5">
     <div class="container d-flex flex-column align-items-center">
-            <h5 class="cey-text-white pb-2">SUBSCRIBE TO OUR NEW LETTER</h5>
-            <div class="ls-s12-input-box gap-0 ">
-                <input class="ls-s12-textbox border-0" type="text" placeholder="ENTER YOUR EMAIL">
-                <button class="p-lg-3 p-md-3 p-2 cey-bg-primary fw-bold border-0">SUBSCRIBE</button>
-            </div>
+        <h5 class="cey-text-white pb-2">SUBSCRIBE TO OUR NEW LETTER</h5>
+        <div class="ls-s12-input-box gap-0 ">
+            <input class="ls-s12-textbox border-0" type="text" placeholder="ENTER YOUR EMAIL">
+            <button class="p-lg-3 p-md-3 p-2 cey-bg-primary fw-bold border-0">SUBSCRIBE</button>
         </div>
+    </div>
     </div>
 </section>
