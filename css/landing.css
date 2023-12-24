@@ -188,6 +188,11 @@
   width: 35%;
   gap: 20px;
 }
+/* section 10 - testamonials */
+.lp-s10 .swiper{
+  width: 80%;
+  height: 500px;
+}
 
 /* section 11 - conatcts */
 .ls-s11-detail-box {
@@ -210,6 +215,6 @@
   flex-direction: row;
 }
 .ls-s12-textbox {
-  width: 280px;
+  width: 255px;
   height: 56px;
 }

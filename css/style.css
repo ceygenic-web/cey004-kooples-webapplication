@@ -103,9 +103,8 @@
 
 /* footer */
 .footer-main-box{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+ display: flex;
+ justify-content: space-between;
 }
 .footer-contact{
   font-size: var(--font-p);
@@ -119,6 +118,7 @@
   font-size: 23px;
 }
 .footer-develop{
+  width: 150px;
   font-size: var(--font-p);
 }
 .footer-hr{

@@ -76,16 +76,35 @@
 
   /* footer */
   .footer-main-box {
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
+  .footer-contact-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-contact-secondary-section{
+    display: flex;
+    flex-direction: column;
+  }
   .footer-terms{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+   .footer-social-icons{
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
   .footer-hr{
     display: flex;
     border-width: 3px;
+    width: 100%;
 
   }
 }
