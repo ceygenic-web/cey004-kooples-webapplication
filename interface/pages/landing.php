@@ -178,3 +178,52 @@
         </div>
     </div>
 </section>
+
+
+<!-- section 10 - testimonials -->
+
+
+<!-- section 11 - conatcts  -->
+<section class="cey-bg-white ls-s11 p-5">
+    <div class="container">
+        <h3 class="cey-main-font pb-3">CONATCTS</h3>
+        <div class="ls-s11-detail-box gap-3">
+            <div class="d-flex flex-column cey-text-white ls-s11-left-box gap-3">
+                <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
+                    <i class="bi bi-telephone-fill mx-1"></i>
+                    <div class="ls-s11-contacts">+94 71 090 2997</div>
+                </div>
+                <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
+                    <i class="bi bi-envelope-fill mx-1"></i>
+                    <div class="ls-s11-contacts">kooplesclothing@gmail.com</div>
+                </div>
+                <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
+                    <i class="bi bi-geo-alt-fill mx-1"></i>
+                    <div class="ls-s11-contacts">No. 14, Charles Father Road, Kandana, Sri Lanka</div>
+                </div>
+            </div>
+            <div class="ls-s11-right-box cey-bg-dark cey-text-white d-flex flex-column justify-content-center">
+                <h6 class="mx-lg-5 mx-sm-3 mx-3 mt-2">FOLLOW US ON</h6>
+                <div class="d-flex gap-4 mx-lg-5 mx-sm-3 mx-3">
+                    <i class="bi bi-facebook ls-s11-icon"></i>
+                    <i class="bi bi-instagram bi-3x ls-s11-icon"></i>
+                    <i class="bi bi-linkedin bi-3x ls-s11-icon"></i>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- section 12 - subscription  -->
+<section class="ls-s12 p-5">
+    <div class="container d-flex flex-column align-items-center">
+            <h5 class="cey-text-white pb-2">SUBSCRIBE TO OUR NEW LETTER</h5>
+            <div class="ls-s12-input-box gap-0 ">
+                <input class="ls-s12-textbox border-0" type="text" placeholder="ENTER YOUR EMAIL">
+                <button class="p-lg-3 p-md-3 p-2 cey-bg-primary fw-bold border-0">SUBSCRIBE</button>
+            </div>
+        </div>
+    </div>
+</section>

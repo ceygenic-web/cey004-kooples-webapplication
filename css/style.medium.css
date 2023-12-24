@@ -68,6 +68,26 @@
   .lp-s8-middle-box {
     width: 100%;
   }
+
+  /* section 11 - conatcts */
+  .ls-s11-detail-box {
+    flex-direction: column;
+  }
+
+  /* footer */
+  .footer-main-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-terms{
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-hr{
+    display: flex;
+    border-width: 3px;
+
+  }
 }
 
 @keyframes sliderMoveIn {
