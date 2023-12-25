@@ -188,28 +188,33 @@
   width: 35%;
   gap: 20px;
 }
+/* section 10 - testamonials */
+.lp-s10 .swiper{
+  width: 80%;
+  height: 500px;
+}
 
 /* section 11 - conatcts */
-.ls-s11-detail-box {
+.lp-s11-detail-box {
   display: flex;
 }
 
-.ls-s11-left-box {
+.lp-s11-left-box {
   flex-grow: 1;
 }
-.ls-s11-right-box {
+.lp-s11-right-box {
   flex-grow: 1;
 }
-.ls-s11-icon {
+.lp-s11-icon {
   font-size: 3em;
 }
 
 /* section 12 - subscription */
-.ls-s12-input-box {
+.lp-s12-input-box {
   display: flex;
   flex-direction: row;
 }
-.ls-s12-textbox {
-  width: 280px;
+.lp-s12-textbox {
+  width: 255px;
   height: 56px;
 }

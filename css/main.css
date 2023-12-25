@@ -278,3 +278,17 @@ div {
 .cey-product-item-card .content {
   z-index: 20;
 }
+
+/* testamonial card */
+.cey-testamonial-card{
+  background-color: var(--dark);
+  color: var(--white);
+  /* position: relative; */
+  width: 450px;
+  height: 400px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

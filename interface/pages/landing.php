@@ -182,34 +182,63 @@
 </section>
 
 
-<!-- section 10 - testimonials -->
+<!-- section 10 - testamonials -->
+<section class="lp-s10 cey-bg-dark">
+    <div class="container py-3">
+        <div class="swiper">
+            <div class="swiper lptestamonialSwiper">
+                <div class="lp-s3-controls w-100 d-flex justify-content-between position-absolute p-3 h-100 align-items-center">
+                    <!-- <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-left fs-1 cey-text-white bi bi-arrow-left-circle"></i></div> -->
+                    <!-- <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div> -->
+                </div>
+                <div class="swiper-wrapper py-5">
+                    <?php
+
+                    for ($i = 0; $i < 6; $i++) {
+                    ?>
+                        <div class="swiper-slide cey-testamonial-card">
+                            <h4 class="pb-4">TESTAMONIALS</h4>
+                            <p class="text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                            <p class="pt-3">- Miss Sunila Kulathunga</p>
+
+                        </div>
+                    <?php
+                    }
+
+                    ?>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <!-- section 11 - conatcts  -->
-<section class="cey-bg-white ls-s11 p-5">
+<section class="cey-bg-white lp-s11 p-5">
     <div class="container">
         <h3 class="cey-main-font pb-3">CONATCTS</h3>
-        <div class="ls-s11-detail-box gap-3">
-            <div class="d-flex flex-column cey-text-white ls-s11-left-box gap-3">
+        <div class="lp-s11-detail-box gap-3 col-lg-12 col-md-12">
+            <div class="d-flex flex-column cey-text-white ls-s11-left-box gap-3 col-lg-6 col-md-6">
                 <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
                     <i class="bi bi-telephone-fill mx-1"></i>
-                    <div class="ls-s11-contacts">+94 71 090 2997</div>
+                    <div class="lp-s11-contacts">+94 71 090 2997</div>
                 </div>
                 <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
                     <i class="bi bi-envelope-fill mx-1"></i>
-                    <div class="ls-s11-contacts">kooplesclothing@gmail.com</div>
+                    <div class="lp-s11-contacts">kooplesclothing@gmail.com</div>
                 </div>
                 <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
                     <i class="bi bi-geo-alt-fill mx-1"></i>
-                    <div class="ls-s11-contacts">No. 14, Charles Father Road, Kandana, Sri Lanka</div>
+                    <div class="lp-s11-contacts">No. 14, Charles Father Road, Kandana, Sri Lanka</div>
                 </div>
             </div>
-            <div class="ls-s11-right-box cey-bg-dark cey-text-white d-flex flex-column justify-content-center">
+            <div class="lp-s11-right-box  cey-bg-dark cey-text-white d-flex flex-column justify-content-center col-lg-6 col-md-6">
                 <h6 class="mx-lg-5 mx-sm-3 mx-3 mt-2">FOLLOW US ON</h6>
                 <div class="d-flex gap-4 mx-lg-5 mx-sm-3 mx-3">
-                    <i class="bi bi-facebook ls-s11-icon"></i>
-                    <i class="bi bi-instagram bi-3x ls-s11-icon"></i>
-                    <i class="bi bi-linkedin bi-3x ls-s11-icon"></i>
+                    <i class="bi bi-facebook lp-s11-icon"></i>
+                    <i class="bi bi-instagram bi-3x lp-s11-icon"></i>
+                    <i class="bi bi-linkedin bi-3x lp-s11-icon"></i>
 
                 </div>
             </div>
@@ -219,12 +248,14 @@
 
 
 <!-- section 12 - subscription  -->
-<section class="ls-s12 p-5">
+<section class="lp-s12 p-5">
     <div class="container d-flex flex-column align-items-center">
-        <h5 class="cey-text-white pb-2">SUBSCRIBE TO OUR NEW LETTER</h5>
-        <div class="ls-s12-input-box gap-0 ">
-            <input class="ls-s12-textbox border-0" type="text" placeholder="ENTER YOUR EMAIL">
-            <button class="p-lg-3 p-md-3 p-2 cey-bg-primary fw-bold border-0">SUBSCRIBE</button>
+        <div class="d-flex flex-column">
+            <h5 class="cey-text-white pb-2">SUBSCRIBE TO OUR NEW LETTER</h5>
+            <div class="lp-s12-input-box gap-0 ">
+                <input class="lp-s12-textbox border-0" type="text" placeholder="ENTER YOUR EMAIL">
+                <button class="lp-s12-button p-lg-3  p-md-3 p-2 cey-bg-primary fw-bold border-0">SUBSCRIBE</button>
+            </div>
         </div>
     </div>
     </div>
