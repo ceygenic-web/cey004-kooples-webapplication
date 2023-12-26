@@ -33,5 +33,9 @@ const closeNavigationSidebar = () => {
 const toProduct = (query = null) => {
   const params = query ? "?product=" + query : "";
   const URL = `product${params}`;
-  window.location.href = URL;
+  toPage(URL);
+};
+
+const toPage = (page) => {
+  window.location.href = page;
 };

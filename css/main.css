@@ -292,3 +292,21 @@ div {
   justify-content: center;
   align-items: center;
 }
+
+/* 404 */
+.section-404 {
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-404 h1 {
+  font-size: 150px;
+  font-weight: bold;
+  color: #3a3f49;
+}
+
+.section-404 {
+  
+}

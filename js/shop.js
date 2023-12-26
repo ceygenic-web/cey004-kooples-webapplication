@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  getKeyValuePairsFromUrlParams();
+
   fetch("api/product/view", {
     method: "GET",
   })
@@ -24,3 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
+
+function getKeyValuePairsFromUrlParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const queryParams = {};
+
+  for (const [key, value] of urlParams.entries()) {
+    // Ensure accurate decoding of values
+    queryParams[key] = decodeURIComponent(value);
+  }
+
+  return queryParams;
+}
