@@ -26,6 +26,7 @@
   align-items: flex-start;
   z-index: 100;
   opacity: 0;
+  height: 0;
 }
 
 .sp-s2-dropdown-list li {
@@ -41,17 +42,18 @@
 
 @keyframes dropdown {
   0% {
+    height: max-content;
     display: flex;
     opacity: 0%;
   }
 
   100% {
+    height: max-content;
     opacity: 100%;
   }
 }
 
 /*section 3 -  products section */
 .sp-s3-main-container {
-    min-height: max-content;
+  min-height: max-content;
 }
-

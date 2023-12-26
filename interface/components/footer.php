@@ -1,4 +1,4 @@
-<section class="p-4 bg-dark ">
+<section class="p-4 cey-bg-darker ">
     <div class="container footer-main-box text-white ">
         <div class="w-100">
             <div class="pb-lg-3 pb-md-3">CONTACT US</div>

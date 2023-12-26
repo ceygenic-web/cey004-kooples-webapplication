@@ -12,14 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   window.addEventListener("resize", () => {
     if (window.innerWidth > 767 && SidebarToggleClicked) {
-      
       sidebar.style.display = "none";
     } else if (window.innerWidth <= 767 && SidebarToggleClicked) {
       sidebar.style.display = "flex";
     }
   });
 });
-
 
 const closeNavigationSidebar = () => {
   const sidebar = document.querySelector(".sidebar");
@@ -30,4 +28,10 @@ const closeNavigationSidebar = () => {
     sidebar.style.display = "flex";
     SidebarToggleClicked = true;
   }
+};
+
+const toProduct = (query = null) => {
+  const params = query ? "?product=" + query : "";
+  const URL = `product${params}`;
+  window.location.href = URL;
 };

@@ -23,6 +23,10 @@ final class Router extends Controller
                 $this->api($routes);
                 break;
 
+            case 'admin':
+                $this->admin($routes);
+                break;
+
 
             case '':
                 $this->view("landing", "Kooples Sri Lanka", ["landing"], ["landing"]);
@@ -34,6 +38,10 @@ final class Router extends Controller
 
             case 'shop':
                 $this->view("shop", "Kooples Sri Lanka | Shop", ["shop"], ["shop"]);
+                break;
+
+            case 'product':
+                $this->view("product", "Kooples Sri Lanka | Product", ["product"], ["product"]);
                 break;
 
             default:
