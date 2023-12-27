@@ -14,7 +14,7 @@ class Product extends Api
 
 
 
-    public  function callFunction(): mixed
+    public function callFunction(): mixed
     {
         if ($this->function) {
             switch ($this->function) {
@@ -24,6 +24,14 @@ class Product extends Api
 
                 case 'add':
                     return [$this->add(), true];
+                    break;
+                
+                case 'update':
+                    return [$this->update(), true];
+                    break;
+
+                case 'delete':
+                    return [$this->delete(), true];
                     break;
 
                 default:
@@ -51,8 +59,30 @@ class Product extends Api
             $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" . $category . "' ")[0]["category_id"];
             $id = mt_rand(000000, 999999);
             $this->updateData("INSERT INTO `product` (`product_id`,`category_category_id`, `title`, `description`) VALUES (?,?, ?, ?)", "siss", array($id, $categoryId, $title, $description));
-            return "card data added";
+            return (object)["status"=>"success"];
         }
-        return null;
+        return (object)["status"=>"failed", "error" => "invalid request"];
+    }
+
+    public function update(){
+        if (RequestHandler::isPostMethod()) {
+            $id = $_POST["id"];
+            $title = $_POST["title"];
+            $description = $_POST["description"];
+            $category = $_POST["category"];
+            $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" . $category . "' ")[0]["category_id"];
+            $this->updateData("UPDATE `product` SET `category_category_id`=?, `title`=?, `description`=? WHERE `product_id`=$id", "iss", array($categoryId, $title, $description));
+            return (object)["status"=>"success"];
+        }
+        return (object)["status"=>"failed", "error" => "invalid request"];
+    }
+
+    public function delete(){
+        if (RequestHandler::isPostMethod()) {
+            $id = $_POST["id"];
+            $this->deleteData("DELETE FROM `product` WHERE `product_id`=$id");
+            return (object)["status"=>"success"];
+        }
+        return (object)["status"=>"failed", "error" => "invalid request"];
     }
 }
