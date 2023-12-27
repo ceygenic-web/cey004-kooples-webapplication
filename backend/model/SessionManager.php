@@ -27,6 +27,11 @@ class SessionManager
         }
     }
 
+    public function updateSessionVariable(string $name)
+    {
+        $this->sessionVariable = $name;
+    }
+
     public function isLoggedIn()
     {
         return isset($_SESSION[$this->sessionVariable]);

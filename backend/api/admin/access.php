@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__ . "/../../model/Api.php");
 require_once(__DIR__ . "/../../model/RequestHandler.php");
+require_once(__DIR__ . "/../../model/PasswordHash.php");
 
 class Access extends Api
 {
@@ -16,7 +17,7 @@ class Access extends Api
         if ($this->function) {
             switch ($this->function) {
                 case 'login':
-                    return [$this->login(($_SERVER["REQUEST_METHOD"]) ? $_GET : []), false];
+                    return [$this->login(($_SERVER["REQUEST_METHOD"] === "POST") ? $_POST : null), false];
                     break;
 
                 default:
@@ -28,8 +29,35 @@ class Access extends Api
         }
     }
 
-    public function login($params, $method = null)
+    public function login($params)
     {
-        return (object)["status" => "success"];
+        // validate data
+        if (!$params) {
+            return false;
+        }
+
+        $mobile = $params["mobile"];
+        $password = $params["password"];
+        $errors = $this->validateData((object)[
+            "id_int" => [(object)["datakey" => "mobile", "value" => $mobile]],
+            "password" => [(object)["datakey" => "password", "value" => $password]],
+        ]);
+
+        foreach ($errors as $key => $value) {
+            if ($value) {
+                return [$key, $value];
+            }
+        }
+
+        // get the user data
+        $userData = $this->getData("SELECT * FROM `admin` WHERE `mobile` = ?", "s", [$mobile])[0];
+        // match passwords
+        if (PasswordHash::isValid($password, $userData["password_hash"])) {
+            $this->sessionInit();
+            $this->sessionManager->updateSessionVariable("cey004_admin");
+            $this->sessionManager->login($userData["id"]);
+            return (object)["status" => "success"];
+        }
+        return (object)["status" => "failed", "error" => "invalid user data!"];
     }
 }

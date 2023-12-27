@@ -120,7 +120,7 @@ class Controller
         if (class_exists($apiName)) {
             $object = new $apiName($apiCall);
             $response = $object->callFunction();
-            if ($response !== false) {
+            if ($response !== false && $response[0]) {
                 ResponseSender::sendJson($response[0], $response[1]);
             } else {
                 CustomErrors::_404();

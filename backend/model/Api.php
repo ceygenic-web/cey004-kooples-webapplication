@@ -1,11 +1,23 @@
 <?php
 require_once(__DIR__ . "/../model/DataValidator.php");
+require_once(__DIR__ . "/../model/SessionManager.php");
 
 class Api
 {
 
     public DatabaseDriver $database;
+    public SessionManager $sessionManager;
     public DataValidator | null $validator = null;
+
+    public function sessionInit()
+    {
+        $this->sessionManager = new SessionManager();
+    }
+
+    public function accessController()
+    {
+        return $this->sessionManager->isLoggedIn();
+    }
 
     private function ConnectDatabase()
     {
@@ -16,7 +28,6 @@ class Api
     {
         $this->ConnectDatabase();
         if ($data) {
-            var_dump($query);
             $results =  $this->database->execute_query($query, $type, $data);
         } else {
             $results =  $this->database->query($query);
