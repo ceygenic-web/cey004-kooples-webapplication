@@ -19,7 +19,7 @@ class Product extends Api
         if ($this->function) {
             switch ($this->function) {
                 case 'view':
-                    return [$this->view(($_SERVER["REQUEST_METHOD"]) ? $_GET : []), false];
+                    return [$this->view(($_SERVER["REQUEST_METHOD"] === "GET") ? $_GET : []), false];
                     break;
 
                 case 'add':
@@ -43,8 +43,17 @@ class Product extends Api
         }
     }
 
-    public function view($method = null)
+    public function view($params)
     {
+        if ($params) {
+        }
+
+        // $this->sessionInit();
+        // $this->sessionManager->updateSessionVariable("cey004_admin");
+
+        // if (!$this->accessController()) {
+        // return (object)["status" => "failed", "error" => "invalid access"];
+        // }
         $results = $this->getData("SELECT * FROM `product` INNER JOIN `category` ON `product`.`category_category_id` = `category`.`category_id`  ");
         return (object)["status" => "success", "results" => $results];
     }

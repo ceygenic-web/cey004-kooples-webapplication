@@ -44,6 +44,13 @@ final class Router extends Controller
                 $this->view("product", "Kooples Sri Lanka | Product", ["product"], ["product"]);
                 break;
 
+            case 'about':
+                $this->view("about", "Kooples Sri Lanka | About Us", [], []);
+                break;
+            case 'contact':
+                $this->view("contact", "Kooples Sri Lanka | Contact", [], []);
+                break;
+
             default:
                 $this->view("404", "Kooples Sri Lanka | 404 Not found");
                 break;
