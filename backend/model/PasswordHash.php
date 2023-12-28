@@ -2,7 +2,7 @@
 
 class PasswordHash
 {
-    // Encryption method using SHA-512
+    // Encryption method using SHA-256
 
     private static string $salt = "1h23j4h5ythf7d6r";
 
@@ -12,7 +12,7 @@ class PasswordHash
         return $hash;
     }
 
-    // Verifier using SHA-512
+    // Verifier using SHA-256
     public static function isValid($password, $hash)
     {
         $hashedfromdb = hash('sha256', $password . self::$salt);

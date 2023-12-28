@@ -12,29 +12,18 @@ class Controller
         define("PAGE_CSS_FILES", $css_files);
     }
 
-    public function view(string $name, string $title, array $js_files = [], array $css_files = [], bool $custom = false)
+    public function view(string $name, string $title, array $js_files = [], array $css_files = [], bool $isAdmin = false, bool $custom = false)
     {
         $this->definePageProperties($title, $js_files, $css_files);
+        $dir = (!$isAdmin)  ? __DIR__ . "/../../interface/pages/" : __DIR__ . "/../../interface/admin/components/";
+        $mainDir = (!$isAdmin)  ?  __DIR__ . "/../../interface/pages/" :  __DIR__ . "/../../interface/admin/pages/";
 
         if (!$custom) {
-            include(__DIR__ . "/../../interface/pages/header.php");
+            include($dir . "header.php");
         }
-        include(__DIR__ . "/../../interface/pages/" . $name . ".php");
+        include($mainDir . $name . ".php");
         if (!$custom) {
-            include(__DIR__ . "/../../interface/pages/footer.php");
-        }
-    }
-
-    public function adminView(string $name, string $title, array $js_files = [], array $css_files = [], bool $custom = false)
-    {
-        $this->definePageProperties($title, $js_files, $css_files);
-
-        if (!$custom) {
-            include(__DIR__ . "/../../interface/admin/components/header.php");
-        }
-        include(__DIR__ . "/../../interface/admin/pages/" . $name . ".php");
-        if (!$custom) {
-            include(__DIR__ . "/../../interface/admin/components/footer.php");
+            include($dir . "footer.php");
         }
     }
 
@@ -51,7 +40,7 @@ class Controller
                 break;
 
             case 'login':
-                $this->adminView($name, "Kooples Admin | Login");
+                $this->view($name, "Kooples Admin | Login", [], [], true);
                 break;
 
             default:
@@ -91,7 +80,7 @@ class Controller
         $apiName = $apiCall[2];
         switch ($apiName) {
             case 'access':
-                $this->callAdminApi($apiName, $apiCall);
+                $this->callApi($apiName, $apiCall, true);
                 break;
 
             default:
@@ -100,23 +89,11 @@ class Controller
         }
     }
 
-    private function callApi($apiName, $apiCall)
+    private function callApi($apiName, $apiCall, bool $isAdmin = false)
     {
-        require(__DIR__ . "/../api/" . $apiName . ".php");
-        if (class_exists($apiName)) {
-            $object = new $apiName($apiCall);
-            $response = $object->callFunction();
-            if ($response !== false) {
-                ResponseSender::sendJson($response[0], $response[1]);
-            } else {
-                CustomErrors::_404();
-            }
-        }
-    }
+        $dir = (!$isAdmin) ? __DIR__ . "/../api/" : __DIR__ . "/../api/admin/";
 
-    private function callAdminApi($apiName, $apiCall)
-    {
-        require(__DIR__ . "/../api/admin/" . $apiName . ".php");
+        require($dir . $apiName . ".php");
         if (class_exists($apiName)) {
             $object = new $apiName($apiCall);
             $response = $object->callFunction();

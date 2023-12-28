@@ -19,7 +19,7 @@
                     <a href="about">
                         <li>ABOUT</li>
                     </a>
-                    <a href="contacts">
+                    <a href="contact">
                         <li>CONTACTS</li>
                     </a>
                 </ul>
@@ -102,7 +102,7 @@
                     <a href="about">
                         <li>ABOUT</li>
                     </a>
-                    <a href="contacts">
+                    <a href="contact">
                         <li>CONTACTS</li>
                     </a>
                 </ul>
