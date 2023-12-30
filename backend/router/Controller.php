@@ -15,15 +15,14 @@ class Controller
     public function view(string $name, string $title, array $js_files = [], array $css_files = [], bool $isAdmin = false, bool $custom = false)
     {
         $this->definePageProperties($title, $js_files, $css_files);
-        $dir = (!$isAdmin)  ? __DIR__ . "/../../interface/pages/" : __DIR__ . "/../../interface/admin/components/";
-        $mainDir = (!$isAdmin)  ?  __DIR__ . "/../../interface/pages/" :  __DIR__ . "/../../interface/admin/pages/";
+        $pageDir = (!$isAdmin)  ? __DIR__ . "/../../interface/pages/" : __DIR__ . "/../../interface/admin/pages/";
 
         if (!$custom) {
-            include($dir . "header.php");
+            include($pageDir . "header.php");
         }
-        include($mainDir . $name . ".php");
+        include($pageDir . $name . ".php");
         if (!$custom) {
-            include($dir . "footer.php");
+            include($pageDir . "footer.php");
         }
     }
 
@@ -40,7 +39,16 @@ class Controller
                 break;
 
             case 'login':
-                $this->view($name, "Kooples Admin | Login", [], [], true);
+                $this->view($name, "Kooples Admin | Login", ["admin-signin"], ["admin"], true);
+                break;
+
+            case 'home':
+                session_start();
+                if (!$_SESSION["cey004_admin"]) {
+                    header("Location: /admin/login");
+                    break;
+                }
+                $this->view($name, "Kooples Admin | Home", ["admin-home"], ["admin"], true);
                 break;
 
             default:
@@ -97,10 +105,10 @@ class Controller
         if (class_exists($apiName)) {
             $object = new $apiName($apiCall);
             $response = $object->callFunction();
-            if ($response !== false && $response[0]) {
+            if (is_array($response) && $response[0]) {
                 ResponseSender::sendJson($response[0], $response[1]);
             } else {
-                CustomErrors::_404();
+                ResponseSender::sendJson((object)["status" => "failed", "error" => "Something Went Wrong!"]);
             }
         }
     }

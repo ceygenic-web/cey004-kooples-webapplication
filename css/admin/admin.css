@@ -1,0 +1,10 @@
+/* admin page */
+.ad-s1 {
+  height: 85vh;
+}
+
+.logo {
+  padding: 10px 0;
+  width: 150px;
+  object-fit: contain;
+}

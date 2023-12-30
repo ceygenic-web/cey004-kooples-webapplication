@@ -20,6 +20,10 @@ class Access extends Api
                     return [$this->login(($_SERVER["REQUEST_METHOD"] === "POST") ? $_POST : null), false];
                     break;
 
+                case 'check':
+                    return [$this->check(($_SERVER["REQUEST_METHOD"] === "POST") ? $_POST : null), false];
+                    break;
+
                 default:
                     return false;
                     break;
@@ -45,7 +49,7 @@ class Access extends Api
 
         foreach ($errors as $key => $value) {
             if ($value) {
-                return [$key, $value];
+                return (object) ["status" => "failed", "error" => [$key, $value]];
             }
         }
 
@@ -59,5 +63,15 @@ class Access extends Api
             return (object)["status" => "success"];
         }
         return (object)["status" => "failed", "error" => "invalid user data!"];
+    }
+
+    public function check()
+    {
+        $this->sessionInit();
+        $this->sessionManager->updateSessionVariable("cey004_admin");
+        if ($this->checkAccess() !== true) {
+            return $this->checkAccess();
+        }
+        return "success";
     }
 }
