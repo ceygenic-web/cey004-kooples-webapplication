@@ -14,9 +14,9 @@ class Api
         $this->sessionManager = new SessionManager();
     }
 
-    public function accessController()
+    public function checkAccess()
     {
-        return $this->sessionManager->isLoggedIn();
+        return ($this->sessionManager->isLoggedIn()) ? true : (object)["status"=>"failed", "error"=>"Access Denied"] ;
     }
 
     private function ConnectDatabase()
