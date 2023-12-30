@@ -153,16 +153,16 @@
 
 <!-- section 2 - related products -->
 <section class="pp-s2 cey-bg-dark">
-    <div class="container py-4">
+    <div class="container py-4 h-100 d-flex flex-column">
         <h3 class="cey-text-white">MORE LIKE THIS...</h3>
-        <div class="py-3 d-flex gap-4 flex-wrap justify-content-between">
-            <div class="swiper mySwiper3">
-                <div class="lp-s3-controls w-100 d-flex justify-content-between position-absolute p-3 h-100 align-items-center">
-                    <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-left fs-1 cey-text-white bi bi-arrow-left-circle"></i></div>
-                    <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div>
+        <div class="py-1 d-flex gap-4 flex-wrap justify-content-between flex-grow-1">
+            <div class="swiper mySwiper3 h-100">
+                <div class="pp-s2-controls w-100 d-flex justify-content-between position-absolute p-3 h-100 align-items-center">
+                    <div class="pp-s2-swiper-control"><i class="pp-s2-swiper-control-left fs-1 cey-text-white bi bi-arrow-left-circle"></i></div>
+                    <div class="pp-s2-swiper-control"><i class="pp-s2-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div>
                 </div>
                 <div class="swiper-wrapper py-5">
-                    <div class="swiper-slide cey-product-item-card cey-shadow-light">
+                    <div class="swiper-slide pp-s2-card cey-product-item-card cey-shadow-light">
                         <img src="resources/images/hero.jpg" height="100%" width="100%">
                         <div class="content">
                             <h6 class="fw-bold">Porduct Title</h6>

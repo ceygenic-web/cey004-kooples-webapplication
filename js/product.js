@@ -41,11 +41,11 @@ const buildProductPageS10Swiper = (perView, space) => {
   });
 
   const relatedProduct = new Swiper(".mySwiper3", {
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: perView,
+    spaceBetween: space,
     navigation: {
-      nextEl: ".lp-s3-swiper-control-right",
-      prevEl: ".lp-s3-swiper-control-left",
+      nextEl: ".pp-s2-swiper-control-right",
+      prevEl: ".pp-s2-swiper-control-left",
     },
   });
 };
