@@ -8,3 +8,9 @@
   width: 150px;
   object-fit: contain;
 }
+
+
+/* admin home page */
+.ahp-s1 {
+  height: 83vh;
+}

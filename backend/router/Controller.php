@@ -1,19 +1,33 @@
 <?php
 
 require_once(__DIR__ . "/../model/CustomErrors.php");
+require_once(__DIR__ . "/../model/SessionManager.php");
 
 class Controller
 {
+
+
+    private static $isAdminLogin;
 
     private function definePageProperties($title, $js_files, $css_files)
     {
         define("PAGE_TITLE", $title);
         define("PAGE_JS_FILES", $js_files);
         define("PAGE_CSS_FILES", $css_files);
+
+        self::$isAdminLogin = false;
     }
 
     public function view(string $name, string $title, array $js_files = [], array $css_files = [], bool $isAdmin = false, bool $custom = false)
     {
+        if (!self::$isAdminLogin) {
+            $sessionManger = new SessionManager();
+            $sessionManger->updateSessionVariable(SESSION_VARIABLE_ADMIN);
+            if (!$sessionManger->isLoggedIn()) {
+                header("Location: /admin/login");
+            }
+        }
+
         $this->definePageProperties($title, $js_files, $css_files);
         $pageDir = (!$isAdmin)  ? __DIR__ . "/../../interface/pages/" : __DIR__ . "/../../interface/admin/pages/";
 
@@ -39,15 +53,11 @@ class Controller
                 break;
 
             case 'login':
+                self::$isAdminLogin = true;
                 $this->view($name, "Kooples Admin | Login", ["admin-signin"], ["admin"], true);
                 break;
 
             case 'home':
-                session_start();
-                if (!$_SESSION["cey004_admin"]) {
-                    header("Location: /admin/login");
-                    break;
-                }
                 $this->view($name, "Kooples Admin | Home", ["admin-home"], ["admin"], true);
                 break;
 
