@@ -14,6 +14,11 @@
 }
 
 :root {
+  /* breakpoints */
+  --bp-small: 425px;
+  --bp-medium: 767px;
+  --bp-large: 1440px;
+
   /* color */
   --darker: #090d14;
   --dark: #171a21;
@@ -308,5 +313,17 @@ div {
 }
 
 .section-404 {
-  
+}
+
+/* common sections */
+
+/*  newsletter section */
+.newsletter-input-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.newsletter-textbox {
+  width: 255px;
+  height: 56px;
 }

@@ -209,12 +209,3 @@
   font-size: 3em;
 }
 
-/* section 12 - subscription */
-.lp-s12-input-box {
-  display: flex;
-  flex-direction: row;
-}
-.lp-s12-textbox {
-  width: 255px;
-  height: 56px;
-}
