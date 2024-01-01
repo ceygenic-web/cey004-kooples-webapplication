@@ -90,6 +90,7 @@
 
 /* sidebar */
 .sidebar {
+  z-index: 1000;
   background-color: var(--dark);
   padding: 20px;
   width: 40%;

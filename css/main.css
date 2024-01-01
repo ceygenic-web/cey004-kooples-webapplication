@@ -327,3 +327,10 @@ div {
   width: 255px;
   height: 56px;
 }
+
+@media (max-width: 425px) {
+  .newsletter-textbox {
+    width: 155px;
+    height: 56px;
+  }
+}
