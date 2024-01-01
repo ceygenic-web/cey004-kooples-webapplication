@@ -45,7 +45,7 @@ final class Router extends Controller
                 break;
 
             case 'about':
-                $this->view("about", "Kooples Sri Lanka | About Us", [], []);
+                $this->view("about", "Kooples Sri Lanka | About Us", [], ["about"]);
                 break;
             case 'contact':
                 $this->view("contact", "Kooples Sri Lanka | Contact", [], ["contact"]);
