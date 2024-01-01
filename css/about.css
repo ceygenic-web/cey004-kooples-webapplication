@@ -76,6 +76,11 @@
   text-align: center;
 }
 
+/* section 6 - delivery section */
+.aup-s6-box {
+  font-size: 128px;
+}
+
 @media (max-width: 1440px) {
   /* section 2 - brand  values */
   .aup-s2-values {
@@ -89,5 +94,15 @@
   .aup-s2-values {
     font-size: 14px;
     height: 70px;
+  }
+
+  /* section 5 - our story */
+  .aup-s5-title {
+    font-size: 32px;
+  }
+
+  .aup-s5-description {
+    width: 300px;
+    font-size: 12px;
   }
 }

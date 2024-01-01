@@ -40,9 +40,11 @@
 </section>
 
 <!-- section 6 - delivery section -->
-<section class="aup-s5 cey-bg-dark">
-    <div class="container d-flex flex-column align-items-center justify-content-center gap-3 h-100">
-        <h2 class="aup-s5-title cey-main-font">OUR STORY</h2>
-        <p class="aup-s5-description">KOOPLES was born from my personal fascination with the captivating art of handloom saree crafting. I was inspired to create a brand that offers all the beautiful ladies the same magical experience I had when I first laid eyes on these excellent fabrics. Now, through KOOPLES, we bring you handpicked creations that celebrate the artistry of skilled artisans, ensuring you feel the same mesmerizing allure with each fold.</p>
+<section class="aup-s6 cey-bg-dark">
+    <div class="container d-flex h-100 cey-text-white py-5 flex-column flex-lg-row">
+        <div class="col-12 col-lg-3 d-flex justify-content-center align-items-center"><i class="aup-s6-box bi bi-box"></i></div>
+        <div class="col-12 col-lg-9 d-flex justify-content-center align-items-center">
+            <p class="fs-5 fw-bold">To provide convenience to our customers across Sri Lanka, we have implemented a robust island-wide delivery service. Through reliable logistics partners, we ensure that our sarees are delivered safely and promptly to our customer's door steps, irrespective of their location.</p>
+        </div>
     </div>
 </section>
