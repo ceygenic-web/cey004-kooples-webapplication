@@ -32,7 +32,7 @@
   max-width: 700px;
   min-width: 300px;
   color: var(--white);
-  font-size: 20px;
+  font-size: 16px;
 
   display: flex;
   flex-direction: column;
@@ -81,6 +81,11 @@
   font-size: 128px;
 }
 
+.aup-s6-description {
+  font-size: 18px;
+  padding: 0 20px;
+}
+
 @media (max-width: 1440px) {
   /* section 2 - brand  values */
   .aup-s2-values {
@@ -104,5 +109,14 @@
   .aup-s5-description {
     width: 300px;
     font-size: 12px;
+  }
+
+  /* section 6 - delivery section */
+  .aup-s6-box {
+    font-size: 64px;
+  }
+
+  .aup-s6-description {
+    font-size: 14px;
   }
 }

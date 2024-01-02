@@ -19,7 +19,7 @@
 <!-- section 3 - actual story -->
 <section class="cey-bg-darker">
     <div class="container py-4 d-flex flex-column align-items-center">
-        <div class="aup-s3-content">
+        <div class="aup-s3-content px-3">
             <p>KOOPLES is a Sri Lankan traditional handloom saree brand that promotes traditional craftsmanship and empowers local artisans. Our handloom sarees are intricately woven with love and dedication by skilled weavers across our nation. And we are giving them a hand to stand in their economic background.</p>
             <p>Our slogan "Grace. Dignity. Identity" represents what KOOPLES is all about. We want our handloom sarees to make you feel graceful and elegant, while also dignifying the lives of our local artisans. Wearing our sarees, you can embrace your own identity and heritage with pride.</p>
         </div>
@@ -44,7 +44,7 @@
     <div class="container d-flex h-100 cey-text-white py-5 flex-column flex-lg-row">
         <div class="col-12 col-lg-3 d-flex justify-content-center align-items-center"><i class="aup-s6-box bi bi-box"></i></div>
         <div class="col-12 col-lg-9 d-flex justify-content-center align-items-center">
-            <p class="fs-5 fw-bold">To provide convenience to our customers across Sri Lanka, we have implemented a robust island-wide delivery service. Through reliable logistics partners, we ensure that our sarees are delivered safely and promptly to our customer's door steps, irrespective of their location.</p>
+            <p class="aup-s6-description fw-bold">To provide convenience to our customers across Sri Lanka, we have implemented a robust island-wide delivery service. Through reliable logistics partners, we ensure that our sarees are delivered safely and promptly to our customer's door steps, irrespective of their location.</p>
         </div>
     </div>
 </section>
