@@ -11,7 +11,7 @@ function loadPanels() {
 
   productPanels.forEach((element) => {
     sendRequest(
-      "/admin/api/product/productAdd",
+      "/admin/api/product/productAddView",
       "GET",
       null,
       {},
