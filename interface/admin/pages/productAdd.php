@@ -1,8 +1,4 @@
-<head>
-<link rel="stylesheet" href="bootstrap.css">
-<link rel="stylesheet" href="main.css">
-</head>
-<body>
+<!-- product add section -->
 <section class="productAdd ad-s1 cey-bg-dark py-5">
     <div class="container py-5 d-flex justify-content-center align-items-center h-100 w-100 flex-column">
         <h1 class="cey-text-white">Add products</h1>
@@ -17,4 +13,3 @@
         </form>
     </div>
 </section>
-</body>

@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="bootstrap.css">
-<link rel="stylesheet" href="main.css">
+<!-- product update section -->
 <section class="productUpdate ad-s1 cey-bg-dark py-5">
     <div class="container py-5 d-flex justify-content-center align-items-center h-100 w-100 flex-column">
         <form method="POST" action="../../backend/api/product.php" class="col-12 col-lg-6 col-md-8 d-flex flex-column gap-1 cey-text-white">

@@ -3,7 +3,7 @@ require_once(__DIR__ . "/../../model/Api.php");
 require_once(__DIR__ . "/../../model/RequestHandler.php");
 require_once(__DIR__ . "/../../model/PasswordHash.php");
 
-class Access extends Api
+class Access extends AdminApi
 {
     private mixed $function;
 
@@ -21,7 +21,7 @@ class Access extends Api
                     break;
 
                 case 'check':
-                    return [$this->check(($_SERVER["REQUEST_METHOD"] === "POST") ? $_POST : null), false];
+                    return [$this->check(), false];
                     break;
 
                 default:
@@ -65,13 +65,12 @@ class Access extends Api
         return (object)["status" => "failed", "error" => "invalid user data!"];
     }
 
-    public function check()
+
+    function check()
     {
-        $this->sessionInit();
-        $this->sessionManager->updateSessionVariable("cey004_admin");
-        if ($this->checkAccess() !== true) {
-            return $this->checkAccess();
+        if ($this->loggedAsAdmin()) {
+            return (object)["status" => "success"];
         }
-        return "success";
+        return (object)["status" => "failed", "error" => "Admin is not logged in"];
     }
 }

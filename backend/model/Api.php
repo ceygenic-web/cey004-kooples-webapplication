@@ -16,7 +16,7 @@ class Api
 
     public function checkAccess()
     {
-        return ($this->sessionManager->isLoggedIn()) ? true : (object)["status"=>"failed", "error"=>"Access Denied"] ;
+        return $this->sessionManager->isLoggedIn();
     }
 
     private function ConnectDatabase()
@@ -45,7 +45,7 @@ class Api
             $this->database->query($query);
         }
     }
-    
+
     public function deleteData(string $query, string $type = null, array $data = null): void
     {
         $this->ConnectDatabase();

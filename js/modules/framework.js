@@ -47,6 +47,11 @@ const sendRequest = async (
       return isJson ? response.json() : response.text();
     })
     .then((data) => {
+      if (!isJson) {
+        callback(data);
+        return;
+      }
+
       try {
         if (data.status == "success") {
           callback(data);
