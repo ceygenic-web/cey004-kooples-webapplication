@@ -60,6 +60,9 @@ class Controller
             case 'home':
                 $this->view($name, "Kooples Admin | Home", ["admin-home"], ["admin"], true);
                 break;
+            case 'test':
+                $this->view($name, "Kooples Admin | Test", ["admin-home"], ["admin"], true);
+                break;
 
             default:
                 $this->view("404", "Kooples Sri Lanka | 404 Not found");

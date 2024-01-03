@@ -41,7 +41,7 @@ final class Router extends Controller
                 break;
 
             case 'product':
-                $this->view("product", "Kooples Sri Lanka | Product", ["product"], ["product"]);
+                $this->view("product", "Kooples Sri Lanka | Product", ["product", "modules/uiBuilder"], ["product"]);
                 break;
 
             case 'about':

@@ -65,3 +65,10 @@
   z-index: 1000;
   cursor: pointer;
 }
+
+@media (max-width: 425px) {
+  /* section 1 - product description */
+  .pp-s1-swiper {
+    height: 300px;
+  }
+}
