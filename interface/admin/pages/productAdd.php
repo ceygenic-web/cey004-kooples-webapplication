@@ -1,3 +1,8 @@
+<head>
+<link rel="stylesheet" href="bootstrap.css">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
 <section class="productAdd ad-s1 cey-bg-dark py-5">
     <div class="container py-5 d-flex justify-content-center align-items-center h-100 w-100 flex-column">
         <h1 class="cey-text-white">Add products</h1>
@@ -5,10 +10,11 @@
             <label for="title">Title</label>
             <input type="text" id="title" name="title" class="form-control"><br>
             <label for="description">Description</label>
-            <input type="text" id="description" name="description"><br>
+            <input type="text" id="description" name="description" class="form-control"><br>
             <label for="category">Category</label>
-            <input type="text" id="category" name="category"><br>
+            <input type="text" id="category" name="category" class="form-control"><br>
             <input type="submit" value="Submit">
         </form>
     </div>
 </section>
+</body>
