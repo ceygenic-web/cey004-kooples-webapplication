@@ -25,7 +25,7 @@ class Product extends Api
                 case 'add':
                     return [$this->add(), true];
                     break;
-                
+
                 case 'update':
                     return [$this->update(), true];
                     break;
@@ -45,16 +45,15 @@ class Product extends Api
 
     public function view($params)
     {
+        $query = "SELECT * FROM `product` INNER JOIN `category` ON `product`.`category_category_id` = `category`.`category_id` ";
         if ($params) {
+            $query .= (isset($params["search"])) ? " WHERE (`product`.`title` LIKE '%" . $params["search"] . "%' OR `product`.`description` LIKE '%" . $params["search"] . "%' OR `category`.`category` LIKE '%" . $params["search"] . "%') " : " ";
+            $query .= (isset($params["product"]) && !isset($params["search"])) ? " WHERE `product`.`product_id` = '" . $params["product"] . "' " : " ";
+            $query .= (isset($params["category"])  && !isset($params["search"])) ? " WHERE `category`.`category` = '" . $params["category"] . "' " : " ";
+            $query .= (isset($params["category"])  && isset($params["search"])) ? " AND `category`.`category` = '" . $params["category"] . "' " : " ";
         }
-
-        // $this->sessionInit();
-        // $this->sessionManager->updateSessionVariable("cey004_admin");
-
-        // if (!$this->accessController()) {
-        // return (object)["status" => "failed", "error" => "invalid access"];
-        // }
-        $results = $this->getData("SELECT * FROM `product` INNER JOIN `category` ON `product`.`category_category_id` = `category`.`category_id`  ");
+        $results = $this->getData($query);
+        // var_dump($query);
         return (object)["status" => "success", "results" => $results];
     }
 
@@ -68,12 +67,13 @@ class Product extends Api
             $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" . $category . "' ")[0]["category_id"];
             $id = mt_rand(000000, 999999);
             $this->updateData("INSERT INTO `product` (`product_id`,`category_category_id`, `title`, `description`) VALUES (?,?, ?, ?)", "siss", array($id, $categoryId, $title, $description));
-            return (object)["status"=>"success"];
+            return (object)["status" => "success"];
         }
-        return (object)["status"=>"failed", "error" => "invalid request"];
+        return (object)["status" => "failed", "error" => "invalid request"];
     }
 
-    public function update(){
+    public function update()
+    {
         if (RequestHandler::isPostMethod()) {
             $id = $_POST["id"];
             $title = $_POST["title"];
@@ -81,17 +81,18 @@ class Product extends Api
             $category = $_POST["category"];
             $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" . $category . "' ")[0]["category_id"];
             $this->updateData("UPDATE `product` SET `category_category_id`=?, `title`=?, `description`=? WHERE `product_id`=$id", "iss", array($categoryId, $title, $description));
-            return (object)["status"=>"success"];
+            return (object)["status" => "success"];
         }
-        return (object)["status"=>"failed", "error" => "invalid request"];
+        return (object)["status" => "failed", "error" => "invalid request"];
     }
 
-    public function delete(){
+    public function delete()
+    {
         if (RequestHandler::isPostMethod()) {
             $id = $_POST["id"];
             $this->deleteData("DELETE FROM `product` WHERE `product_id`=$id");
-            return (object)["status"=>"success"];
+            return (object)["status" => "success"];
         }
-        return (object)["status"=>"failed", "error" => "invalid request"];
+        return (object)["status" => "failed", "error" => "invalid request"];
     }
 }

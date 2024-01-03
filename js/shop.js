@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   getKeyValuePairsFromUrlParams();
 
-  fetch("api/product/view", {
+  let URL = "api/product/view";
+  URL += window.location.search;
+  fetch(URL, {
     method: "GET",
   })
     .then((res) => res.json())
