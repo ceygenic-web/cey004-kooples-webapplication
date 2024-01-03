@@ -57,8 +57,15 @@ class Controller
                 $this->view($name, "Kooples Admin | Login", ["admin-signin"], ["admin"], true);
                 break;
 
+            case '':
+                $this->view("home", "Kooples Admin | Home", ["admin-home"], ["admin"], true);
+                break;
+
             case 'home':
                 $this->view($name, "Kooples Admin | Home", ["admin-home"], ["admin"], true);
+                break;
+            case 'test':
+                $this->view($name, "Kooples Admin | Test", ["admin-home"], ["admin"], true);
                 break;
 
             default:
@@ -98,6 +105,10 @@ class Controller
         $apiName = $apiCall[2];
         switch ($apiName) {
             case 'access':
+                $this->callApi($apiName, $apiCall, true);
+                break;
+
+            case 'product':
                 $this->callApi($apiName, $apiCall, true);
                 break;
 
