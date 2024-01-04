@@ -174,8 +174,8 @@
 
 <!-- section 3 - Video -->
 <section class="lp-s8 cey-bg-darker px-5">
-    <div class="container d-flex justify-content-center">
-        <video height="678" src="../../resources/video/main.mp4" autoplay></video>
+    <div class="container d-flex justify-content-center py-4">
+        <!-- <video loop height="678" src="../../resources/video/main.mp4" autoplay></video> -->
     </div>
 </section>
 
