@@ -68,16 +68,16 @@
 <!-- section 4 - categories -->
 <section class="lp-s4 cey-bg-dark">
     <div class="container py-5">
-        <h3 class="cey-main-font">LATEST COLLECTIONS</h3>
+        <h3 class="cey-main-font">CATEGORIES</h3>
         <div class="d-flex flex-column">
             <div class="d-flex flex-wrap">
-                <div class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category1.jpg');">
+                <div onclick="toPage('/shop?category=category 1')" class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category1.jpg');">
                     <div class="d-flex flex-column">
                         <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
                         <p class="cey-text-white">EXPLORE -></p>
                     </div>
                 </div>
-                <div class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
+                <div onclick="toPage('/shop?category=category 2')" class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
                     <div class="d-flex flex-column">
                         <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
                         <p class="cey-text-white">EXPLORE -></p>
@@ -85,7 +85,7 @@
                 </div>
             </div>
             <div class="d-flex flex-wrap">
-                <div class="col-6 col-md-3 lp-s4-card d-flex align-items-end p-4 lp-s4-small-card" style="background-image: url('resources/images/category3.jpg');">
+                <div onclick="toPage('/shop?category=category 3')" class="col-6 col-md-3 lp-s4-card d-flex align-items-end p-4 lp-s4-small-card" style="background-image: url('resources/images/category3.jpg');">
                     <div class="d-flex flex-column">
                         <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
                         <p class="cey-text-white">EXPLORE -></p>
@@ -160,7 +160,7 @@
         <div class="lp-s8-section p-3 lp-s8-middle-box">
             <h3>OUR STORY</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt labore a tenetur.</p>
-            <button class="cey-btn-box cey-main-font">ABOUT US</button>
+            <button onclick="toPage('/about')" class="cey-btn-box cey-main-font">ABOUT US</button>
         </div>
         <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-right.png');"></div>
     </div>

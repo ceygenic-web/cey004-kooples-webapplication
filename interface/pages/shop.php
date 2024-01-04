@@ -10,17 +10,12 @@
     <div class="container d-flex gap-2 flex-md-row flex-column">
         <div class="order-1 order-md-0 col-12 col-md-4 sp-s2-dropdown fs-5 text-center fw-bold cey-main-font position-relative d-flex flex-column">
             <span class=" cey-bg-white sp-s2-dropdown-btn cey-text-dark p-2 flex-grow-1">CATEGORIES</span>
-            <ul class="sp-s2-dropdown-list p-3 cey-bg-primary-light cey-text-dark flex-column position-absolute w-100">
-                <li>ALL</li>
-                <li>STUNNING</li>
-                <li>DAZLING</li>
-                <li>BRIDAL</li>
-                <li>PALLU</li>
-                <li>CHAVRON</li>
+            <ul id="shopCategoryDropdown" class="sp-s2-dropdown-list p-3 cey-bg-primary-light cey-text-dark flex-column position-absolute w-100">
+                <li>ANY CATEGORY</li>
             </ul>
         </div>
         <div class="order-0 order-md-1 col-12 col-md-8 d-flex">
-            <input class="p-2 w-75 cey-border-white cey-outline-light" type="text" placeholder="Type here to search..." />
+            <input onchange="searchBar(event)" class="p-2 w-75 cey-border-white cey-outline-light" type="text" placeholder="Type here to search..." />
             <button class="cey-main-font cey-btn-box w-25 fs-5"><span class="d-none d-md-block">SEARCH</span><i class="bi bi-search d-block d-md-none"></i></button>
         </div>
     </div>
@@ -29,7 +24,7 @@
 
 <!-- section 3 - products section -->
 <section class="sp-s3 cey-bg-white">
-    <div id="mainProductContainer" class="sp-s3-main-container container px-5 py-1 d-flex flex-wrap gap-5 justify-content-between">
+    <div id="mainProductContainer" class="sp-s3-main-container container px-5 py-1 d-flex flex-wrap gap-5 justify-content-between vh-100 overflow-auto py-5">
         <?php
         for ($i = 0; $i < 0; $i++) {
         ?>

@@ -24,6 +24,7 @@ class Product extends AdminApi
                     return [$this->productUpdateView(), false];
                     break;
 
+
                 default:
                     return false;
                     break;
