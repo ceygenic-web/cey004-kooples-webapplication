@@ -9,7 +9,7 @@
                 <div class="lp-s1-dot"></div>
                 <div class="cey-main-font-light">IDENTITY</div>
             </div>
-            <h1 class="cey-text-white cey-main-font">FIRST HEADING GOES HERE</h1>
+            <h1 class="cey-text-white cey-main-font">SEARCH YOUR DREAM SAREE HERE!</h1>
             <div class="lp-s1-searchbar">
                 <input class="py-2" type="text" placeholder="search your dream saree....">
                 <i class="fs-2 bi bi-search"></i>

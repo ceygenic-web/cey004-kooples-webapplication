@@ -10,20 +10,20 @@
 <section class="cey-bg-dark">
     <div class="container py-5 cey-text-white d-flex justify-content-center">
         <div class="cup-s2-contacts-box d-flex flex-column gap-3">
-            <p class="text-center cey-main-font-light">Some content has to go here related to content... </p>
+            <!-- <p class="text-center cey-main-font-light">Some content has to go here related to content... </p> -->
             <div class="d-flex flex-column cey-text-darker gap-3">
                 <div class="py-2 px-4 cey-bg-white d-flex gap-3">
                     <i class="px-4 fs-1 bi bi-telephone-fill"></i>
                     <div class="d-flex flex-column">
                         <h4 class="m-0 fs-6 fw-light">Mobile No</h4>
-                        <h3 class="m-0 fs-4 fw-bold">+94 71 090 2997</h3>
+                        <h3 class="m-0 fs-4 fw-bold">+94 78 482 2711</h3>
                     </div>
                 </div>
                 <div class="py-2 px-4 cey-bg-white d-flex gap-3">
                     <i class="px-4 fs-1 bi bi-whatsapp"></i>
                     <div class="d-flex flex-column">
                         <h4 class="m-0 fs-6 fw-light">WhatsApp</h4>
-                        <h3 class="m-0 fs-4 fw-bold">+94 71 090 2997</h3>
+                        <h3 class="m-0 fs-4 fw-bold">+94 78 482 2711</h3>
                     </div>
                 </div>
                 <div class="py-2 px-4 cey-bg-white d-flex gap-3">
