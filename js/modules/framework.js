@@ -71,3 +71,30 @@ const sendRequest = async (
       callback(null, error); // Pass error to callback
     });
 };
+
+/**
+ *parse wuery parameters from URL
+ */
+function getKeyValuePairsFromUrlParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const queryParams = {};
+
+  for (const [key, value] of urlParams.entries()) {
+    // Ensure accurate decoding of values
+    queryParams[key] = decodeURIComponent(value);
+  }
+
+  return queryParams;
+}
+
+/**
+ * update URL queries based on object
+ */
+function setKeyValuePairsToUrlParams(object) {
+  const urlParams = new URLSearchParams(object);
+  history.replaceState(
+    null,
+    null,
+    window.location.pathname + "?" + urlParams.toString()
+  );
+}

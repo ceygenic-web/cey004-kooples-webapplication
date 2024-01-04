@@ -4,7 +4,14 @@ let _search = "";
 
 // initiator
 document.addEventListener("DOMContentLoaded", () => {
-  getKeyValuePairsFromUrlParams();
+  const queries = getKeyValuePairsFromUrlParams();
+  _category = queries.category ?? "";
+  _search = queries.search ?? "";
+
+  // set default search
+  const shopSearch = document.getElementById("shopSearch");
+  shopSearch.value = _search;
+
   searchProduct("", "");
 
   // update categories in to dropdown
@@ -45,7 +52,6 @@ function searchProduct(search = "", category = "") {
 
   urlQueriesObject = { ...urlQueriesObject, ...paramsObject };
   URL += "?" + new URLSearchParams(urlQueriesObject).toString();
-  console.log(URL);
 
   sendRequest(URL, "GET", null, {}, true, (data) => {
     const container = document.getElementById("mainProductContainer");
@@ -74,6 +80,17 @@ function searchProduct(search = "", category = "") {
           </div>
         `;
       }
+
+      // if (_category) {
+      //   setKeyValuePairsToUrlParams({
+      //     category: _category,
+      //   });
+      // }
+      // if (_search) {
+      //   setKeyValuePairsToUrlParams({
+      //     search: _search,
+      //   });
+      // }
     }
   });
 }
@@ -82,17 +99,4 @@ function searchProduct(search = "", category = "") {
 function searchBar(event) {
   const search = event.target.value;
   searchProduct(search, _category);
-}
-
-// utility
-function getKeyValuePairsFromUrlParams() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const queryParams = {};
-
-  for (const [key, value] of urlParams.entries()) {
-    // Ensure accurate decoding of values
-    queryParams[key] = decodeURIComponent(value);
-  }
-
-  return queryParams;
 }

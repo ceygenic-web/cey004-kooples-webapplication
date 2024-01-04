@@ -15,7 +15,7 @@
             </ul>
         </div>
         <div class="order-0 order-md-1 col-12 col-md-8 d-flex">
-            <input onchange="searchBar(event)" class="p-2 w-75 cey-border-white cey-outline-light" type="text" placeholder="Type here to search..." />
+            <input id="shopSearch" onchange="searchBar(event)" class="p-2 w-75 cey-border-white cey-outline-light" type="text" placeholder="Type here to search..." />
             <button class="cey-main-font cey-btn-box w-25 fs-5"><span class="d-none d-md-block">SEARCH</span><i class="bi bi-search d-block d-md-none"></i></button>
         </div>
     </div>
