@@ -46,14 +46,15 @@ function searchProduct(search = "", category = "") {
     if (data.status == "success") {
       data.results.forEach((element) => {
         container.innerHTML += `
-                  <div class="shop-product-card col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center mt-5" onclick="toProduct('${element.title}')">
+                  <div class="shop-product-card col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center mt-5">
                         <div class="shop-product-card-container w-100 cey-shadow-light position-relative">
                           <div class="content">
                             <h6 class="fw-bold">${element.title}</h6>
                             <p>${element.description}</p>
-                            <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
+                            <!-- <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button> -->
+                            <button onclick="toPage('purchase?product=${element.title}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
                           </div>
-                          <img src="resources/images/products/${element.product_id}.jpg" height="100%" width="100%">
+                          <img src="resources/images/products/${element.product_id}.jpg" height="100%" width="100%" onclick="toProduct('${element.title}')">
                         </div>
                   </div>
               `;
