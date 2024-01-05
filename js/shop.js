@@ -15,20 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   searchProduct("", "");
 
   // update categories in to dropdown
-  sendRequest("api/category/get", "GET", null, {}, true, (data) => {
-    const dropdown = document.getElementById("shopCategoryDropdown");
-    let dropdownComponent = `<li onclick="searchProduct('', '')">ANY PRODUCT</li>`;
-    if (data.status == "success") {
-      data.results.forEach((element) => {
-        dropdownComponent += `<li onclick="searchProduct('', '${element.category}')">${element.category}</li>`;
-      });
-      dropdown.innerHTML = dropdownComponent;
-    } else if (data.status == "failed") {
-      console.log("Failed to load category");
-    } else {
-      console.log("Something went wrong");
-    }
-  });
+  loadCategories();
 });
 
 // search products
@@ -59,15 +46,15 @@ function searchProduct(search = "", category = "") {
     if (data.status == "success") {
       data.results.forEach((element) => {
         container.innerHTML += `
-                  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 d-flex justify-content-center mt-5" onclick="toProduct('${element.title}')">
-                      <div class="cey-product-item-card cey-shadow-light">
-                          <img src="resources/images/products/${element.product_id}.jpg" height="100%" width="100%">
+                  <div class="shop-product-card col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center mt-5" onclick="toProduct('${element.title}')">
+                        <div class="shop-product-card-container w-100 cey-shadow-light position-relative">
                           <div class="content">
-                              <h6 class="fw-bold">${element.title}</h6>
-                              <p>${element.description}</p>
-                              <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
+                            <h6 class="fw-bold">${element.title}</h6>
+                            <p>${element.description}</p>
+                            <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
                           </div>
-                      </div>
+                          <img src="resources/images/products/${element.product_id}.jpg" height="100%" width="100%">
+                        </div>
                   </div>
               `;
       });
@@ -91,6 +78,24 @@ function searchProduct(search = "", category = "") {
       //     search: _search,
       //   });
       // }
+    }
+  });
+}
+
+// load Categories
+function loadCategories() {
+  sendRequest("api/category/get", "GET", null, {}, true, (data) => {
+    const dropdown = document.getElementById("shopCategoryDropdown");
+    let dropdownComponent = `<li onclick="searchProduct('', '')">ANY PRODUCT</li>`;
+    if (data.status == "success") {
+      data.results.forEach((element) => {
+        dropdownComponent += `<li onclick="searchProduct('', '${element.category}')">${element.category}</li>`;
+      });
+      dropdown.innerHTML = dropdownComponent;
+    } else if (data.status == "failed") {
+      console.log("Failed to load category");
+    } else {
+      console.log("Something went wrong");
     }
   });
 }
