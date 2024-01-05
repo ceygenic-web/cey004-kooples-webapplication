@@ -50,11 +50,12 @@ function mainContainerBuilder(data, container) {
     <div class="mb-4">
       ${specialSection}
       <div class="my-4">
-          <span class="py-2 px-3 cey-bg-darker cey-text-white">${data.price}</span>
+          <span class="py-2 px-3 cey-bg-darker cey-text-white">${data.price} LKR</span>
       </div>
     </div>
+    <p class="cey-text-primary">Payments will be handles via whatsapp! Payment gates will be implimented soon</p>
     <div class="d-flex gap-2">
-      <button class="col-6 cey-btn-box fw-bold">ADD TO CART</button>
+      <button onclick="toPage('purchase?product=${data.title}');" class="col-6 cey-btn-box fw-bold">PURCHASE</button>
       <button class="col-6 cey-bg-darker cey-text-white fw-bold">ADD TO WATCH LIST</button>
     </div>
   `;
@@ -89,47 +90,3 @@ function secondaryContainerBuilder(data, container) {
 
   secondaryContainer.innerHTML = section;
 }
-
-// test
-/**
- * tempory testing section
- */
-const mockData = {
-  description: {
-    head: "Product Description",
-    body: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam numquam aliquam eligendi? Est fuga expedita, nesciunt illo facere fugit dicta adipisci veritatis accusantium nam odit dolores, atque sequi vero perferendis.`,
-  },
-  price: "59.99",
-  special: {
-    feature1: {
-      sectionTitle: "Comfort and Grip",
-      value: "Soft-touch finish and contoured shape for all-day comfort.",
-    },
-    feature2: {
-      sectionTitle: "Precision Tracking",
-      value: "High-definition sensor for smooth and accurate cursor control.",
-    },
-  },
-  secondary: {
-    specifications: {
-      head: "Specifications",
-      body: "Dimensions: 120 x 60 x 30 mm, Weight: 90 g, Battery: Rechargeable",
-    },
-    reviews: {
-      head: "Customer Reviews",
-      body: "4.8 out of 5 stars based on 1,200 reviews",
-    },
-    extra: {
-      head: "extra Item",
-      body: "there is no such extra item to be included",
-    },
-  },
-};
-
-window.addEventListener("DOMContentLoaded", () => {
-  productDataUpdater(
-    JSON.stringify(mockData),
-    "mainProductContainer",
-    "secondaryProductContainer"
-  );
-});
