@@ -7,7 +7,7 @@
                 <div class="footer-contact-secondary-section">
                     <div class="d-flex gap-2 pb-2 footer-contact">
                         <i class="bi bi-telephone-fill mx-1"></i>
-                        <div class="">+94 71 090 2997</div>
+                        <div class="">+94 78 482 2711</div>
                     </div>
                     <div class="d-flex gap-2 pb-2 footer-contact">
                         <i class="bi bi-envelope-fill mx-1"></i>
@@ -15,7 +15,7 @@
                     </div>
                     <div class="d-flex gap-2 pb-2 footer-contact">
                         <i class="bi bi-geo-alt-fill mx-1"></i>
-                        <div class="ls-s11-contacts">No. 14, Charles Father Road,<br> Kandana, Sri Lanka</div>
+                        <div class="ls-s11-contacts">Kadawatha, Sri Lanka</div>
                     </div>
                 </div>
             </div>
