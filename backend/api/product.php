@@ -9,6 +9,7 @@ class Product extends Api
 
     public function __construct(array $apiCall)
     {
+        var_dump("work 6");
         $this->function = ($apiCall[2]) ?? null;
     }
 
