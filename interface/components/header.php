@@ -108,7 +108,7 @@
                 </ul>
             </div>
             <div class="main-navbar-navigation-icons">
-                <i class="bi bi-search"></i>
+                <i onclick="toPage('shop')" class="bi bi-search"></i>
                 <i class="bi bi-cart"></i>
                 <i class="bi bi-person"></i>
             </div>

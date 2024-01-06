@@ -78,3 +78,17 @@
   bottom: 0;
   z-index: 20;
 }
+
+@media (max-width: 767px) {
+  /* section 1 - category banner */
+  .sp-s1 {
+    height: 150px;
+  }
+}
+
+@media (max-width: 425px) {
+  /* section 1 - category banner */
+  .sp-s1 {
+    height: 100px;
+  }
+}

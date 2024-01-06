@@ -24,7 +24,7 @@
 
 <!-- section 3 - products section -->
 <section class="sp-s3 cey-bg-white">
-    <div id="mainProductContainer" class="sp-s3-main-container container px-5 py-1 d-flex flex-wrap py-1">
+    <div id="mainProductContainer" class="sp-s3-main-container container px-1 px-lg-5 py-lg-2 d-flex flex-wrap py-0">
         <?php
         for ($i = 0; $i < 0; $i++) {
         ?>

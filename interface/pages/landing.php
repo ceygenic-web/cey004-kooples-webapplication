@@ -33,7 +33,7 @@
 </section>
 
 <!-- section 3 - latests -->
-<section class="lp-s3 cey-bg-white">
+<section class="lp-s3 cey-bg-white" id="latestCollectionSection"> 
     <div class="container py-3">
         <h3 class="cey-main-font">LATEST COLLECTIONS</h3>
         <div class="swiper">
@@ -42,9 +42,8 @@
                     <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-left fs-1 cey-text-white bi bi-arrow-left-circle"></i></div>
                     <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div>
                 </div>
-                <div class="swiper-wrapper py-5">
+                <div class="swiper-wrapper py-5" id="latestCollectionContainer">
                     <?php
-
                     for ($i = 0; $i < 6; $i++) {
                     ?>
                         <div class="swiper-slide cey-product-item-card cey-shadow-light">
@@ -57,7 +56,6 @@
                         </div>
                     <?php
                     }
-
                     ?>
                 </div>
             </div>

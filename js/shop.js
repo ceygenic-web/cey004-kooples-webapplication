@@ -46,7 +46,7 @@ function searchProduct(search = "", category = "") {
     if (data.status == "success") {
       data.results.forEach((element) => {
         container.innerHTML += `
-                  <div class="shop-product-card col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center mt-5">
+                  <div class="shop-product-card col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center mt-2">
                         <div class="shop-product-card-container w-100 cey-shadow-light position-relative">
                           <div class="content">
                             <h6 class="fw-bold">${element.title}</h6>
