@@ -127,28 +127,28 @@ function compressImage(imageFile, quality = 0.8) {
 }
 
 // test
-const input = document.getElementById("imageInput"); // Assuming an <input type="file"> element
-input.addEventListener("change", (event) => {
-  const imageFile = event.target.files[0];
+// const input = document.getElementById("imageInput"); // Assuming an <input type="file"> element
+// input.addEventListener("change", (event) => {
+//   const imageFile = event.target.files[0];
 
-  // Compress the image
-  compressImage(imageFile)
-    .then((compressedBlob) => {
-      const form = new FormData();
-      form.append("image", compressedBlob);
+//   // Compress the image
+//   compressImage(imageFile)
+//     .then((compressedBlob) => {
+//       const form = new FormData();
+//       form.append("image", compressedBlob);
 
-      sendRequest(
-        "api/product/upload-image",
-        "POST",
-        form,
-        {},
-        true,
-        (data) => {
-          console.log(data);
-        }
-      );
-    })
-    .catch((error) => {
-      console.error("Error compressing image:", error);
-    });
-});
+//       sendRequest(
+//         "api/product/upload-image",
+//         "POST",
+//         form,
+//         {},
+//         true,
+//         (data) => {
+//           console.log(data);
+//         }
+//       );
+//     })
+//     .catch((error) => {
+//       console.error("Error compressing image:", error);
+//     });
+// });
