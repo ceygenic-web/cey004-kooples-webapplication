@@ -20,7 +20,7 @@ class Controller
 
     public function view(string $name, string $title, array $js_files = [], array $css_files = [], bool $isAdmin = false, bool $custom = false)
     {
-        if (!self::$isAdminLogin) {
+        if (!self::$isAdminLogin && $isAdmin) {
             $sessionManger = new SessionManager();
             $sessionManger->updateSessionVariable(SESSION_VARIABLE_ADMIN);
             if (!$sessionManger->isLoggedIn()) {
