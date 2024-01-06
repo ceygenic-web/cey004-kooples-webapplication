@@ -54,7 +54,7 @@ function heroSearch() {
 
 // load latest collection
 function loadLatestCollection() {
-  sendRequest("api/product/view?limit=6", "GET", null, {}, true, (data) => {
+  sendRequest("api/product/view?limit=6", "GET", null, {}, false, (data) => {
     const container = document.getElementById("latestCollectionContainer");
     container.innerHTML = "";
     if (data.status == "success") {
