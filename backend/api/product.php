@@ -19,6 +19,7 @@ class Product extends Api
         if ($this->function) {
             switch ($this->function) {
                 case 'view':
+                    var_dump("work 1");
                     return [$this->view(($_SERVER["REQUEST_METHOD"] === "GET") ? $_GET : []), false];
                     break;
 
