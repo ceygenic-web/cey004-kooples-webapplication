@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 function setProductToMessage() {
   const URLdata = getKeyValuePairsFromUrlParams();
   const link = document.getElementById("messageLink");
-  link.href = `https://wa.me/94784822710?text=I wants to but this product : ${URLdata.product} : Image : -
-  https://kooplesclothing.com/resources/images/hero.jpg`;
+  link.setAttribute(
+    "href",
+    `https://wa.me/94784822710?text=I wants to but this product : ${URLdata.product} : Image : -
+  https://kooplesclothing.com/resources/images/hero.jpg`
+  );
 }
