@@ -8,8 +8,7 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
 
-        <a href="https://wa.me/94784822710?text=I wants to but this product : Product 01 : Image : -
-        www.youtube.com" class="btn btn-success btn-lg rounded-pill" target="_blank">
+        <a id="messageLink" href="#" class="btn btn-success btn-lg rounded-pill" target="_blank">
             <i class="bi bi-whatsapp fs-2x"></i> <span class="ms-2">Continue Payments in WhatsApp</span>
         </a>
     </div>
