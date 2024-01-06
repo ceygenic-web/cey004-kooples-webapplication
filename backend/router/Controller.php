@@ -133,7 +133,7 @@ class Controller
             if (is_array($response) && $response[0]) {
                 ResponseSender::sendJson($response[0], $response[1]);
             } else {
-                ResponseSender::sendJson((object)["status" => "failed", "error" => "Something Went Wrong!"]);
+                ResponseSender::sendJson((object)["status" => "failed", "error" => "Something went wrong!"]);
             }
         }
     }

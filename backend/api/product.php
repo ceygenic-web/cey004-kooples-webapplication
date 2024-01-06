@@ -26,6 +26,10 @@ class Product extends Api
                     return [$this->add(), true];
                     break;
 
+                case 'upload-image':
+                    return [$this->uploadImage(), true];
+                    break;
+
                 case 'update':
                     return [$this->update(), true];
                     break;
@@ -51,7 +55,7 @@ class Product extends Api
             $query .= (isset($params["product"]) && !isset($params["search"])) ? " WHERE `product`.`product_id` = '" . $params["product"] . "' " : " ";
             $query .= (isset($params["category"])  && !isset($params["search"])) ? " WHERE `category`.`category` = '" . $params["category"] . "' " : " ";
             $query .= (isset($params["category"])  && isset($params["search"])) ? " AND `category`.`category` = '" . $params["category"] . "' " : " ";
-            $query .= (isset($params["limit"])) ? " LIMIT ".$params["limit"]."  " : " ";
+            $query .= (isset($params["limit"])) ? " LIMIT " . $params["limit"] . "  " : " ";
         }
         $results = $this->getData($query);
         // var_dump($query);
@@ -68,6 +72,19 @@ class Product extends Api
             $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" . $category . "' ")[0]["category_id"];
             $id = mt_rand(000000, 999999);
             $this->updateData("INSERT INTO `product` (`product_id`,`category_category_id`, `title`, `description`) VALUES (?,?, ?, ?)", "siss", array($id, $categoryId, $title, $description));
+            return (object)["status" => "success"];
+        }
+        return (object)["status" => "failed", "error" => "invalid request"];
+    }
+
+    public  function uploadImage()
+    {
+        if (RequestHandler::isPostMethod()) {
+            $image = $_FILES["image"];
+            if ($image["type"] !== "image/jpeg") {
+                return (object)["status" => "failed", "error" => "Invalid File Format"];
+            }
+            move_uploaded_file($image["tmp_name"], __DIR__ . "/../../resources/images/products/images.jpg");
             return (object)["status" => "success"];
         }
         return (object)["status" => "failed", "error" => "invalid request"];

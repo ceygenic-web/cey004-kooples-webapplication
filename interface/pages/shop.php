@@ -42,7 +42,8 @@
         }
         ?>
     </div>
-    <div class="sp-s3-pagination-container d-flex justify-content-center py-4">
+    
+    <!-- <div class="sp-s3-pagination-container d-flex justify-content-center py-4">
         <div class="cey-bg-primary-light d-flex">
             <div class="px-2 py-1 cey-text-white cey-bg-dark">B</div>
             <div class="px-2 py-1">1</div>
@@ -50,5 +51,5 @@
             <div class="px-2 py-1">...</div>
             <div class="px-2 py-1 cey-text-white cey-bg-dark">N</div>
         </div>
-    </div>
+    </div> -->
 </section>

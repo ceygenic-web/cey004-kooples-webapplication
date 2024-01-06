@@ -98,3 +98,57 @@ function setKeyValuePairsToUrlParams(object) {
     window.location.pathname + "?" + urlParams.toString()
   );
 }
+
+function compressImage(imageFile, quality = 0.8) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(imageFile);
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        canvas.toBlob(
+          (compressedBlob) => {
+            resolve(compressedBlob);
+          },
+          "image/jpeg",
+          quality
+        );
+      };
+      img.onerror = reject;
+      img.src = reader.result;
+    };
+    reader.onerror = reject;
+  });
+}
+
+// test
+const input = document.getElementById("imageInput"); // Assuming an <input type="file"> element
+input.addEventListener("change", (event) => {
+  const imageFile = event.target.files[0];
+
+  // Compress the image
+  compressImage(imageFile)
+    .then((compressedBlob) => {
+      const form = new FormData();
+      form.append("image", compressedBlob);
+
+      sendRequest(
+        "api/product/upload-image",
+        "POST",
+        form,
+        {},
+        true,
+        (data) => {
+          console.log(data);
+        }
+      );
+    })
+    .catch((error) => {
+      console.error("Error compressing image:", error);
+    });
+});

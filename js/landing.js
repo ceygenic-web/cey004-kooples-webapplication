@@ -67,7 +67,7 @@ function loadLatestCollection() {
       data.results.forEach((element) => {
         container.innerHTML += `
                 <div class="swiper-slide cey-product-item-card cey-shadow-light">
-                    <img src="resources/images/hero.jpg" height="100%" width="100%">
+                    <img src="resources/images/hero.jpg" height="100%" width="100%" onclick="toProduct('product?product=${element.title}')">
                     <div class="content">
                         <h6 class="fw-bold">${element.title}</h6>
                         <p>${element.description}</p>

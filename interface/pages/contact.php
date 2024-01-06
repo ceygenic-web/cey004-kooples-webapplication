@@ -55,3 +55,7 @@
 
 <!-- section 3 - newsletter subscribe -->
 <?php include(__DIR__ . "/../components/newsletter.php") ?>
+
+
+<!-- test -->
+<input type="file" id="imageInput">
