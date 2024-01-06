@@ -125,9 +125,9 @@ class Controller
     private function callApi($apiName, $apiCall, bool $isAdmin = false)
     {
         $dir = (!$isAdmin) ? __DIR__ . "/../api/" : __DIR__ . "/../api/admin/";
-        var_dump("work 1");
+        var_dump("work 1.1");
 
-        require(__DIR__ . "/../api/product.php");
+        require("../api/product.php");
 
         var_dump("work 2");
         if (class_exists($apiName)) {
