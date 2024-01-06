@@ -57,8 +57,8 @@ class Product extends Api
             $query .= (isset($params["category"])  && isset($params["search"])) ? " AND `category`.`category` = '" . $params["category"] . "' " : " ";
             $query .= (isset($params["limit"])) ? " LIMIT " . $params["limit"] . "  " : " ";
         }
-        $results = $this->getData($query);
-        // var_dump($query);
+        // $results = $this->getData($query);
+        var_dump($query);
         return (object)["status" => "success", "results" => $results];
     }
 
