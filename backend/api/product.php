@@ -59,7 +59,7 @@ class Product extends Api
         }
         // $results = $this->getData($query);
         var_dump($query);
-        return (object)["status" => "success", "results" => $results];
+        return (object)["status" => "success", "results" => "results"];
     }
 
     public  function add()
