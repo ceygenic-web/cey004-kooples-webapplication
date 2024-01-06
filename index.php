@@ -1,4 +1,3 @@
-test
 <?php
 
 require_once("backend/router/Router.php");
