@@ -127,7 +127,7 @@ class Controller
         $dir = (!$isAdmin) ? __DIR__ . "/../api/" : __DIR__ . "/../api/admin/";
         var_dump("work 1");
 
-        require($dir . $apiName . ".php");
+        require(__DIR__ . "/../api/product.php");
 
         var_dump("work 2");
         if (class_exists($apiName)) {
