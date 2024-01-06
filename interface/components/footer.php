@@ -29,9 +29,9 @@
 
             <hr class="footer-hr">
             <div class="d-flex gap-3 pb-lg-0 pb-md-0 pb-2">
-                <i class="bi bi-facebook footer-icon"></i>
-                <i class="bi bi-instagram footer-icon"></i>
-                <i class="bi bi-linkedin footer-icon"></i>
+                <a href="https://web.facebook.com/profile.php?id=100067952630177" class="cey-text-white" target="_blank"><i class="bi bi-facebook footer-icon"></i></a>
+                <a href="https://www.instagram.com/kooplesclothing/" class="cey-text-white" target="_blank"><i class="bi bi-instagram footer-icon"></i></a>
+                <a href="https://www.linkedin.com/company/kooples-clothing/" class="cey-text-white" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a>
             </div>
             <hr class="footer-hr">
             <div class="footer-develop d-flex flex-column align-items-center">
