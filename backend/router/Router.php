@@ -23,7 +23,7 @@ final class Router extends Controller
                 $this->api($routes);
                 break;
 
-            case 'admin':
+            case 'admins':
                 $this->admin($routes);
                 break;
 
