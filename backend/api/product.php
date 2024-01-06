@@ -2,6 +2,7 @@
 require_once(__DIR__ . "/../model/Api.php");
 require_once(__DIR__ . "/../model/RequestHandler.php");
 
+var_dump("work 6");
 class Product extends Api
 {
 
@@ -9,7 +10,6 @@ class Product extends Api
 
     public function __construct(array $apiCall)
     {
-        var_dump("work 6");
         $this->function = ($apiCall[2]) ?? null;
     }
 
