@@ -19,7 +19,6 @@ class Product extends Api
         if ($this->function) {
             switch ($this->function) {
                 case 'view':
-                    var_dump("work 1");
                     return [$this->view(($_SERVER["REQUEST_METHOD"] === "GET") ? $_GET : []), false];
                     break;
 
@@ -58,9 +57,9 @@ class Product extends Api
             $query .= (isset($params["category"])  && isset($params["search"])) ? " AND `category`.`category` = '" . $params["category"] . "' " : " ";
             $query .= (isset($params["limit"])) ? " LIMIT " . $params["limit"] . "  " : " ";
         }
-        // $results = $this->getData($query);
-        var_dump($query);
-        return (object)["status" => "success", "results" => "results"];
+        $results = $this->getData($query);
+        // var_dump($query);
+        return (object)["status" => "success", "results" => $results];
     }
 
     public  function add()
