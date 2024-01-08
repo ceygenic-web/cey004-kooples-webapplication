@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // load home layout ui components
 function loadPanels() {
-  let productPanels = ["productUpdate", "productAdd"];
+  let productPanels = ["productUpdateView", "productAddView"];
 
   productPanels.forEach((element) => {
     sendRequest(
-      "/admin/api/product/productAdd",
+      "/admin/api/product/" + element,
       "GET",
       null,
       {},

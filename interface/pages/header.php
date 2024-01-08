@@ -26,6 +26,7 @@
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="<?= ROOT ?>js/bootstrap.bundle.js"></script>
+    <script defer src="<?= ROOT ?>js/modules/framework.js"></script>
     <script defer src="<?= ROOT ?>js/main.js"></script>
     <?php
     foreach (PAGE_JS_FILES as $value) {

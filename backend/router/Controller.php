@@ -90,6 +90,10 @@ class Controller
                 $this->callApi($apiName, $apiCall);
                 break;
 
+            case 'category':
+                $this->callApi($apiName, $apiCall);
+                break;
+
             default:
                 CustomErrors::_404();
                 break;

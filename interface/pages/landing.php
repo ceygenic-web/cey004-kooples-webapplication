@@ -11,8 +11,8 @@
             </div>
             <h1 class="cey-text-white cey-main-font">SEARCH YOUR DREAM SAREE HERE!</h1>
             <div class="lp-s1-searchbar">
-                <input class="py-2" type="text" placeholder="search your dream saree....">
-                <i class="fs-2 bi bi-search"></i>
+                <input id="heroSearch" class="py-2" type="text" placeholder="search your dream saree....">
+                <button class="bg-transparent border-0 cey-text-white"><i onclick="heroSearch()" class="fs-2 bi bi-search"></i></button>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
 </section>
 
 <!-- section 3 - latests -->
-<section class="lp-s3 cey-bg-white">
+<section class="lp-s3 cey-bg-white" id="latestCollectionSection"> 
     <div class="container py-3">
         <h3 class="cey-main-font">LATEST COLLECTIONS</h3>
         <div class="swiper">
@@ -42,9 +42,8 @@
                     <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-left fs-1 cey-text-white bi bi-arrow-left-circle"></i></div>
                     <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div>
                 </div>
-                <div class="swiper-wrapper py-5">
+                <div class="swiper-wrapper py-5" id="latestCollectionContainer">
                     <?php
-
                     for ($i = 0; $i < 6; $i++) {
                     ?>
                         <div class="swiper-slide cey-product-item-card cey-shadow-light">
@@ -57,7 +56,6 @@
                         </div>
                     <?php
                     }
-
                     ?>
                 </div>
             </div>
@@ -68,24 +66,30 @@
 <!-- section 4 - categories -->
 <section class="lp-s4 cey-bg-dark">
     <div class="container py-5">
-        <h3 class="cey-main-font">LATEST COLLECTIONS</h3>
+        <h3 class="cey-main-font">CATEGORIES</h3>
         <div class="d-flex flex-column">
             <div class="d-flex flex-wrap">
-                <div class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category1.jpg');">
+                <div onclick="toPage('/shop?category=Chevron')" class="p-4 col-md-4 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category1.jpg');">
                     <div class="d-flex flex-column">
-                        <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
+                        <h4 class="fw-bold cey-text-white">Chevron</h4>
                         <p class="cey-text-white">EXPLORE -></p>
                     </div>
                 </div>
-                <div class="p-4 col-md-6 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
+                <div onclick="toPage('/shop?category=Dazzling')" class="p-4 col-md-4 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
                     <div class="d-flex flex-column">
-                        <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
+                        <h4 class="fw-bold cey-text-white">Dazzling</h4>
+                        <p class="cey-text-white">EXPLORE -></p>
+                    </div>
+                </div>
+                <div onclick="toPage('/shop?category=Taffta')" class="p-4 col-md-4 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
+                    <div class="d-flex flex-column">
+                        <h4 class="fw-bold cey-text-white">Taffta</h4>
                         <p class="cey-text-white">EXPLORE -></p>
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-wrap">
-                <div class="col-6 col-md-3 lp-s4-card d-flex align-items-end p-4 lp-s4-small-card" style="background-image: url('resources/images/category3.jpg');">
+            <!-- <div class="d-flex flex-wrap">
+                <div onclick="toPage('/shop?category=category 3')" class="col-6 col-md-3 lp-s4-card d-flex align-items-end p-4 lp-s4-small-card" style="background-image: url('resources/images/category3.jpg');">
                     <div class="d-flex flex-column">
                         <h4 class="fw-bold cey-text-white">CATEGORY 1</h4>
                         <p class="cey-text-white">EXPLORE -></p>
@@ -109,7 +113,7 @@
                         <p class="cey-text-white">EXPLORE -></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -164,6 +168,13 @@
             <button class="cey-btn-box cey-main-font">ABOUT US</button>
         </div>
         <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-right.png');"></div>
+    </div>
+</section>
+
+<!-- section 3 - Video -->
+<section class="lp-s8 cey-bg-darker px-5">
+    <div class="container d-flex justify-content-center py-4">
+        <!-- <video loop height="678" src="../../resources/video/main.mp4" autoplay></video> -->
     </div>
 </section>
 

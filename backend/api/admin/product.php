@@ -16,13 +16,14 @@ class Product extends AdminApi
     {
         if ($this->function) {
             switch ($this->function) {
-                case 'productAdd':
+                case 'productAddView':
                     return [$this->productAddView(), false];
                     break;
 
-                case 'productUpdate':
+                case 'productUpdateView':
                     return [$this->productUpdateView(), false];
                     break;
+
 
                 default:
                     return false;

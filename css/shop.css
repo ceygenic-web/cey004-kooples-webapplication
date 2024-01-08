@@ -55,5 +55,40 @@
 
 /*section 3 -  products section */
 .sp-s3-main-container {
-  min-height: max-content;
+  min-height: 500px;
+}
+
+.shop-product-card {
+  height: 400px;
+  padding: 10px;
+  position: relative;
+}
+
+.shop-product-card-container img {
+  /* translate: -15px -15px; */
+  object-fit: cover;
+  object-position: 80% 80%;
+  z-index: 20;
+}
+
+.shop-product-card-container .content {
+  position: absolute;
+  padding: 15px;
+  color: var(--white);
+  bottom: 0;
+  z-index: 20;
+}
+
+@media (max-width: 767px) {
+  /* section 1 - category banner */
+  .sp-s1 {
+    height: 150px;
+  }
+}
+
+@media (max-width: 425px) {
+  /* section 1 - category banner */
+  .sp-s1 {
+    height: 100px;
+  }
 }
