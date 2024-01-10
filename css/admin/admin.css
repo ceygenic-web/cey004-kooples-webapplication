@@ -1,6 +1,6 @@
 /* admin page */
 .ad-s1 {
-  height: 85vh;
+  min-height: 85vh;
 }
 
 .logo {
