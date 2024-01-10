@@ -51,12 +51,6 @@ class Controller
             case 'api':
                 $this->adminApi($adminCall);
                 break;
-
-            case 'login':
-                self::$isAdminLogin = true;
-                $this->view($name, "Kooples Admin | Login", ["admin-signin"], ["admin"], true);
-                break;
-
             case '':
                 $this->view("home", "Kooples Admin | Home", ["admin-home"], ["admin"], true);
                 break;
@@ -64,6 +58,12 @@ class Controller
             case 'home':
                 $this->view($name, "Kooples Admin | Home", ["admin-home"], ["admin"], true);
                 break;
+
+            case 'login':
+                self::$isAdminLogin = true;
+                $this->view($name, "Kooples Admin | Login", ["admin-signin"], ["admin"], true);
+                break;
+
             case 'test':
                 $this->view($name, "Kooples Admin | Test", ["admin-home"], ["admin"], true);
                 break;
@@ -133,7 +133,7 @@ class Controller
             if (is_array($response) && $response[0]) {
                 ResponseSender::sendJson($response[0], $response[1]);
             } else {
-                ResponseSender::sendJson((object)["status" => "failed", "error" => "Something Went Wrong!"]);
+                ResponseSender::sendJson((object)["status" => "failed", "error" => "Something Went Wrong! at Server"]);
             }
         }
     }

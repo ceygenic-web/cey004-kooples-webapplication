@@ -51,7 +51,7 @@ class Product extends Api
             $query .= (isset($params["product"]) && !isset($params["search"])) ? " WHERE `product`.`product_id` = '" . $params["product"] . "' " : " ";
             $query .= (isset($params["category"])  && !isset($params["search"])) ? " WHERE `category`.`category` = '" . $params["category"] . "' " : " ";
             $query .= (isset($params["category"])  && isset($params["search"])) ? " AND `category`.`category` = '" . $params["category"] . "' " : " ";
-            $query .= (isset($params["limit"])) ? " LIMIT ".$params["limit"]."  " : " ";
+            $query .= (isset($params["limit"])) ? " LIMIT " . $params["limit"] . "  " : " ";
         }
         $results = $this->getData($query);
         // var_dump($query);

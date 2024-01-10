@@ -39,7 +39,7 @@ class Product extends AdminApi
         if (!$this->loggedAsAdmin()) {
             return  (object)["status" => "failed", "results" => "access denied"];
         }
-        $results =  file_get_contents(__DIR__ . "/../../../interface/admin/pages/productAdd.php");
+        $results =  file_get_contents(__DIR__ . "/../../../interface/admin/components/productAdd.php");
         return (object)["status" => "success", "results" => $results];
     }
     public function productUpdateView()
@@ -47,7 +47,7 @@ class Product extends AdminApi
         if (!$this->loggedAsAdmin()) {
             return  (object)["status" => "failed", "results" => "access denied"];
         }
-        $results = file_get_contents(__DIR__ . "/../../../interface/admin/pages/productUpdate.php");
+        $results = file_get_contents(__DIR__ . "/../../../interface/admin/components/productUpdate.php");
         return (object)["status" => "success", "results" => $results];
     }
 }

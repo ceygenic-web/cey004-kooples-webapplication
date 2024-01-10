@@ -98,3 +98,15 @@ function setKeyValuePairsToUrlParams(object) {
     window.location.pathname + "?" + urlParams.toString()
   );
 }
+
+/**
+ * genarte a FORM from input fields given as ids
+ */
+function genarateFromFromInputValues(...ids) {
+  const form = new FormData();
+  ids.forEach((id) => {
+    const element = document.getElementById(id);
+    form.append(element.getAttribute("name"), element.value);
+  });
+  return form;
+}
