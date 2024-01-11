@@ -15,8 +15,10 @@ function loadPanels() {
       "GET",
       null,
       {},
-      true,
+      false,
       (json) => {
+        console.log(json);
+        return;
         let container = document.getElementById("product");
         let data = JSON.parse(json);
         if (data.status == "success") {
