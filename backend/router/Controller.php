@@ -24,9 +24,6 @@ class Controller
             $sessionManger = new SessionManager();
             $sessionManger->updateSessionVariable(SESSION_VARIABLE_ADMIN);
             if (!$sessionManger->isLoggedIn()) {
-                session_start();
-                $_SESSION["admin_user"] = "user";
-                var_dump("redirected");
                 var_dump($_SESSION);
                 // header("Location: /admin/login");
             }

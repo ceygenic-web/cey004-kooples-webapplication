@@ -24,12 +24,14 @@ class SessionManager
             session_set_cookie_params($expire, $path, $domain, $secure, $httponly);
 
             session_start();
+            var_dump($_SESSION);
         }
     }
 
     public function updateSessionVariable(string $name)
     {
         $this->sessionVariable = $name;
+        var_dump($_SESSION);
     }
 
     public function isLoggedIn()
