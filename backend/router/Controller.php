@@ -24,8 +24,7 @@ class Controller
             $sessionManger = new SessionManager();
             $sessionManger->updateSessionVariable(SESSION_VARIABLE_ADMIN);
             if (!$sessionManger->isLoggedIn()) {
-                var_dump($_SESSION);
-                // header("Location: /admin/login");
+                header("Location: /admin/login");
             }
         }
 
