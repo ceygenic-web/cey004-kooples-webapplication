@@ -56,6 +56,7 @@ function loadPanels() {
                     select.appendChild(option);
                   });
                 }
+
                 if (!isListning) {
                   addEventListeners();
                 }

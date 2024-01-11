@@ -1,6 +1,7 @@
 /* admin page */
 .ad-s1 {
-  min-height: 85vh;
+  
+  flex-grow: 1;
 }
 
 .logo {
@@ -33,4 +34,8 @@
   font-size: 25px;
   width: 100%;
   margin: 10px 20px;
+}
+
+.productAdd  {
+  overflow: auto;
 }
