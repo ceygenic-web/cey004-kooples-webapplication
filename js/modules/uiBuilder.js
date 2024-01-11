@@ -67,15 +67,12 @@ function mainContainerBuilder(data, container) {
   //   }
   // }
 
-  let minmizedDescription =
-    data.description.split(" ").slice(0, 10).join(" ") + "...";
-
   component = `
     <div class="d-flex flex-column">
       <div class="mb-4 border-3">
         <h5 class="fw-bold">Description</h5>
         <div>
-            ${minmizedDescription}
+            ${data.description}
         </div>
       </div>
       <div class="mb-4">${specialSection}</div>

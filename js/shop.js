@@ -45,12 +45,14 @@ function searchProduct(search = "", category = "") {
     container.innerHTML = "";
     if (data.status == "success") {
       data.results.forEach((element) => {
+        let minmizedDescription =
+          element.description.split(" ").slice(0, 10).join(" ") + "...";
         container.innerHTML += `
                   <div class="shop-product-card col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center mt-2">
                         <div class="shop-product-card-container w-100 cey-shadow-light position-relative">
                           <div class="content">
                             <h6 class="fw-bold">${element.title}</h6>
-                            <p>${element.description}</p>
+                            <p>${minmizedDescription}</p>
                             <!-- <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button> -->
                             <button onclick="toPage('purchase?product=${element.title}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
                           </div>
