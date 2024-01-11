@@ -63,7 +63,7 @@ const sendRequest = async (
         }
       } catch (error) {
         alert("something went wrong!");
-        console.log("Error Occured!");
+        console.error("Error Occured! : ", error);
       }
     })
     .catch((error) => {
@@ -109,4 +109,43 @@ function genarateFromFromInputValues(...ids) {
     form.append(element.getAttribute("name"), element.value);
   });
   return form;
+}
+
+/**
+ * image comporessor
+ */
+function compressImage(imageFile, quality = 0.7) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(imageFile);
+
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+
+        canvas.toBlob(
+          (compressedImageBlob) => {
+            resolve(
+              new File([compressedImageBlob], imageFile.name, {
+                type: imageFile.type,
+              })
+            );
+          },
+          "image/jpeg",
+          quality
+        ); // Adjust quality as needed
+      };
+      img.src = reader.result;
+    };
+
+    reader.onerror = (error) => {
+      reject(error);
+    };
+  });
 }

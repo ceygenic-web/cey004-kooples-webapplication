@@ -17,3 +17,20 @@
 .admin-main-container {
   height: 80vh;
 }
+
+#addImagePreviewBox {
+  height: 300px;
+}
+
+.admin-product-image-preview {
+  width: 250px;
+  height: 200px;
+  margin: 0 10px;
+  object-fit: contain;
+}
+
+.image-close-icon {
+  font-size: 25px;
+  width: 100%;
+  margin: 10px 20px;
+}

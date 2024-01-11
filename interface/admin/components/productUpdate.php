@@ -10,7 +10,7 @@
             <label for="description">Description:</label>
             <input type="text" id="update_description" name="description"><br>
             <label for="category">Category:</label>
-            <input type="text" id="update_category" name="category"><br>
+            <select id="productUpdateViewcategory" name="category"></select><br>
             <label for="blousepiece">Blousepiece</label>
             <input type="text" id="update_blousepiece" name="blousepiece" class="form-control"><br>
             <label for="style_number">Style number</label>
