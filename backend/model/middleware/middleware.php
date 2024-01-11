@@ -34,7 +34,7 @@ class Middleware
 
     private function log(string $status)
     {
-        $content = file_get_contents($this->tmpLogFilePath);
-        file_put_contents($this->tmpLogFilePath, $content . "\n it is working " . $_SERVER["HTTP_USER_AGENT"] . $status . "!" . time());
+        // $content = file_get_contents($this->tmpLogFilePath);
+        // file_put_contents($this->tmpLogFilePath, $content . "\n it is working " . $_SERVER["HTTP_USER_AGENT"] . $status . "!" . time());
     }
 }
