@@ -63,7 +63,7 @@ const sendRequest = async (
         }
       } catch (error) {
         alert("something went wrong!");
-        console.log("Error Occured!");
+        console.error("Error Occured! : ", error);
       }
     })
     .catch((error) => {
@@ -99,56 +99,53 @@ function setKeyValuePairsToUrlParams(object) {
   );
 }
 
-function compressImage(imageFile, quality = 0.8) {
+/**
+ * genarte a FORM from input fields given as ids
+ */
+function genarateFromFromInputValues(...ids) {
+  const form = new FormData();
+  ids.forEach((id) => {
+    const element = document.getElementById(id);
+    form.append(element.getAttribute("name"), element.value);
+  });
+  return form;
+}
+
+/**
+ * image comporessor
+ */
+function compressImage(imageFile, quality = 0.7) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(imageFile);
+
     reader.onload = () => {
       const img = new Image();
       img.onload = () => {
         const canvas = document.createElement("canvas");
         canvas.width = img.width;
         canvas.height = img.height;
+
         const ctx = canvas.getContext("2d");
         ctx.drawImage(img, 0, 0);
+
         canvas.toBlob(
-          (compressedBlob) => {
-            resolve(compressedBlob);
+          (compressedImageBlob) => {
+            resolve(
+              new File([compressedImageBlob], imageFile.name, {
+                type: imageFile.type,
+              })
+            );
           },
           "image/jpeg",
           quality
-        );
+        ); // Adjust quality as needed
       };
-      img.onerror = reject;
       img.src = reader.result;
     };
-    reader.onerror = reject;
+
+    reader.onerror = (error) => {
+      reject(error);
+    };
   });
 }
-
-// test
-// const input = document.getElementById("imageInput"); // Assuming an <input type="file"> element
-// input.addEventListener("change", (event) => {
-//   const imageFile = event.target.files[0];
-
-//   // Compress the image
-//   compressImage(imageFile)
-//     .then((compressedBlob) => {
-//       const form = new FormData();
-//       form.append("image", compressedBlob);
-
-//       sendRequest(
-//         "api/product/upload-image",
-//         "POST",
-//         form,
-//         {},
-//         true,
-//         (data) => {
-//           console.log(data);
-//         }
-//       );
-//     })
-//     .catch((error) => {
-//       console.error("Error compressing image:", error);
-//     });
-// });

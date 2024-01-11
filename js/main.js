@@ -31,7 +31,7 @@ const closeNavigationSidebar = () => {
 };
 
 const toProduct = (query = null) => {
-  const params = query ? "?product=" + query : "";
+  const params = query ? "?id=" + query : "";
   const URL = `product${params}`;
   toPage(URL);
 };

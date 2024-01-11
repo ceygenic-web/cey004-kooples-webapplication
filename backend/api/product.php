@@ -50,7 +50,9 @@ class Product extends Api
     public function view($params)
     {
         $query = "SELECT * FROM `product` INNER JOIN `category` ON `product`.`category_category_id` = `category`.`category_id` ";
-        if ($params) {
+        if (isset($params["id"]) && !empty($params["id"])) {
+            $query .= " WHERE `product`.`product_id` = '" . $params["id"] . "' ";
+        } else if ($params) {
             $query .= (isset($params["search"])) ? " WHERE (`product`.`title` LIKE '%" . $params["search"] . "%' OR `product`.`description` LIKE '%" . $params["search"] . "%' OR `category`.`category` LIKE '%" . $params["search"] . "%') " : " ";
             $query .= (isset($params["product"]) && !isset($params["search"])) ? " WHERE `product`.`product_id` = '" . $params["product"] . "' " : " ";
             $query .= (isset($params["category"])  && !isset($params["search"])) ? " WHERE `category`.`category` = '" . $params["category"] . "' " : " ";
@@ -58,23 +60,54 @@ class Product extends Api
             $query .= (isset($params["limit"])) ? " LIMIT " . $params["limit"] . "  " : " ";
         }
         $results = $this->getData($query);
-        // var_dump($query);
+
+        // get images
+        foreach ($results as $key => $value) {
+            $productId = $value['product_id'];
+            $results[$key]["images"] = $this->getData("SELECT * FROM `product_images` WHERE `product_product_id` = '$productId' ");
+        }
         return (object)["status" => "success", "results" => $results];
     }
 
     public  function add()
     {
-        if (RequestHandler::isPostMethod()) {
-            $title = $_POST["title"];
-            $description = $_POST["description"];
-            $category = $_POST["category"];
-
-            $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" . $category . "' ")[0]["category_id"];
-            $id = mt_rand(000000, 999999);
-            $this->updateData("INSERT INTO `product` (`product_id`,`category_category_id`, `title`, `description`) VALUES (?,?, ?, ?)", "siss", array($id, $categoryId, $title, $description));
-            return (object)["status" => "success"];
+        if (!RequestHandler::isPostMethod()) {
+            return (object)["status" => "failed", "error" => "invalid request"];
         }
-        return (object)["status" => "failed", "error" => "invalid request"];
+
+        $title = $_POST["title"];
+        $description = $_POST["description"];
+        $category = $_POST["category"];
+        $price = $_POST["price"];
+        $other_data = $_POST["other_data"];
+        $images = $_FILES;
+
+
+        if (
+            (!isset($title) || empty($title)) ||
+            (!isset($description) || empty($description)) ||
+            (!isset($category) || empty($category)) ||
+            (!isset($price) || empty($price)) ||
+            (!isset($other_data) || empty($other_data))
+        ) {
+            return (object)["status" => "failed", "error" => "Empty Input field!"];
+        }
+
+        if (!floatval($price)) {
+            return (object)["status" => "failed", "error" => "invalid price"];
+        }
+
+        $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" .  $category . "' ")[0]["category_id"];
+        $id = mt_rand(000000, 999999);
+        $this->updateData("INSERT INTO `product` 
+                                    (`product_id`,`category_category_id`, `title`, `description`, `price`, `other_data`) 
+                                    VALUES (?,?, ?, ?, ?,?)", "sissss", array($id, $categoryId, $title, $description, $price, $other_data));
+        foreach ($images as $key => $value) {
+            $fileName = "resources/images/products/$id-image-$key.jpeg";
+            move_uploaded_file($value["tmp_name"], __DIR__ . "/../../$fileName");
+            $this->updateData("INSERT INTO `product_images` (`filename`, `product_product_id`) VALUES ('$fileName', '$id') ");
+        }
+        return (object)["status" => "success"];
     }
 
     public  function uploadImage()

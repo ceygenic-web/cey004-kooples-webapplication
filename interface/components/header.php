@@ -29,9 +29,9 @@
     <div class="d-flex justify-content-end">
         <div class="gap-3 d-flex">
             <div class="d-flex gap-2">
-                <a href="https://www.instagram.com/kooplesclothing/" class="cey-text-white"><i class="bi cey-cursor-pointer bi-instagram"></i></a>
-                <a href="https://web.facebook.com/profile.php?id=100067952630177" class="cey-text-white"><i class="bi cey-cursor-pointer bi-facebook"></i></a>
-                <a href="https://www.linkedin.com/company/kooples-clothing/" class="cey-text-white"><i class="bi cey-cursor-pointer bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/kooplesclothing/" class="cey-text-white" target="_blank"><i class="bi cey-cursor-pointer bi-instagram"></i></a>
+                <a href="https://web.facebook.com/profile.php?id=100067952630177" class="cey-text-white" target="_blank"><i class="bi cey-cursor-pointer bi-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/kooples-clothing/" class="cey-text-white" target="_blank"><i class="bi cey-cursor-pointer bi-linkedin"></i></a>
             </div>
             <div>
                 <div class="dropdown open p-0 currency-changer">
