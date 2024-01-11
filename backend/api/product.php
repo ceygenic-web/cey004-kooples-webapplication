@@ -79,6 +79,7 @@ class Product extends Api
         $description = $_POST["description"];
         $category = $_POST["category"];
         $price = $_POST["price"];
+        $subCategories = $_POST["sub_category"];
         $other_data = $_POST["other_data"];
         $images = $_FILES;
 
@@ -87,6 +88,7 @@ class Product extends Api
             (!isset($title) || empty($title)) ||
             (!isset($description) || empty($description)) ||
             (!isset($category) || empty($category)) ||
+            (!isset($subCategories) || empty($subCategories)) ||
             (!isset($price) || empty($price)) ||
             (!isset($other_data) || empty($other_data))
         ) {
@@ -98,10 +100,11 @@ class Product extends Api
         }
 
         $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" .  $category . "' ")[0]["category_id"];
+        $subCategoryId = $this->getData("SELECT * FROM `sub_categories` WHERE `sub_category` ='" .  $subCategories . "' ")[0]["sub_categories_id"];
         $id = mt_rand(000000, 999999);
         $this->updateData("INSERT INTO `product` 
-                                    (`product_id`,`category_category_id`, `title`, `description`, `price`, `other_data`) 
-                                    VALUES (?,?, ?, ?, ?,?)", "sissss", array($id, $categoryId, $title, $description, $price, $other_data));
+                                    (`product_id`,`category_category_id`, `title`, `description`, `price`, `sub_categories_sub_categories_id`, `other_data`) 
+                                    VALUES (?,?,?,?,?,?,?)", "sisssss", array($id, $categoryId, $title, $description, $price, $subCategoryId, $other_data));
         foreach ($images as $key => $value) {
             $fileName = "resources/images/products/$id-image-$key.jpeg";
             move_uploaded_file($value["tmp_name"], __DIR__ . "/../../$fileName");

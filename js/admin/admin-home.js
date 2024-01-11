@@ -36,9 +36,31 @@ function loadPanels() {
                 select.appendChild(option);
               });
             }
-            if (!isListning) {
-              addEventListeners();
-            }
+            sendRequest(
+              "/api/category/getsub",
+              "GET",
+              null,
+              {},
+              true,
+              (data) => {
+                const select = document.getElementById(element + "SubCategory");
+                const defaultOption = document.createElement("option");
+                defaultOption.value = 0;
+                defaultOption.innerText = "Select a Sub category";
+                select.appendChild(defaultOption);
+                if (data.status == "success") {
+                  data.results.forEach((category) => {
+                    const option = document.createElement("option");
+                    option.value = category.sub_category;
+                    option.innerText = category.sub_category;
+                    select.appendChild(option);
+                  });
+                }
+                if (!isListning) {
+                  addEventListeners();
+                }
+              }
+            );
           });
         } else if (data.status == "failed") {
           container.innerHTML += "Error 500";
@@ -93,6 +115,7 @@ function addProduct() {
     "add_title",
     "add_description",
     "productAddViewcategory",
+    "productAddViewSubCategory",
     "add_price",
   ];
   const specialFieldsIds = [

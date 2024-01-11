@@ -7,9 +7,11 @@
             <input type="text" id="add_title" name="title" class="form-control"><br>
             <label for="description">Description</label>
             <input type="text" id="add_description" name="description" class="form-control"><br>
-            <label for="category">Category</label>
+            <label for="productAddViewcategory">Category</label>
             <!-- <input type="text" id="add_category" name="category" class="form-control"><br> -->
             <select name="category" id="productAddViewcategory" class="form-select"></select>
+            <label for="productAddViewSubCategory">Sub Category</label>
+            <select name="sub_category" id="productAddViewSubCategory" class="form-select"></select>
             <label for="add_images">Images</label>
             <input onchange="updateAddImagePreview(event)" type="file" multiple id="add_images" name="images" class="form-control"><br>
             <div class="d-flex bg-dark overflow-auto p-2" id="addImagePreviewBox">

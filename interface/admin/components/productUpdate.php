@@ -11,6 +11,8 @@
             <input type="text" id="update_description" name="description"><br>
             <label for="category">Category:</label>
             <select id="productUpdateViewcategory" name="category"></select><br>
+            <label for="productUpdateViewSubCategory">Sub Category:</label>
+            <select id="productUpdateViewSubCategory" name="sub_category"></select><br>
             <label for="blousepiece">Blousepiece</label>
             <input type="text" id="update_blousepiece" name="blousepiece" class="form-control"><br>
             <label for="style_number">Style number</label>
