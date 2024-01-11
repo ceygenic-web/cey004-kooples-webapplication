@@ -17,7 +17,7 @@ class SessionManager
             $expire = 60 * 60 * 24 * 14; // Expiration time in seconds (14 days)
             $path = '/'; // Cookie path
             $domain = ''; // Cookie domain (leave empty for current domain)
-            $secure = false; // Set to true if using HTTPS
+            $secure = true; // Set to true if using HTTPS
             $httponly = true; // Set to true to make the cookie accessible only through HTTP
 
             // Set the session cookie parameters
