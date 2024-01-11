@@ -90,7 +90,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES ('471516',1,'this is the final product ','here is the description field',12000,'{\"blousepiece\":\"has blous\",\"style_number\":\"hehe\",\"shipping_info\":\"home\",\"returns\":\"no return\",\"measurements\":\"345\",\"wash_instructions\":\"wash\",\"fabric\":\"fabric is here\"}'),('802615',1,'this is the final product ','here is the description field',12000,'{\"blousepiece\":\"has blous\",\"style_number\":\"hehe\",\"shipping_info\":\"home\",\"returns\":\"no return\",\"measurements\":\"345\",\"wash_instructions\":\"wash\",\"fabric\":\"fabric is here\"}');
+INSERT INTO `product` VALUES ('471516',1,'this is the final product ','here is the description field',12000,'{\"blousepiece\":\"has blous\",\"style_number\":\"hehe\",\"shipping_info\":\"home\",\"returns\":\"no return\",\"measurements\":\"345\",\"wash_instructions\":\"wash\",\"fabric\":\"fabric is here\"}'),('802615',1,'this is the final product ','here is the description field',12000,'{\"blousepiece\":\"has blous\",\"style_number\":\"hehe\",\"shipping_info\":\"home\",\"returns\":\"no return\",\"measurements\":\"345\",\"wash_instructions\":\"wash\",\"fabric\":\"fabric is here\"}'),('957709',1,'saree 2`','sareee description',12000,'{\"blousepiece\":\"no\",\"style_number\":\"12h1231\",\"shipping_info\":\"home\",\"returns\":\"no\",\"measurements\":\"100m\",\"wash_instructions\":\"can\",\"fabric\":\"fabric\"}');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,7 +108,7 @@ CREATE TABLE `product_images` (
   PRIMARY KEY (`product_images_id`),
   KEY `fk_product_images_product1_idx` (`product_product_id`),
   CONSTRAINT `fk_product_images_product1` FOREIGN KEY (`product_product_id`) REFERENCES `product` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +117,7 @@ CREATE TABLE `product_images` (
 
 LOCK TABLES `product_images` WRITE;
 /*!40000 ALTER TABLE `product_images` DISABLE KEYS */;
-INSERT INTO `product_images` VALUES (1,'resources/images/products/802615-image-0.jpeg','802615'),(2,'resources/images/products/802615-image-1.jpeg','802615'),(3,'resources/images/products/802615-image-2.jpeg','802615'),(4,'resources/images/products/471516-image-0.jpeg','471516'),(5,'resources/images/products/471516-image-1.jpeg','471516'),(6,'resources/images/products/471516-image-2.jpeg','471516');
+INSERT INTO `product_images` VALUES (1,'resources/images/products/802615-image-0.jpeg','802615'),(2,'resources/images/products/802615-image-1.jpeg','802615'),(3,'resources/images/products/802615-image-2.jpeg','802615'),(4,'resources/images/products/471516-image-0.jpeg','471516'),(5,'resources/images/products/471516-image-1.jpeg','471516'),(6,'resources/images/products/471516-image-2.jpeg','471516'),(7,'resources/images/products/957709-image-0.jpeg','957709'),(8,'resources/images/products/957709-image-1.jpeg','957709'),(9,'resources/images/products/957709-image-2.jpeg','957709');
 /*!40000 ALTER TABLE `product_images` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -130,4 +130,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-11 20:35:16
+-- Dump completed on 2024-01-12  3:08:36
