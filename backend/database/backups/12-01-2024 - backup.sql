@@ -75,7 +75,7 @@ CREATE TABLE `product` (
   `product_id` varchar(6) NOT NULL,
   `category_category_id` int NOT NULL,
   `title` varchar(255) NOT NULL,
-  `description` varchar(45) NOT NULL,
+  `description` text NOT NULL,
   `price` double NOT NULL,
   `sub_categories_sub_categories_id` int NOT NULL,
   `other_data` text,
@@ -93,6 +93,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES ('696580',1,'Yellow Rayon Saree','Elevate your ethnic charm with this resplende',15500,1,'{\"blousepiece\":\"Jacket piece come with glossy yellow unstitched blouse fabric one yard \",\"style_number\":\"Y001\",\"shipping_info\":\"Next Day Delivery within Colombo, Island wide Delivery within 3 -4 days\",\"returns\":\"Exchanges accepted within 7 days\",\"measurements\":\"Saree Length - 6 yards Jacket Piece - 1 yard Saree Height - 45 inches\",\"wash_instructions\":\"Dry clean and handwash only \",\"fabric\":\"40% Cotton 40% Rayon 20%Lurex \"}');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +111,7 @@ CREATE TABLE `product_images` (
   PRIMARY KEY (`product_images_id`),
   KEY `fk_product_images_product1_idx` (`product_product_id`),
   CONSTRAINT `fk_product_images_product1` FOREIGN KEY (`product_product_id`) REFERENCES `product` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,6 +120,7 @@ CREATE TABLE `product_images` (
 
 LOCK TABLES `product_images` WRITE;
 /*!40000 ALTER TABLE `product_images` DISABLE KEYS */;
+INSERT INTO `product_images` VALUES (10,'resources/images/products/696580-image-0.jpeg','696580'),(11,'resources/images/products/696580-image-1.jpeg','696580'),(12,'resources/images/products/696580-image-2.jpeg','696580'),(13,'resources/images/products/696580-image-3.jpeg','696580');
 /*!40000 ALTER TABLE `product_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-12  3:47:26
+-- Dump completed on 2024-01-12  4:41:45

@@ -65,12 +65,14 @@ function loadLatestCollection() {
       }
 
       data.results.forEach((element) => {
+        let minmizedDescription =
+          element.description.split(" ").slice(0, 10).join(" ") + "...";
         container.innerHTML += `
                 <div class="swiper-slide cey-product-item-card cey-shadow-light">
                     <img src="resources/images/hero.jpg" height="100%" width="100%" onclick="toProduct('product?product=${element.title}')">
                     <div class="content">
                         <h6 class="fw-bold">${element.title}</h6>
-                        <p>${element.description}</p>
+                        <p>${minmizedDescription}</p>
                         <button onclick="toPage('purchase?product=${element.title}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
                     </div>
                 </div>
