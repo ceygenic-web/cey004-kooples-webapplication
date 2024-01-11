@@ -12,7 +12,7 @@
 
 /* admin home page */
 .ahp-s1 {
-  height: 83vh;
+  min-height: 83vh;
 }
 
 .admin-main-container {
@@ -36,6 +36,3 @@
   margin: 10px 20px;
 }
 
-.productAdd  {
-  overflow: auto;
-}
