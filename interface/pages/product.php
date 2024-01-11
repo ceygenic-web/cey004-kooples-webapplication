@@ -16,8 +16,8 @@
             <div class="pp-s1-swiper col-12 col-lg-6">
                 <!-- Swiper -->
                 <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                    <div class="swiper-wrapper" id="productMainSwiperContainer">
+                        <!-- <div class="swiper-slide">
                             <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
                         </div>
                         <div class="swiper-slide">
@@ -46,14 +46,14 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                        </div>
+                        </div> -->
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
                 <div thumbsSlider="" class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                    <div class="swiper-wrapper" id="productThumbSwiperContainer">
+                        <!-- <div class="swiper-slide">
                             <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
                         </div>
                         <div class="swiper-slide">
@@ -82,7 +82,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

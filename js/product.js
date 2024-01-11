@@ -41,10 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // load product
+  const URLparams = getKeyValuePairsFromUrlParams();
   productDataUpdater(
-    JSON.stringify(mockData),
+    URLparams["id"],
     "mainProductContainer",
-    "secondaryProductContainer"
+    "secondaryProductContainer",
+    buildProductPageS1SwiperInitiator
   );
 });
 

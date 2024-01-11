@@ -152,7 +152,7 @@
 <section class="lp-s7 cey-bg-white">
     <div class="cey-text-white container h-100 d-flex flex-column justify-content-center align-items-center py-5 text-center">
         <h3 class="py-3 cey-main-font">HANDLOOM INDUSTRY</h3>
-        <p class="lp-s7-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam in ab mollitia aliquam repudiandae, labore doloribus ipsam nisi ipsa dolores assumenda quae ut recusandae consectetur et dolor error qui velit!</p>
+        <p class="lp-s7-description">The Sri Lankan handloom industry is a vibrant sector that has a historical connection to handlooms, with records of the country trading vividly designed cotton textiles with India and China as far as 1000 years ago1. Today, it is primarily a cottage industry, with a few large manufacturers leading the way</p>
         <button class="cey-btn-box lp-s7-btn">LEARN MORE</button>
     </div>
 </section>
@@ -163,8 +163,9 @@
         <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-left.png');"></div>
         <div class="lp-s8-section p-3 lp-s8-middle-box">
             <h3>OUR STORY</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt labore a tenetur.</p>
-            <button onclick="toPage('/about')" class="cey-btn-box cey-main-font">ABOUT US</button>
+            <p>KOOPLES was born from my personal fascination with the captivating art of handloom saree crafting. I was inspired to create a brand that offers all the beautiful ladies the same magical experience I had when I first laid eyes on these excellent fabrics. Now, through KOOPLES, we bring you handpicked creations that celebrate the artistry of skilled artisans, ensuring you feel the same mesmerizing allure with each fold.
+</p>
+            <button class="cey-btn-box cey-main-font">ABOUT US</button>
         </div>
         <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-right.png');"></div>
     </div>
@@ -222,7 +223,7 @@
             <div class="d-flex flex-column cey-text-white ls-s11-left-box gap-3 col-lg-6 col-md-6">
                 <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
                     <i class="bi bi-telephone-fill mx-1"></i>
-                    <div class="lp-s11-contacts">+94 71 090 2997</div>
+                    <div class="lp-s11-contacts">+94 78 482 2711</div>
                 </div>
                 <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
                     <i class="bi bi-envelope-fill mx-1"></i>
@@ -230,15 +231,15 @@
                 </div>
                 <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
                     <i class="bi bi-geo-alt-fill mx-1"></i>
-                    <div class="lp-s11-contacts">No. 14, Charles Father Road, Kandana, Sri Lanka</div>
+                    <div class="lp-s11-contacts">Kadawatha, Sri Lanka</div>
                 </div>
             </div>
             <div class="lp-s11-right-box  cey-bg-dark cey-text-white d-flex flex-column justify-content-center col-lg-6 col-md-6">
                 <h6 class="mx-lg-5 mx-sm-3 mx-3 mt-2">FOLLOW US ON</h6>
                 <div class="d-flex gap-4 mx-lg-5 mx-sm-3 mx-3">
-                    <i class="bi bi-facebook lp-s11-icon"></i>
-                    <i class="bi bi-instagram bi-3x lp-s11-icon"></i>
-                    <i class="bi bi-linkedin bi-3x lp-s11-icon"></i>
+                    <a href="https://web.facebook.com/profile.php?id=100067952630177" class="cey-text-white" target="_blank"><i class="bi bi-facebook lp-s11-icon"></i></a>
+                    <a href="https://www.instagram.com/kooplesclothing/" class="cey-text-white" target="_blank"><i class="bi bi-instagram bi-3x lp-s11-icon"></i></a>
+                    <a href="https://www.linkedin.com/company/kooples-clothing/" class="cey-text-white" target="_blank"><i class="bi bi-linkedin bi-3x lp-s11-icon"></i></a>
 
                 </div>
             </div>

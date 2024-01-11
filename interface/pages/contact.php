@@ -44,9 +44,9 @@
             <div class="d-flex flex-column justify-content-center p-3 cey-bg-white cey-text-darker mt-4">
                 <h3 class="text-center">FOLLOW US ON</h3>
                 <div class="d-flex justify-content-around p-2">
-                    <i class="p-2 cup-s2-social-icons bi bi-instagram"></i>
-                    <i class="p-2 cup-s2-social-icons bi bi-facebook"></i>
-                    <i class="p-2 cup-s2-social-icons bi bi-linkedin"></i>
+                    <a href="https://www.instagram.com/kooplesclothing/" style="color: black;" target="_blank"><i class="p-2 cup-s2-social-icons bi bi-instagram"></i></a>
+                    <a href="https://web.facebook.com/profile.php?id=100067952630177"  style="color: black;" target="_blank"><i class="p-2 cup-s2-social-icons bi bi-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/kooples-clothing/" style="color: black;" target="_blank"><i class="p-2 cup-s2-social-icons bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
