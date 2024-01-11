@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . "/../../model/Api.php");
+require_once(__DIR__ . "/../../model/AdminApi.php");
 require_once(__DIR__ . "/../../model/RequestHandler.php");
 require_once(__DIR__ . "/../../model/PasswordHash.php");
 
