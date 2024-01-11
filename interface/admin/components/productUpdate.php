@@ -8,7 +8,7 @@
             <label for="title">Title:</label>
             <input type="text" id="update_title" name="title"><br>
             <label for="description">Description:</label>
-            <input type="text" id="update_description" name="description"><br>
+            <textarea  id="update_description" name="description" cols="30" rows="5"></textarea><br>
             <label for="category">Category:</label>
             <select id="productUpdateViewcategory" name="category"></select><br>
             <label for="productUpdateViewSubCategory">Sub Category:</label>

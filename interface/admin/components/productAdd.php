@@ -6,7 +6,7 @@
             <label for="title">Title</label>
             <input type="text" id="add_title" name="title" class="form-control"><br>
             <label for="description">Description</label>
-            <input type="text" id="add_description" name="description" class="form-control"><br>
+            <textarea id="add_description" name="description" class="form-control" cols="30" rows="10"></textarea><br>
             <label for="productAddViewcategory">Category</label>
             <!-- <input type="text" id="add_category" name="category" class="form-control"><br> -->
             <select name="category" id="productAddViewcategory" class="form-select"></select>
