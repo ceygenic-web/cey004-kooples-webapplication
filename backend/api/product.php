@@ -120,7 +120,40 @@ class Product extends Api
             move_uploaded_file($image["tmp_name"], __DIR__ . "/../../resources/images/products/images.jpg");
             return (object)["status" => "success"];
         }
-        return (object)["status" => "failed", "error" => "invalid request"];
+
+        $title = $_POST["title"];
+        $description = $_POST["description"];
+        $category = $_POST["category"];
+        $price = $_POST["price"];
+        $other_data = $_POST["other_data"];
+        $images = $_FILES;
+
+
+        if (
+            (!isset($title) || empty($title)) ||
+            (!isset($description) || empty($description)) ||
+            (!isset($category) || empty($category)) ||
+            (!isset($price) || empty($price)) ||
+            (!isset($other_data) || empty($other_data))
+        ) {
+            return (object)["status" => "failed", "error" => "Empty Input field!"];
+        }
+
+        if (!floatval($price)) {
+            return (object)["status" => "failed", "error" => "invalid price"];
+        }
+
+        $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" .  $category . "' ")[0]["category_id"];
+        $id = mt_rand(000000, 999999);
+        $this->updateData("INSERT INTO `product` 
+                                    (`product_id`,`category_category_id`, `title`, `description`, `price`, `other_data`) 
+                                    VALUES (?,?, ?, ?, ?,?)", "sissss", array($id, $categoryId, $title, $description, $price, $other_data));
+        foreach ($images as $key => $value) {
+            $fileName = "resources/images/products/$id-image-$key.jpeg";
+            move_uploaded_file($value["tmp_name"], __DIR__ . "/../../$fileName");
+            $this->updateData("INSERT INTO `product_images` (`filename`, `product_product_id`) VALUES ('$fileName', '$id') ");
+        }
+        return (object)["status" => "success"];
     }
 
     public function update()

@@ -7,7 +7,7 @@ class AdminApi extends Api
     public function loggedAsAdmin()
     {
         $this->sessionInit();
-        $this->sessionManager->updateSessionVariable("cey004_admin");
+        $this->sessionManager->updateSessionVariable(SESSION_VARIABLE_ADMIN);
         return $this->checkAccess();
     }
 }

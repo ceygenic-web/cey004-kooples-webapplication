@@ -21,9 +21,7 @@ class Controller
     public function view(string $name, string $title, array $js_files = [], array $css_files = [], bool $isAdmin = false, bool $custom = false)
     {
         if (!self::$isAdminLogin && $isAdmin) {
-            var_dump("test before");
             $sessionManger = new SessionManager();
-            var_dump("test after");
             $sessionManger->updateSessionVariable(SESSION_VARIABLE_ADMIN);
             if (!$sessionManger->isLoggedIn()) {
                 var_dump($_SESSION);
