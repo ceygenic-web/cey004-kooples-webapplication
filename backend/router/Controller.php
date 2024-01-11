@@ -25,6 +25,7 @@ class Controller
             $sessionManger->updateSessionVariable(SESSION_VARIABLE_ADMIN);
             if (!$sessionManger->isLoggedIn()) {
                 var_dump("redirected");
+                var_dump($_SESSION);
                 // header("Location: /admin/login");
             }
         }
