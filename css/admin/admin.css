@@ -1,6 +1,7 @@
 /* admin page */
 .ad-s1 {
-  min-height: 85vh;
+  
+  flex-grow: 1;
 }
 
 .logo {
@@ -11,7 +12,7 @@
 
 /* admin home page */
 .ahp-s1 {
-  height: 83vh;
+  min-height: 83vh;
 }
 
 .admin-main-container {
@@ -34,3 +35,4 @@
   width: 100%;
   margin: 10px 20px;
 }
+

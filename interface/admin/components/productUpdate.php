@@ -8,9 +8,11 @@
             <label for="title">Title:</label>
             <input type="text" id="update_title" name="title"><br>
             <label for="description">Description:</label>
-            <input type="text" id="update_description" name="description"><br>
+            <textarea  id="update_description" name="description" cols="30" rows="5"></textarea><br>
             <label for="category">Category:</label>
             <select id="productUpdateViewcategory" name="category"></select><br>
+            <label for="productUpdateViewSubCategory">Sub Category:</label>
+            <select id="productUpdateViewSubCategory" name="sub_category"></select><br>
             <label for="blousepiece">Blousepiece</label>
             <input type="text" id="update_blousepiece" name="blousepiece" class="form-control"><br>
             <label for="style_number">Style number</label>

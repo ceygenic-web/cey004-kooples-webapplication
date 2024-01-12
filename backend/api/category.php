@@ -21,6 +21,9 @@ class Category extends Api
                 case 'get':
                     return [$this->get(), false];
                     break;
+                case 'getsub':
+                    return [$this->getsub(), false];
+                    break;
 
                 case 'add':
                     return [$this->add(), true];
@@ -46,6 +49,13 @@ class Category extends Api
     public function get()
     {
         $query = "SELECT * FROM `category`";
+        $results = $this->getData($query);
+        return (object)["status" => "success", "results" => $results];
+    }
+
+    public function getsub()
+    {
+        $query = "SELECT * FROM `sub_categories`";
         $results = $this->getData($query);
         return (object)["status" => "success", "results" => $results];
     }
