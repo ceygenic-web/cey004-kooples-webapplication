@@ -35,7 +35,7 @@ function createSwiperSlide(fileName) {
   const slide = document.createElement("div");
   slide.classList.add("swiper-slide");
   const img = document.createElement("img");
-  img.setAttribute("src", fileName);
+  img.setAttribute("src", SERVER_URL + fileName);
   slide.appendChild(img);
   return slide;
 }

@@ -1,4 +1,5 @@
 // states
+const SERVER_URL = "https://www.kooplesclothing.com/";
 let SidebarToggleClicked = false;
 
 // initiator

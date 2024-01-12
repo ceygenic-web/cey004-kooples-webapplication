@@ -1,37 +1,3 @@
-// product data updator
-const mockData = {
-  title: "Product 1",
-  description: {
-    head: "Product Description",
-    body: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam numquam aliquam eligendi? Est fuga expedita, nesciunt illo facere fugit dicta adipisci veritatis accusantium nam odit dolores, atque sequi vero perferendis.`,
-  },
-  price: "13500",
-  special: {
-    feature1: {
-      sectionTitle: "Comfort and Grip",
-      value: "Soft-touch finish and contoured shape for all-day comfort.",
-    },
-    feature2: {
-      sectionTitle: "Precision Tracking",
-      value: "High-definition sensor for smooth and accurate cursor control.",
-    },
-  },
-  secondary: {
-    specifications: {
-      head: "Specifications",
-      body: "Dimensions: 120 x 60 x 30 mm, Weight: 90 g, Battery: Rechargeable",
-    },
-    reviews: {
-      head: "Customer Reviews",
-      body: "4.8 out of 5 stars based on 1,200 reviews",
-    },
-    extra: {
-      head: "extra Items",
-      body: "there is no such extra item to be included",
-    },
-  },
-};
-
 // landing page initiator
 document.addEventListener("DOMContentLoaded", () => {
   //build landing page swiper
