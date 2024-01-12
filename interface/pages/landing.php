@@ -33,7 +33,7 @@
 </section>
 
 <!-- section 3 - latests -->
-<section class="lp-s3 cey-bg-white" id="latestCollectionSection"> 
+<section class="lp-s3 cey-bg-white" id="latestCollectionSection">
     <div class="container py-3">
         <h3 class="cey-main-font">LATEST COLLECTIONS</h3>
         <div class="swiper">
@@ -43,20 +43,7 @@
                     <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div>
                 </div>
                 <div class="swiper-wrapper py-5" id="latestCollectionContainer">
-                    <?php
-                    for ($i = 0; $i < 6; $i++) {
-                    ?>
-                        <div class="swiper-slide cey-product-item-card cey-shadow-light">
-                            <img src="resources/images/hero.jpg" height="100%" width="100%">
-                            <div class="content">
-                                <h6 class="fw-bold">Porduct Title</h6>
-                                <p>product descriptino of small content will be here and it will be very short...</p>
-                                <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
+                    <!-- latest collection will load here -->
                 </div>
             </div>
         </div>
@@ -69,21 +56,15 @@
         <h3 class="cey-main-font">CATEGORIES</h3>
         <div class="d-flex flex-column">
             <div class="d-flex flex-wrap">
-                <div onclick="toPage('/shop?category=Chevron')" class="p-4 col-md-4 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category1.jpg');">
+                <div onclick="toPage('/shop?category=Rayon Collection')" class="p-4 col-md-4 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category1.jpg');">
                     <div class="d-flex flex-column">
-                        <h4 class="fw-bold cey-text-white">Chevron</h4>
+                        <h4 class="fw-bold cey-text-white">Rayon</h4>
                         <p class="cey-text-white">EXPLORE -></p>
                     </div>
                 </div>
-                <div onclick="toPage('/shop?category=Dazzling')" class="p-4 col-md-4 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
+                <div onclick="toPage('/shop?category=Cotton Collection')" class="p-4 col-md-4 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
                     <div class="d-flex flex-column">
-                        <h4 class="fw-bold cey-text-white">Dazzling</h4>
-                        <p class="cey-text-white">EXPLORE -></p>
-                    </div>
-                </div>
-                <div onclick="toPage('/shop?category=Taffta')" class="p-4 col-md-4 lp-s4-card d-flex align-items-end col-12 lp-s4-large-card" style="background-image: url('resources/images/category2.jpg');">
-                    <div class="d-flex flex-column">
-                        <h4 class="fw-bold cey-text-white">Taffta</h4>
+                        <h4 class="fw-bold cey-text-white">Cotton</h4>
                         <p class="cey-text-white">EXPLORE -></p>
                     </div>
                 </div>
@@ -164,7 +145,7 @@
         <div class="lp-s8-section p-3 lp-s8-middle-box">
             <h3>OUR STORY</h3>
             <p>KOOPLES was born from my personal fascination with the captivating art of handloom saree crafting. I was inspired to create a brand that offers all the beautiful ladies the same magical experience I had when I first laid eyes on these excellent fabrics. Now, through KOOPLES, we bring you handpicked creations that celebrate the artistry of skilled artisans, ensuring you feel the same mesmerizing allure with each fold.
-</p>
+            </p>
             <button class="cey-btn-box cey-main-font">ABOUT US</button>
         </div>
         <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-right.png');"></div>

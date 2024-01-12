@@ -67,9 +67,10 @@ function loadLatestCollection() {
       data.results.forEach((element) => {
         let minmizedDescription =
           element.description.split(" ").slice(0, 10).join(" ") + "...";
+        const imageName = element.images[0].filename;
         container.innerHTML += `
                 <div class="swiper-slide cey-product-item-card cey-shadow-light">
-                    <img src="resources/images/hero.jpg" height="100%" width="100%" onclick="toProduct('product?product=${element.title}')">
+                    <img src="${SERVER_URL}${imageName}" height="100%" width="100%" onclick="toProduct('${element.product_id}')">
                     <div class="content">
                         <h6 class="fw-bold">${element.title}</h6>
                         <p>${minmizedDescription}</p>

@@ -5,11 +5,10 @@
             <div>
                 <button onclick="history.back()" class="border-0 py-1 mb-3 px-3 cey-bg-darker cey-text-white">Back</button>
             </div>
-            <h3 class="cey-main-font">PRODUCT NAME GOES HERE</h3>
+            <h3 class="cey-main-font" id="productTitle"></h3>
             <div class="dropdown">
-                <button class="px-3 py-1 cey-border-dark cey-text-white cey-bg-dark">
-                    CATEGORY
-                </button>
+                <button class="px-3 py-1 cey-border-dark cey-text-white cey-bg-dark" id="productCategory"></button>
+                <button class="mx-2 px-2 py-1 cey-border-dark cey-text-dark " id="productSubCategory"></button>
             </div>
         </div>
         <div class=" d-flex flex-lg-row flex-column py-4 gap-3">

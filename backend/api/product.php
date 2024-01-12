@@ -49,7 +49,9 @@ class Product extends Api
 
     public function view($params)
     {
-        $query = "SELECT * FROM `product` INNER JOIN `category` ON `product`.`category_category_id` = `category`.`category_id` ";
+        $query = "SELECT * FROM `product` 
+                    INNER JOIN `category` ON `product`.`category_category_id` = `category`.`category_id` 
+                    INNER JOIN `sub_categories` ON `product`.`sub_categories_sub_categories_id` = `sub_categories`.`sub_categories_id` ";
         if (isset($params["id"]) && !empty($params["id"])) {
             $query .= " WHERE `product`.`product_id` = '" . $params["id"] . "' ";
         } else if ($params) {

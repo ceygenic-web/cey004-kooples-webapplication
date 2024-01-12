@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= PAGE_TITLE ?></title>
+    <meta name="description" content="Shop for handcrafted sarees. We are promoting traditional handloom saree and apparel craftmanship in Sri Lanka.">
+    <meta property="og:site_name" content="Kooples Clothing">
+    <meta property="og:title" content="Kooples Clothing Sri Lanka" />
+    <meta property="og:description" content="Shop for handcrafted sarees. We are promoting traditional handloom saree and apparel craftmanship in Sri Lanka." />
+    <meta property="og:image" itemprop="image" content="/resources/images/logo.png">
+    <meta property="og:type" content="product" />
 
     <link rel="shortcut icon" href="resources/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
