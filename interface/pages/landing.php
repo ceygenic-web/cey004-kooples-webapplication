@@ -156,6 +156,8 @@
 <section class="lp-s8 cey-bg-darker px-5">
     <div class="container d-flex justify-content-center py-4">
         <!-- <video loop height="678" src="../../resources/video/main.mp4" autoplay></video> -->
+        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/902519151?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="encoded-main"></iframe></div>
+        <script defer src="https://player.vimeo.com/api/player.js"></script>
     </div>
 </section>
 
