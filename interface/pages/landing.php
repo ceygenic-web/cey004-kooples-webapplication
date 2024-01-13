@@ -156,6 +156,10 @@
 <section class="lp-s8 cey-bg-darker px-5">
     <div class="container d-flex justify-content-center py-4">
         <!-- <video loop height="678" src="../../resources/video/main.mp4" autoplay></video> -->
+        <div style="position: relative; height: 400px; width: 100%;" class="overflow-hidden">
+            <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/lpeuIu-ZYJY?si=8ZbJFtzdFZb9b5QI&autoplay=1&mute=1&controls=0&disablekb=1&fs=0&loop=1&modestbranding=1&color=white" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>
+            <!-- <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/lpeuIu-ZYJY?autoplay=1&mute=1&controls=0&disablekb=1&fs=0&loop=1&modestbranding=1&color=white&" frameborder="0"> -->
+        </div>
     </div>
 </section>
 
