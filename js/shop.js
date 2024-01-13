@@ -54,7 +54,7 @@ function searchProduct(search = "", category = "") {
                             <h6 class="fw-bold">${element.title}</h6>
                             <p>${minmizedDescription}</p>
                             <!-- <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button> -->
-                            <button onclick="toPage('purchase?product=${element.title}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
+                            <button onclick="toPage('purchase?productId=${element.product_id}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
                           </div>
                           <img src="${SERVER_URL}${element.images[0]["filename"]}" height="100%" width="100%" onclick="toProduct('${element.product_id}')">
                         </div>
