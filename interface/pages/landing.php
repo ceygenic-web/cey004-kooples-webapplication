@@ -115,12 +115,12 @@
     <div class="container py-5">
         <h3 class="text-white cey-main-font">OUR BLOGS</h3>
         <div class="d-flex flex-column flex-md-row">
-            <div style="background-image: url('resources/images/blog1.png');" class="lp-s5-card">
+            <div style="background-image: url('resources/images/blog1.jpg');" class="lp-s5-card">
                 <h5 class="fw-bold"><a href="#" class="text-white text-decoration-none">Blog Title</a></h5>
                 <p>this part consists of small part of the actual blog content and it should not be
                     longer than 2 lines</p>
             </div>
-            <div style="background-image: url('resources/images/blog2.png');" class="lp-s5-card">
+            <div style="background-image: url('resources/images/blog2.jpg');" class="lp-s5-card">
                 <h5 class="fw-bold"><a href="#" class="text-white text-decoration-none">Blog Title</a></h5>
                 <p>this part consists of small part of the actual blog content and it should not be
                     longer than 2 lines</p>
@@ -141,14 +141,14 @@
 <!-- section 8 - our story -->
 <section class="lp-s8 cey-bg-white">
     <div class="h-100 d-flex flex-column flex-lg-row">
-        <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-left.png');"></div>
+        <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-left.jpg');"></div>
         <div class="lp-s8-section p-3 lp-s8-middle-box">
             <h3>OUR STORY</h3>
             <p>KOOPLES was born from my personal fascination with the captivating art of handloom saree crafting. I was inspired to create a brand that offers all the beautiful ladies the same magical experience I had when I first laid eyes on these excellent fabrics. Now, through KOOPLES, we bring you handpicked creations that celebrate the artistry of skilled artisans, ensuring you feel the same mesmerizing allure with each fold.
             </p>
             <button class="cey-btn-box cey-main-font">ABOUT US</button>
         </div>
-        <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-right.png');"></div>
+        <div class="lp-s8-section lp-s8-sides" style="background-image: url('resources/images/ourstory-right.jpg');"></div>
     </div>
 </section>
 
