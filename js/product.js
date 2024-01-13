@@ -14,13 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "secondaryProductContainer",
     buildProductPageS1SwiperInitiator
   );
-  console.log("sent 1");
 });
 
 const buildProductPageS1SwiperInitiator = () => {
-  console.log("sent 2");
   if (!isRelatedLoaded) {
-    // loadRelatedProduct();
+    loadRelatedProduct();
   }
 
   if (window.innerWidth > 1400) {
