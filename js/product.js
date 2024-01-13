@@ -14,13 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     "secondaryProductContainer",
     buildProductPageS1SwiperInitiator
   );
-  console.log("sent 1");
 });
 
 const buildProductPageS1SwiperInitiator = () => {
-  console.log("sent 2");
   if (!isRelatedLoaded) {
-    // loadRelatedProduct();
+    loadRelatedProduct();
   }
 
   if (window.innerWidth > 1400) {
@@ -68,16 +66,41 @@ const buildProductPageS2Swiper = (perView, space) => {
 // load related Product
 var isRelatedLoaded = false;
 function loadRelatedProduct() {
-  console.log("sent 3");
   sendRequest(
-    "/api/product/get-related?search=sunn",
+    "/api/product/get-related?search=",
     "GET",
     null,
     {},
     true,
     (data) => {
       isRelatedLoaded = true;
-      console.log(data);
+
+      let swiperSlideUI = ``;
+      if (data.status == "success") {
+        data.results.forEach((product) => {
+          const minimizedDescription =
+            product.description.split(" ").slice(0, 10).join(" ") + "...";
+          swiperSlideUI += `
+            <div class="swiper-slide pp-s2-card cey-product-item-card cey-shadow-light">
+                <img style="object-fit: cover" src="${SERVER_URL}${product.images[0].filename}" height="100%" width="100%">
+                <div class="content">
+                    <h6 class="fw-bold">${product.title}</h6>
+                    <p>${minimizedDescription}</p>
+                    <button onclick="toPage('purchase?productId=${product.product_id}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
+                </div>
+            </div>
+          `;
+        });
+        const relatedProductContainer = document.getElementById(
+          "relatedProductContainer"
+        );
+
+        relatedProductContainer.innerHTML = swiperSlideUI;
+      } else {
+        document
+          .getElementById("relatedProductSection")
+          .classList.add("d-none");
+      }
     }
   );
 }

@@ -1,4 +1,4 @@
-// project bias ui component builder JS framework
+  // project bias ui component builder JS framework
 // Product details component builder
 function productDataUpdater(
   id,
