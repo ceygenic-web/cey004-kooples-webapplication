@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="resources/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="<?= ROOT ?>css/bootstrap.css">
     <link rel="stylesheet" href="<?= ROOT ?>css/main.css">
     <?php
@@ -31,6 +32,7 @@
 
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://player.vimeo.com/api/player.js"></script>
     <script defer src="<?= ROOT ?>js/bootstrap.bundle.js"></script>
     <script defer src="<?= ROOT ?>js/modules/framework.js"></script>
     <script defer src="<?= ROOT ?>js/main.js"></script>
