@@ -14,7 +14,7 @@
         <div class=" d-flex flex-lg-row flex-column py-4 gap-3">
             <div class="pp-s1-swiper col-12 col-lg-6">
                 <!-- Swiper -->
-                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 cey-bg-dark">
                     <div class="swiper-wrapper" id="productMainSwiperContainer">
                         <!-- <div class="swiper-slide">
                             <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
@@ -50,7 +50,7 @@
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
-                <div thumbsSlider="" class="swiper mySwiper">
+                <div thumbsSlider="" class="swiper mySwiper cey-bg-dark">
                     <div class="swiper-wrapper" id="productThumbSwiperContainer">
                         <!-- <div class="swiper-slide">
                             <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
