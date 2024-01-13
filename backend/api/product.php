@@ -141,8 +141,20 @@ class Product extends Api
     public function delete()
     {
         if (RequestHandler::isPostMethod()) {
-            $id = $_POST["id"];
-            $this->deleteData("DELETE FROM `product` WHERE `product_id`=$id");
+            $id = ($_POST["id"]) ?? null;
+            $images = $this->getData("SELECT * FROM `product_images` WHERE `product_product_id`='$id' ");
+            if (count($images) === 0) {
+                return (object)["status" => "failed", "error" => "Image Not Found!"];
+            }
+
+            foreach ($images as $value) {
+                if (unlink($value["filename"])) {
+                    $imageId = $value['product_images_id'];
+                    $this->updateData("DELETE FROM `product_images` WHERE `product_id`='$imageId'");
+                };
+            }
+
+            $this->updateData("DELETE FROM `product` WHERE `product_id`='$id'");
             return (object)["status" => "success"];
         }
         return (object)["status" => "failed", "error" => "invalid request"];

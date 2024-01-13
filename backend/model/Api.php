@@ -46,16 +46,6 @@ class Api
         }
     }
 
-    public function deleteData(string $query, string $type = null, array $data = null): void
-    {
-        $this->ConnectDatabase();
-        if ($data) {
-            $this->database->execute_query($query, $type, $data);
-        } else {
-            $this->database->query($query);
-        }
-    }
-
     public function validateData(object $data): object
     {
         if (!$this->validator) {

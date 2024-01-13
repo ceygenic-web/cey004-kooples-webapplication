@@ -74,7 +74,7 @@ class Category extends Api
     {
         if (RequestHandler::isPostMethod()) {
             $id = $_POST["id"];
-            $this->deleteData("DELETE FROM `category` WHERE `category_id`='" . $id . "' ");
+            $this->updateData("DELETE FROM `category` WHERE `category_id`='" . $id . "' ");
             return (object)["status" => "success"];
         }
         return (object)["status" => "failed", "error" => "invalid request"];
