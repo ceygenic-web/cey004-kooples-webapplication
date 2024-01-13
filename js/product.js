@@ -14,21 +14,27 @@ document.addEventListener("DOMContentLoaded", () => {
     "secondaryProductContainer",
     buildProductPageS1SwiperInitiator
   );
+  console.log("sent 1");
 });
 
 const buildProductPageS1SwiperInitiator = () => {
+  console.log("sent 2");
+  if (!isRelatedLoaded) {
+    // loadRelatedProduct();
+  }
+
   if (window.innerWidth > 1400) {
-    buildProductPageS10Swiper(4, 30);
+    buildProductPageS2Swiper(4, 30);
   } else if (window.innerWidth <= 1400 && window.innerWidth > 998) {
-    buildProductPageS10Swiper(3, 20);
+    buildProductPageS2Swiper(3, 20);
   } else if (window.innerWidth <= 998 && window.innerWidth > 600) {
-    buildProductPageS10Swiper(2, 10);
+    buildProductPageS2Swiper(2, 10);
   } else if (window.innerWidth <= 600) {
-    buildProductPageS10Swiper(1, 5);
+    buildProductPageS2Swiper(1, 5);
   }
 };
 
-const buildProductPageS10Swiper = (perView, space) => {
+const buildProductPageS2Swiper = (perView, space) => {
   const swiper = new Swiper(".mySwiper", {
     loop: true,
     spaceBetween: 0,
@@ -58,3 +64,20 @@ const buildProductPageS10Swiper = (perView, space) => {
     },
   });
 };
+
+// load related Product
+var isRelatedLoaded = false;
+function loadRelatedProduct() {
+  console.log("sent 3");
+  sendRequest(
+    "/api/product/get-related?search=sunn",
+    "GET",
+    null,
+    {},
+    true,
+    (data) => {
+      isRelatedLoaded = true;
+      console.log(data);
+    }
+  );
+}

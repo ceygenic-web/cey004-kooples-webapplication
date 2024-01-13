@@ -111,7 +111,7 @@
 </section>
 
 <!-- section 6 - blogs -->
-<section class="lp-s5 cey-bg-dark">
+<!-- <section class="lp-s5 cey-bg-dark">
     <div class="container py-5">
         <h3 class="text-white cey-main-font">OUR BLOGS</h3>
         <div class="d-flex flex-column flex-md-row">
@@ -127,7 +127,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- section 7 - handloom -->
 <section class="lp-s7 cey-bg-white">

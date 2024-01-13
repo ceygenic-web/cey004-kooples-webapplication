@@ -97,7 +97,7 @@
 </section>
 
 <!-- section 2 - related products -->
-<section class="pp-s2 cey-bg-dark">
+<section class="pp-s2 cey-bg-dark" id="relatedProductSection">
     <div class="container py-4 h-100 d-flex flex-column">
         <h3 class="cey-text-white">MORE LIKE THIS...</h3>
         <div class="py-1 d-flex gap-4 flex-wrap justify-content-between flex-grow-1">
@@ -106,54 +106,9 @@
                     <div class="pp-s2-swiper-control"><i class="pp-s2-swiper-control-left fs-1 cey-text-white bi bi-arrow-left-circle"></i></div>
                     <div class="pp-s2-swiper-control"><i class="pp-s2-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div>
                 </div>
-                <div class="swiper-wrapper py-5">
-                    <div class="swiper-slide pp-s2-card cey-product-item-card cey-shadow-light">
-                        <img src="resources/images/hero.jpg" height="100%" width="100%">
-                        <div class="content">
-                            <h6 class="fw-bold">Porduct Title</h6>
-                            <p>product descriptino of small content will be here and it will be very short...</p>
-                            <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide cey-product-item-card cey-shadow-light">
-                        <img src="resources/images/hero.jpg" height="100%" width="100%">
-                        <div class="content">
-                            <h6 class="fw-bold">Porduct Title</h6>
-                            <p>product descriptino of small content will be here and it will be very short...</p>
-                            <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide cey-product-item-card cey-shadow-light">
-                        <img src="resources/images/hero.jpg" height="100%" width="100%">
-                        <div class="content">
-                            <h6 class="fw-bold">Porduct Title</h6>
-                            <p>product descriptino of small content will be here and it will be very short...</p>
-                            <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
-                        </div>
-                    </div>
-                    <div class="swiper-slide cey-product-item-card cey-shadow-light">
-                        <img src="resources/images/hero.jpg" height="100%" width="100%">
-                        <div class="content">
-                            <h6 class="fw-bold">Porduct Title</h6>
-                            <p>product descriptino of small content will be here and it will be very short...</p>
-                            <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
-                        </div>
-                    </div>
+                <div class="swiper-wrapper py-5" id="relatedProductContainer">
+                    Loading...
                 </div>
-                <?php
-                for ($i = 0; $i < 4; $i++) {
-                ?>
-                    <!-- <div class="swiper-slide cey-product-item-card cey-shadow-light">
-                    <img src="resources/images/hero.jpg" height="100%" width="100%">
-                    <div class="content">
-                        <h6 class="fw-bold">Porduct Title</h6>
-                        <p>product descriptino of small content will be here and it will be very short...</p>
-                        <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button>
-                    </div>
-                </div> -->
-                <?php
-                }
-                ?>
             </div>
         </div>
 </section>

@@ -21,13 +21,12 @@ class Product extends Api
                 case 'view':
                     return [$this->view(($_SERVER["REQUEST_METHOD"] === "GET") ? $_GET : []), false];
                     break;
+                case 'get-related':
+                    return [$this->getRelated(($_SERVER["REQUEST_METHOD"] === "GET") ? $_GET : []), false];
+                    break;
 
                 case 'add':
                     return [$this->add(), true];
-                    break;
-
-                case 'upload-image':
-                    return [$this->uploadImage(), true];
                     break;
 
                 case 'update':
@@ -47,6 +46,7 @@ class Product extends Api
         }
     }
 
+    // load products details
     public function view($params)
     {
         $query = "SELECT * FROM `product` 
@@ -71,6 +71,15 @@ class Product extends Api
         return (object)["status" => "success", "results" => $results];
     }
 
+    public function getRelated($params)
+    {
+        $parameters["search"] = ($params["search"]) ?? null;
+        $parameters["limit"] = 4;
+        return $this->view($parameters);
+    }
+
+
+    // add products to the server
     public  function add()
     {
         if (!RequestHandler::isPostMethod()) {
@@ -107,52 +116,6 @@ class Product extends Api
         $this->updateData("INSERT INTO `product` 
                                     (`product_id`,`category_category_id`, `title`, `description`, `price`, `sub_categories_sub_categories_id`, `other_data`) 
                                     VALUES (?,?,?,?,?,?,?)", "sisssss", array($id, $categoryId, $title, $description, $price, $subCategoryId, $other_data));
-        foreach ($images as $key => $value) {
-            $fileName = "resources/images/products/$id-image-$key.jpeg";
-            move_uploaded_file($value["tmp_name"], __DIR__ . "/../../$fileName");
-            $this->updateData("INSERT INTO `product_images` (`filename`, `product_product_id`) VALUES ('$fileName', '$id') ");
-        }
-        return (object)["status" => "success"];
-    }
-
-    public  function uploadImage()
-    {
-        if (RequestHandler::isPostMethod()) {
-            $image = $_FILES["image"];
-            if ($image["type"] !== "image/jpeg") {
-                return (object)["status" => "failed", "error" => "Invalid File Format"];
-            }
-            move_uploaded_file($image["tmp_name"], __DIR__ . "/../../resources/images/products/images.jpg");
-            return (object)["status" => "success"];
-        }
-
-        $title = $_POST["title"];
-        $description = $_POST["description"];
-        $category = $_POST["category"];
-        $price = $_POST["price"];
-        $other_data = $_POST["other_data"];
-        $images = $_FILES;
-
-
-        if (
-            (!isset($title) || empty($title)) ||
-            (!isset($description) || empty($description)) ||
-            (!isset($category) || empty($category)) ||
-            (!isset($price) || empty($price)) ||
-            (!isset($other_data) || empty($other_data))
-        ) {
-            return (object)["status" => "failed", "error" => "Empty Input field!"];
-        }
-
-        if (!floatval($price)) {
-            return (object)["status" => "failed", "error" => "invalid price"];
-        }
-
-        $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" .  $category . "' ")[0]["category_id"];
-        $id = mt_rand(000000, 999999);
-        $this->updateData("INSERT INTO `product` 
-                                    (`product_id`,`category_category_id`, `title`, `description`, `price`, `other_data`) 
-                                    VALUES (?,?, ?, ?, ?,?)", "sissss", array($id, $categoryId, $title, $description, $price, $other_data));
         foreach ($images as $key => $value) {
             $fileName = "resources/images/products/$id-image-$key.jpeg";
             move_uploaded_file($value["tmp_name"], __DIR__ . "/../../$fileName");

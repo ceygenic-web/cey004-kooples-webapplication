@@ -13,9 +13,9 @@
                     <a href="shop">
                         <li>SHOP</li>
                     </a>
-                    <a href="handloom">
+                    <!-- <a href="handloom">
                         <li>HANDLOOM</li>
-                    </a>
+                    </a> -->
                     <a href="about">
                         <li>ABOUT</li>
                     </a>
@@ -96,9 +96,9 @@
                     <a href="shop">
                         <li>SHOP</li>
                     </a>
-                    <a href="handloom">
+                    <!-- <a href="handloom">
                         <li>HANDLOOM</li>
-                    </a>
+                    </a> -->
                     <a href="about">
                         <li>ABOUT</li>
                     </a>
