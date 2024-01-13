@@ -114,7 +114,7 @@ function genarateFromFromInputValues(...ids) {
 /**
  * image comporessor
  */
-function compressImage(imageFile, quality = 0.7) {
+function compressImage(imageFile, quality = 0.5) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(imageFile);
