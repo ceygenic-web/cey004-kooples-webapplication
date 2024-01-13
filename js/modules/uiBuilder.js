@@ -43,12 +43,12 @@ function createSwiperSlide(fileName) {
   img.setAttribute("src", SERVER_URL + fileName);
   img.style.zIndex = "50";
   slide.appendChild(img);
-  const backDrop = img.cloneNode();
-  backDrop.style.objectFit = "cover";
-  backDrop.style.position = "absolute";
-  backDrop.style.filter = "blur(30px)";
-  backDrop.style.zIndex = "40";
-  slide.prepend(backDrop);
+  // const backDrop = img.cloneNode();
+  // backDrop.style.objectFit = "cover";
+  // backDrop.style.position = "absolute";
+  // backDrop.style.filter = "blur(30px)";
+  // backDrop.style.zIndex = "40";
+  // slide.prepend(backDrop);
   return slide;
 }
 

@@ -20,17 +20,17 @@
             <label for="blousepiece">Blousepiece</label>
             <input type="text" id="add_blousepiece" name="blousepiece" class="form-control"><br>
             <label for="style_number">Style number</label>
-            <input type="text" id="add_style_number" name="style_number" class="form-control"><br>
+            <input type="text" id="add_style_number" name="Style number" class="form-control"><br>
             <label for="category">Shipping info</label>
-            <input type="text" id="add_shipping_info" name="shipping_info" class="form-control"><br>
+            <input type="text" id="add_shipping_info" name="Shipping info" class="form-control"><br>
             <label for="returns">Returns</label>
-            <input type="text" id="add_returns" name="returns" class="form-control"><br>
+            <input type="text" id="add_returns" name="Returns" class="form-control"><br>
             <label for="measurements">Measurements</label>
-            <input type="text" id="add_measurements" name="measurements" class="form-control"><br>
+            <input type="text" id="add_measurements" name="Measurements" class="form-control"><br>
             <label for="wash_instructions">Wash and care instructions</label>
-            <input type="text" id="add_wash_instructions" name="wash_instructions" class="form-control"><br>
+            <input type="text" id="add_wash_instructions" name="Wash and care instructions" class="form-control"><br>
             <label for="fabric">Fabric Composition</label>
-            <input type="text" id="add_fabric" name="fabric" class="form-control"><br>
+            <input type="text" id="add_fabric" name="Fabric Composition" class="form-control"><br>
             <label for="price">Price (LKR)</label>
             <input type="number" id="add_price" name="price" class="form-control"><br>
             <input type="submit" value="Submit">
