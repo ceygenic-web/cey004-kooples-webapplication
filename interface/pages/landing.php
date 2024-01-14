@@ -157,8 +157,10 @@
     <div class="container d-flex justify-content-center py-4">
         <!-- <video loop height="678" src="../../resources/video/main.mp4" autoplay></video> -->
         <div style="position: relative; height: 400px; width: 100%;" class="overflow-hidden">
-            <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/lpeuIu-ZYJY?si=8ZbJFtzdFZb9b5QI&autoplay=1&mute=1&controls=0&disablekb=1&fs=0&loop=1&modestbranding=1&color=white" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>
-            <!-- <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/lpeuIu-ZYJY?autoplay=1&mute=1&controls=0&disablekb=1&fs=0&loop=1&modestbranding=1&color=white&" frameborder="0"> -->
+            <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/QTdl4LazLdI?si=nTtt-VfpUHzTMwpE&rel=0&version=3&autoplay=1&controls=0&&showinfo=0&loop=1&iv_load_policy=3&playlist=QTdl4LazLdI" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>
+            <!-- <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/QTdl4LazLdI?si=nTtt-VfpUHzTMwpE&rel=0?version=3&autoplay=1&controls=0&&showinfo=0&modestbranding=1&color=white" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe> -->
+            <div style="position: absolute; background-color: transparent;width: 100%; height: 100%; top: 0; left: 0;"></div>
+            <!-- <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/lpeuIu-ZYJY?autoplay=1&mute=1&controls=0&disablekb=1&fs=0&loop=1&modestbranding=1&color=white&rel=0?version=3&autoplay=1&controls=0&&showinfo=0&loop=1" frameborder="0"> -->
         </div>
     </div>
 </section>
@@ -178,20 +180,16 @@
                     <!-- <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div> -->
                 </div>
                 <div class="swiper-wrapper py-5">
-                    <?php
-
-                    for ($i = 0; $i < 6; $i++) {
-                    ?>
-                        <div class="swiper-slide cey-testamonial-card">
-                            <h4 class="pb-4">TESTAMONIALS</h4>
-                            <p class="text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                            <p class="pt-3">- Miss Sunila Kulathunga</p>
-
-                        </div>
-                    <?php
-                    }
-
-                    ?>
+                    <div class="swiper-slide cey-testamonial-card">
+                        <h4 class="pb-4">TESTAMONIALS</h4>
+                        <p class="text-center">Love the collection, keep up the great service. Appreciate l👍👍👍</p>
+                        <p class="pt-3">- Umanga de Zoysa</p>
+                    </div>
+                    <div class="swiper-slide cey-testamonial-card">
+                        <h4 class="pb-4">TESTAMONIALS</h4>
+                        <p class="text-center">Good quality and stunning looks 👍</p>
+                        <p class="pt-3">- Wathsala Gunawardana</p>
+                    </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
