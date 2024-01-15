@@ -109,11 +109,16 @@ class Product extends Api
         if (!floatval($price)) {
             return (object)["status" => "failed", "error" => "invalid price"];
         }
-
+        
         $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" .  $category . "' ")[0]["category_id"];
         $subCategoryId = $this->getData("SELECT * FROM `sub_categories` WHERE `sub_category` ='" .  $subCategories . "' ")[0]["sub_categories_id"];
-        var_dump($categoryId);
-        var_dump($subCategoryId);
+        if ($categoryId === null) {
+            return (object)["status" => "failed", "error" => "invalid Category"];
+        }
+        if ($subCategoryId === null) {
+            return (object)["status" => "failed", "error" => "invalid Sub Category"];
+        }
+
         return (object)["status" => "success"];
         $id = mt_rand(000000, 999999);
         $this->updateData("INSERT INTO `product` 
