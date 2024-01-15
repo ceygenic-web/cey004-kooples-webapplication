@@ -83,7 +83,7 @@ function loadRelatedProduct() {
           swiperSlideUI += `
             <div class="swiper-slide pp-s2-card cey-product-item-card cey-shadow-light">
                 <img style="object-fit: cover" src="${SERVER_URL}${product.images[0].filename}" height="100%" width="100%">
-                <div class="position-absolute pp-s2-card-backdrop"></div>
+                <div onclick="toProduct('${product.product_id}')" class="card-backdrop"></div>
                 <div class="content">
                     <h6 class="fw-bold">${product.title}</h6>
                     <p>${minimizedDescription}</p>

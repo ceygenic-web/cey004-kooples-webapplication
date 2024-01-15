@@ -70,7 +70,8 @@ function loadLatestCollection() {
         const imageName = element.images[0].filename;
         container.innerHTML += `
                 <div class="swiper-slide cey-product-item-card cey-shadow-light">
-                    <img src="${SERVER_URL}${imageName}" height="100%" width="100%" onclick="toProduct('${element.product_id}')">
+                    <img src="${SERVER_URL}${imageName}" height="100%" width="100%">
+                    <div onclick="toProduct('${element.product_id}')" class="card-backdrop"></div>
                     <div class="content">
                         <h6 class="fw-bold">${element.title}</h6>
                         <p>${minmizedDescription}</p>
