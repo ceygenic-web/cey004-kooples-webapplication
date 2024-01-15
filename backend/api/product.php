@@ -124,7 +124,6 @@ class Product extends Api
         }
 
         $id = mt_rand(000000, 999999);
-        return (object)["status" => "success"];
         $this->updateData("INSERT INTO `product` 
                                     (`product_id`,`category_category_id`, `title`, `description`, `price`, `sub_categories_sub_categories_id`, `other_data`) 
                                     VALUES (?,?,?,?,?,?,?)", "sisssss", array($id, $categoryId, $title, $description, $price, $subCategoryId, $other_data));
