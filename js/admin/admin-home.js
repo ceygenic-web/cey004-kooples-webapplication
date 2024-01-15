@@ -147,7 +147,7 @@ function addProduct() {
     requestForm.append(index, file);
   });
 
-  for (const [key, value] of formData.entries()) {
+  for (const [key, value] of requestForm.entries()) {
     console.log(`${key}: ${value}`);
   }
 
