@@ -123,16 +123,19 @@ class Product extends Api
             return (object)["status" => "failed", "error" => "invalid Sub Category"];
         }
 
-        $id = mt_rand(000000, 999999);
+        $id = mt_rand(100000, 999999);
         $this->updateData("INSERT INTO `product` 
                                     (`product_id`,`category_category_id`, `title`, `description`, `price`, `sub_categories_sub_categories_id`, `other_data`) 
                                     VALUES (?,?,?,?,?,?,?)", "sisssss", array($id, $categoryId, $title, $description, $price, $subCategoryId, $other_data));
+
+        $uploadedImageCount = 0;
         foreach ($images as $key => $value) {
             $fileName = "resources/images/products/$id-image-$key.jpeg";
             move_uploaded_file($value["tmp_name"], __DIR__ . "/../../$fileName");
             $this->updateData("INSERT INTO `product_images` (`filename`, `product_product_id`) VALUES ('$fileName', '$id') ");
+            $uploadedImageCount++;
         }
-        return (object)["status" => "success"];
+        return (object)["status" => "success", "results" => $uploadedImageCount];
     }
 
     public function update()
