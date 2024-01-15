@@ -46,7 +46,7 @@ function searchProduct(search = "", category = "") {
     if (data.status == "success") {
       data.results.forEach((element) => {
         let minmizedDescription =
-          element.description.split(" ").slice(0, 10).join(" ") + "...";
+          element.description.split(" ").slice(0, 7).join(" ") + "...";
         container.innerHTML += `
                   <div class="shop-product-card col-12 col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center mt-2">
                         <div class="shop-product-card-container w-100 cey-shadow-light position-relative">
@@ -56,6 +56,7 @@ function searchProduct(search = "", category = "") {
                             <!-- <button class="cey-btn-box"><span class="me-3">CART</span> <i class="bi-cart"></i></button> -->
                             <button onclick="toPage('purchase?productId=${element.product_id}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
                           </div>
+                          <div onclick="toProduct('${element.product_id}')" style="translate: 0 0;" class="card-backdrop"></div>
                           <img src="${SERVER_URL}${element.images[0]["filename"]}" height="100%" width="100%" onclick="toProduct('${element.product_id}')">
                         </div>
                   </div>

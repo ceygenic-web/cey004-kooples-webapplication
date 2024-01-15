@@ -77,6 +77,7 @@
   color: var(--white);
   bottom: 0;
   z-index: 20;
+  line-height: 18px;
 }
 
 @media (max-width: 767px) {
