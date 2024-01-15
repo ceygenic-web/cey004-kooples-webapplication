@@ -112,6 +112,9 @@ class Product extends Api
 
         $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" .  $category . "' ")[0]["category_id"];
         $subCategoryId = $this->getData("SELECT * FROM `sub_categories` WHERE `sub_category` ='" .  $subCategories . "' ")[0]["sub_categories_id"];
+        var_dump($categoryId);
+        var_dump($subCategoryId);
+        return (object)["status" => "success"];
         $id = mt_rand(000000, 999999);
         $this->updateData("INSERT INTO `product` 
                                     (`product_id`,`category_category_id`, `title`, `description`, `price`, `sub_categories_sub_categories_id`, `other_data`) 
