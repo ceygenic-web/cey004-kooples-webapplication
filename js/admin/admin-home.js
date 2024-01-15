@@ -146,6 +146,9 @@ function addProduct() {
   imagesArray.forEach((file, index) => {
     requestForm.append(index, file);
   });
+
+  console.log(requestForm);
+  return;
   sendRequest("/api/product/add", "POST", requestForm, {}, true, (data) => {
     try {
       if (data.status == "success") {
