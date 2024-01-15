@@ -148,9 +148,10 @@ class Product extends Api
             }
 
             foreach ($images as $value) {
-                unlink($value["filename"]);
-                $imageId = $value['product_images_id'];
-                $this->updateData("DELETE FROM `product_images` WHERE `product_images_id`='$imageId'");
+                if (unlink($value["filename"])) {
+                    $imageId = $value['product_images_id'];
+                    $this->updateData("DELETE FROM `product_images` WHERE `product_images_id`='$imageId'");
+                };
             }
 
             $this->updateData("DELETE FROM `product` WHERE `product_id`='$id'");
