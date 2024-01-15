@@ -150,7 +150,7 @@ class Product extends Api
             foreach ($images as $value) {
                 if (unlink($value["filename"])) {
                     $imageId = $value['product_images_id'];
-                    $this->updateData("DELETE FROM `product_images` WHERE `product_id`='$imageId'");
+                    $this->updateData("DELETE FROM `product_images` WHERE `product_product_id`='$imageId'");
                 };
             }
 
