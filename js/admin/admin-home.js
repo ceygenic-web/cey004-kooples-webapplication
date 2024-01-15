@@ -17,7 +17,6 @@ function loadPanels() {
       {},
       true,
       (data) => {
-        console.log(data);
         let container = document.getElementById("product");
         if (data.status == "success") {
           container.innerHTML += data.results;
@@ -148,13 +147,18 @@ function addProduct() {
     requestForm.append(index, file);
   });
   sendRequest("/api/product/add", "POST", requestForm, {}, true, (data) => {
-    if (data.status == "success") {
-      alert("success");
-      window.location.reload();
-    } else if (data.status == "failed") {
-      alert(data.error);
-    } else {
-      alert("Something went worng");
+    try {
+      if (data.status == "success") {
+        alert("success");
+        window.location.reload();
+      } else if (data.status == "failed") {
+        alert(data.error);
+      } else {
+        alert("Something went worng");
+        console.log(data);
+      }
+    } catch (error) {
+      console.error(error);
       console.log(data);
     }
   });
