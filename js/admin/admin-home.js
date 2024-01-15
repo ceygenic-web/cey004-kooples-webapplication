@@ -146,27 +146,22 @@ function addProduct() {
   imagesArray.forEach((file, index) => {
     requestForm.append(index, file);
   });
+  sendRequest("/api/product/add", "POST", requestForm, {}, false, (data) => {
+    console.log(data);
 
-  for (const [key, value] of requestForm.entries()) {
-    console.log(`${key}: ${value}`);
-  }
-
-  return;
-  sendRequest("/api/product/add", "POST", requestForm, {}, true, (data) => {
-    try {
-      if (data.status == "success") {
-        alert("success");
-        window.location.reload();
-      } else if (data.status == "failed") {
-        alert(data.error);
-      } else {
-        alert("Something went worng");
-        console.log(data);
-      }
-    } catch (error) {
-      console.error(error);
-      console.log(data);
-    }
+    // try {
+    //   if (data.status == "success") {
+    //     alert("success");
+    //     window.location.reload();
+    //   } else if (data.status == "failed") {
+    //     alert(data.error);
+    //   } else {
+    //     alert("Something went worng");
+    //     console.log(data);
+    //   }
+    // } catch (error) {
+    //   console.log(data);
+    // }
   });
 }
 
