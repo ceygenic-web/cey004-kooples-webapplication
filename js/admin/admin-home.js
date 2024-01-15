@@ -147,7 +147,8 @@ function addProduct() {
     requestForm.append(index, file);
   });
 
-  console.log(requestForm);
+  console.log(requestForm.keys());
+  console.log(requestForm.values());
   return;
   sendRequest("/api/product/add", "POST", requestForm, {}, true, (data) => {
     try {
