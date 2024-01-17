@@ -157,7 +157,7 @@
     <div class="container d-flex justify-content-center py-4">
         <!-- <video loop height="678" src="../../resources/video/main.mp4" autoplay></video> -->
         <div style="position: relative; height: 400px; width: 100%;" class="overflow-hidden">
-            <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/s4M-Zwom93Y?si=1oH6eCYqxuzUvkbE&rel=0&version=3&mute=1&autoplay=1&controls=0&&showinfo=0&loop=1&iv_load_policy=3&playlist=s4M-Zwom93Y" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>
+            <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/i0sUNC8Bylg?si=yEnvZ21On6fkD82f&rel=0&version=3&mute=1&autoplay=1&controls=0&&showinfo=0&loop=1&iv_load_policy=3&playlist=i0sUNC8Bylg" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>
             <!-- <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/QTdl4LazLdI?si=nTtt-VfpUHzTMwpE&rel=0?version=3&autoplay=1&controls=0&&showinfo=0&modestbranding=1&color=white" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe> -->
             <div style="position: absolute; background-color: transparent;width: 100%; height: 100%; top: 0; left: 0;"></div>
             <!-- <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" id="ytplayer" type="text/html" width="720" height="405" src="https://www.youtube.com/embed/lpeuIu-ZYJY?autoplay=1&mute=1&controls=0&disablekb=1&fs=0&loop=1&modestbranding=1&color=white&rel=0?version=3&autoplay=1&controls=0&&showinfo=0&loop=1" frameborder="0"> -->
