@@ -100,7 +100,7 @@
 </section>
 
 <!-- section 5 - promotion -->
-<section class="lp-s5 cey-bg-white">
+<!-- <section class="lp-s5 cey-bg-white">
     <div class="container py-5">
         <h3 class="cey-main-font">PROMOTION</h3>
         <div class="d-flex flex-column flex-md-row w-100">
@@ -108,7 +108,7 @@
             <button class="lp-s5-shop-btn cey-bg-dark cey-text-white">SHOP NOW</button>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- section 6 - blogs -->
 <!-- <section class="lp-s5 cey-bg-dark">

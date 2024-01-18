@@ -64,6 +64,10 @@
   cursor: pointer;
 }
 
+.lp-card-img {
+  object-fit: contain;
+}
+
 /* section 3 - category pallete section */
 .lp-s4 h3 {
   color: var(--white);
