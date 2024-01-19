@@ -34,7 +34,7 @@ const buildProductPageS1SwiperInitiator = () => {
 
 const buildProductPageS2Swiper = (perView, space) => {
   const swiper = new Swiper(".mySwiper", {
-    // direction: "vertical",
+    direction: "vertical",
     loop: true,
     spaceBetween: 0,
     slidesPerView: 4,
@@ -45,7 +45,17 @@ const buildProductPageS2Swiper = (perView, space) => {
   const tumbs = new Swiper(".mySwiper2", {
     loop: true,
     spaceBetween: 0,
-    // direction: "vertical",
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: [0, 0, -400],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },
+    direction: "vertical",
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",

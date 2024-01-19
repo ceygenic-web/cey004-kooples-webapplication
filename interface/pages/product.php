@@ -13,8 +13,43 @@
         </div>
         <div class=" d-flex flex-lg-row flex-column py-4 gap-3">
             <div class="pp-s1-swiper col-12 col-lg-6">
+                <div thumbsSlider="" class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="productThumbSwiperContainer">
+                        <!-- <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                        </div> -->
+                    </div>
+                </div>
+
                 <!-- Swiper -->
-                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2 cey-bg-dark">
+                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
                     <div class="swiper-wrapper" id="productMainSwiperContainer">
                         <!-- <div class="swiper-slide">
                             <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
@@ -49,40 +84,6 @@
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
-                </div>
-                <div thumbsSlider="" class="swiper mySwiper cey-bg-dark">
-                    <div class="swiper-wrapper" id="productThumbSwiperContainer">
-                        <!-- <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                        </div> -->
-                    </div>
                 </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column justify-content-between" id="mainProductContainer">
