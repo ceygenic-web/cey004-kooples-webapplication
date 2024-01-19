@@ -65,7 +65,8 @@
 }
 
 .lp-card-img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* section 3 - category pallete section */

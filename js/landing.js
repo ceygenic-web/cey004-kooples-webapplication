@@ -69,7 +69,7 @@ function loadLatestCollection() {
           element.description.split(" ").slice(0, 10).join(" ") + "...";
         const imageName = element.images[0].filename;
         container.innerHTML += `
-                <div class="swiper-slide cey-product-item-card cey-shadow-light">
+                <div class="swiper-slide cey-product-item-card cey-shadow-light cey-cursor-pointer">
                     <img class="lp-card-img" src="${SERVER_URL}${imageName}" height="100%" width="100%">
                     <div onclick="toProduct('${element.product_id}')" class="card-backdrop"></div>
                     <div class="content">
