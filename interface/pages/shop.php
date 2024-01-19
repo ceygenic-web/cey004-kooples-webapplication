@@ -1,9 +1,9 @@
 <!-- section 1 - product category banner -->
-<section class="sp-s1 cey-bg-darker">
+<!-- <section class="sp-s1 cey-bg-darker">
     <div class="h-100 container d-flex justify-content-center align-items-center">
-
+        <h2 class="fs-1 fw-bold cey-text-white">SHOP</h2>
     </div>
-</section>
+</section> -->
 
 <!-- section 2 - Search bar -->
 <section class="sp-s2 cey-bg-dark p-2">
@@ -42,7 +42,7 @@
         }
         ?>
     </div>
-    
+
     <!-- <div class="sp-s3-pagination-container d-flex justify-content-center py-4">
         <div class="cey-bg-primary-light d-flex">
             <div class="px-2 py-1 cey-text-white cey-bg-dark">B</div>
