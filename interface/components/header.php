@@ -54,9 +54,9 @@
     <nav class="secondary-navbar">
         <div class="container d-flex justify-content-md-between  justify-content-center">
             <div class="secondary-navbar-notice">
-                <div id="secondaryNavbarNotice">
+                <!-- <div id="secondaryNavbarNotice">
                     some text content will be loaded here....
-                </div>
+                </div> -->
                 <i class="bi bi-caret-right"></i>
             </div>
             <div class="gap-3 d-none d-md-flex">

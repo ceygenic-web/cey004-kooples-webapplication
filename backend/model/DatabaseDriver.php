@@ -7,6 +7,11 @@ class DatabaseDriver
     // Constructor that takes in connection details and establishes a connection to the database
     public function __construct()
     {
+        $this->createConnection();
+    }
+
+    private function createConnection()
+    {
         $host = DB_SERVER;
         $user = DB_USERNAME;
         $password = DB_PASSWORD; // janith
@@ -55,6 +60,8 @@ class DatabaseDriver
         // Return the result object
         return $result;
     }
+
+    
 
     // Destructor that closes the database connection
     public function __destruct()
