@@ -1,4 +1,4 @@
-  // project bias ui component builder JS framework
+// project bias ui component builder JS framework
 // Product details component builder
 function productDataUpdater(
   id,
@@ -117,9 +117,13 @@ function secondaryContainerBuilder(data, container) {
       if (sectionCount > 0) {
         section += `<hr />`;
       }
+
+      const subSectionsTitles = key
+        .toLowerCase()
+        .replace(/\b\w/g, (char) => char.toUpperCase());
       section += `
         <div class="mb-4 border-bottom border-3">
-            <h5 class="fw-bold">${key}</h5>
+            <h5 class="fw-bold">${subSectionsTitles}</h5>
             <div>
                 ${element}
             </div>
