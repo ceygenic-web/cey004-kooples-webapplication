@@ -28,7 +28,7 @@
   height: 100%;
   display: block;
   object-fit: contain;
-  border: rgba(0, 0, 0, 0.07) .5px solid;
+  border: rgba(0, 0, 0, 0.07) 0.5px solid;
   backdrop-filter: rgba(0, 0, 0, 0.132) 7px 7px 20px;
 }
 
@@ -67,5 +67,10 @@
   /* section 1 - product description */
   .pp-s1-swiper {
     height: 400px;
+  }
+
+  .mySwiper2 {
+    height: 375px;
+    width: 300px;
   }
 }
