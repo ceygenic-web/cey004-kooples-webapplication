@@ -90,7 +90,6 @@ function mainContainerBuilder(data, container) {
       <div class="mb-4">${specialSection}</div>
     </div>
     <div class="d-flex flex-column">
-      <hr>
       <div class="my-4">
             <span class="py-2 px-3 cey-bg-darker cey-text-white">${data.price} LKR</span>
         </div>

@@ -149,3 +149,43 @@ function compressImage(imageFile, quality = 0.5) {
     };
   });
 }
+
+/**
+ * model builder
+ */
+
+class UIModel {
+  constructor() {
+    this.model = new bootstrap.Modal("#UIModel");
+  }
+
+  /**
+   * open UI model
+   *
+   */
+  openModel(modelTitle = null, modelBody = null, modelFooter = null) {
+    this.model.show();
+    modelTitle
+      ? (document.getElementById("modelTitle").innerText = modelTitle)
+      : null;
+
+    modelBody
+      ? modelBody instanceof Element
+        ? document.getElementById("modelBody").appendChild(modelBody)
+        : (document.getElementById("modelBody").innerHTML = modelBody)
+      : null;
+
+    modelFooter
+      ? modelBody instanceof Element
+        ? document.getElementById("modelFooter").appendChild(modelFooter)
+        : (document.getElementById("modelFooter").innerHTML = modelFooter)
+      : null;
+  }
+
+  /**
+   * close openned model
+   */
+  closeModel() {
+    this.model.hide();
+  }
+}

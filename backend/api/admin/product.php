@@ -12,7 +12,7 @@ class Product extends AdminApi
         $this->function = ($apiCall[3]) ?? null;
     }
 
-    public  function callFunction(): mixed
+    public function callFunction(): mixed
     {
         if ($this->function) {
             switch ($this->function) {

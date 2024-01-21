@@ -140,17 +140,81 @@ class Product extends Api
 
     public function update()
     {
-        if (RequestHandler::isPostMethod()) {
-            $id = $_POST["id"];
-            $title = $_POST["title"];
-            $description = $_POST["description"];
-            $category = $_POST["category"];
-            $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" . $category . "' ")[0]["category_id"];
-            $this->updateData("UPDATE `product` SET `category_category_id`=?, `title`=?, `description`=? WHERE `product_id`=$id", "iss", array($categoryId, $title, $description));
-            return (object)["status" => "success"];
+        if (!RequestHandler::isPostMethod()) {
+            return (object)["status" => "failed", "error" => "invalid request method"];
         }
-        return (object)["status" => "failed", "error" => "invalid request"];
+
+        if (RequestHandler::postMethodHasError("id")) {
+            return (object)["status" => "failed", "error" => "Product ID is not provided"];
+        }
+
+
+        // set the update query
+        $updateQuery = "UPDATE `product` SET ";
+        $queryDataTypes = "";
+        $queryData = [];
+
+        $isFirstCollumSet = false;
+
+        if ($title  = $_POST["title"] ?? null) {
+            $updateQuery .= " `title`= ? ";
+            $queryDataTypes .= "s";
+            array_push($queryData, $title);
+            $isFirstCollumSet = true;
+        }
+
+        if ($description = $_POST["description"] ?? null) {
+            $updateQuery .= ($isFirstCollumSet) ? ", `description`= ? " : " `description`= ? ";
+            $queryDataTypes .= "s";
+            array_push($queryData, $description);
+            $isFirstCollumSet = true;
+        };
+
+        if ($price = $_POST["price"] ?? null) {
+            $updateQuery .=  ($isFirstCollumSet) ? ", `price`= ? " : " `price`= ? ";
+            $queryDataTypes .= "s";
+            array_push($queryData, $price);
+            $isFirstCollumSet = true;
+        };
+
+        if ($categoryId = $_POST["category_id"] ?? null) {
+            $categoryFromDb = $this->getData("SELECT * FROM `category` WHERE `category_id`=? ", "i", [$categoryId]);
+            if (count($categoryFromDb) == 0) {
+                return (object)["status" => "failed", "error" => "Invalid Category Id"];
+            }
+
+            $updateQuery .= ($isFirstCollumSet) ?  ", `category_category_id`= ? " : " `category_category_id`= ? ";
+            $queryDataTypes .= "i";
+            array_push($queryData, $categoryId);
+            $isFirstCollumSet = true;
+        }
+
+
+        if ($subCategoryId = $_POST["sub_category"] ?? null) {
+            $subCategoryFromDb = $this->getData("SELECT * FROM `sub_categories` WHERE `sub_categories_id`=? ", "i", [$subCategoryId]);
+            if (count($subCategoryFromDb) == 0) {
+                return (object)["status" => "failed", "error" => "Invalid Sub Category Id"];
+            }
+
+            $updateQuery .= ($isFirstCollumSet) ? ", `sub_categories_sub_categories_id`= ? " : " `sub_categories_sub_categories_id`= ? ";
+            $queryDataTypes .= "i";
+            array_push($queryData, $subCategoryId);
+            $isFirstCollumSet = true;
+        }
+
+        // set where clueue 
+        $updateQuery .= " WHERE `product_id` = ? ";
+        $queryDataTypes .= "i";
+        array_push($queryData, $_POST["id"]);
+
+        try {
+            $this->updateData($updateQuery, $queryDataTypes, $queryData);
+        } catch (\Throwable $th) {
+            return (object)["status" => "failed", "error" => "Something Went Wrong at Database Level!"];
+        }
+        return (object)["status" => "success"];
     }
+
 
     public function delete()
     {
