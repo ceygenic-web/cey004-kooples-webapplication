@@ -40,3 +40,16 @@ const toProduct = (query = null) => {
 const toPage = (page) => {
   window.location.href = page;
 };
+
+// discount card UI component
+function discountUIComponent(price, discount) {
+  // discount component
+  let newPrice = price - (price / 100) * discount;
+  let priceComponent = ``;
+  if (discount > 0 && discount < 100) {
+    priceComponent += `<span class="fs-6 text-decoration-line-through text-secondary">${price} LKR</span> <span class="cey-text-primary fs-5 fw-bold"> ${newPrice} LKR</span>`;
+  } else {
+    priceComponent += `<span class="fs-5 fw-bold cey-text-primary">${price} LKR</span>`;
+  }
+  return priceComponent;
+}
