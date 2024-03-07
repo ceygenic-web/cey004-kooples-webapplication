@@ -67,6 +67,13 @@ function loadLatestCollection() {
       data.results.forEach((element) => {
         let minmizedDescription =
           element.description.split(" ").slice(0, 10).join(" ") + "...";
+
+        // discount UI
+        let priceComponent = discountUIComponent(
+          element.price,
+          element.discount
+        );
+
         const imageName = element.images[0].filename;
         container.innerHTML += `
                 <div class="swiper-slide cey-product-item-card cey-shadow-light cey-cursor-pointer">
@@ -75,7 +82,7 @@ function loadLatestCollection() {
                     <div class="content">
                         <h6 class="fw-bold">${element.title}</h6>
                         <p>${minmizedDescription}</p>
-                        <button onclick="toPage('purchase?product=${element.title}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
+                        <span>${priceComponent}</span>
                     </div>
                 </div>
               `;
