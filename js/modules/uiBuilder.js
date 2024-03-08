@@ -79,6 +79,9 @@ function mainContainerBuilder(data, container) {
   //   }
   // }
 
+  // discount UI section
+  const discountUIComp = discountUIComponent(data.price, data.discount);
+
   component = `
     <div class="d-flex flex-column">
       <div class="mb-4 border-3">
@@ -91,7 +94,7 @@ function mainContainerBuilder(data, container) {
     </div>
     <div class="d-flex flex-column">
       <div class="my-4">
-            <span class="py-2 px-3 cey-bg-darker cey-text-white">${data.price} LKR</span>
+            <span class="py-2 px-3 cey-bg-darker cey-text-white">${discountUIComp}</span>
         </div>
       <p class="cey-text-primary">Payments will be handles via whatsapp! Payment gates will be implimented soon</p>
       <div class="d-flex gap-2">

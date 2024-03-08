@@ -92,6 +92,13 @@ function loadRelatedProduct() {
         data.results.forEach((product) => {
           const minimizedDescription =
             product.description.split(" ").slice(0, 10).join(" ") + "...";
+
+          // discount UI
+          let priceComponent = discountUIComponent(
+            product.price,
+            product.discount
+          );
+
           swiperSlideUI += `
             <div class="swiper-slide pp-s2-card cey-product-item-card cey-shadow-light">
                 <img style="object-fit: cover" src="${SERVER_URL}${product.images[0].filename}" height="100%" width="100%">
@@ -99,7 +106,7 @@ function loadRelatedProduct() {
                 <div class="content">
                     <h6 class="fw-bold">${product.title}</h6>
                     <p>${minimizedDescription}</p>
-                    <button onclick="toPage('purchase?productId=${product.product_id}')" class="cey-btn-box"><span class="me-3">PURCHASE</span> <i class="bi-cart"></i></button>
+                    <span>${priceComponent}</span>
                 </div>
             </div>
           `;
