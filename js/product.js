@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "secondaryProductContainer",
     buildProductPageS1SwiperInitiator
   );
+
+  // meta
+  fbq("track", "Purchase", { currency: "USD", value: 30.0 });
 });
 
 const buildProductPageS1SwiperInitiator = () => {
