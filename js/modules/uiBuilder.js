@@ -98,7 +98,7 @@ function mainContainerBuilder(data, container) {
         </div>
       <p class="cey-text-primary">Payments will be handles via whatsapp! Payment gates will be implimented soon</p>
       <div class="d-flex gap-2">
-        <button onclick="toPage('purchase?productId=${data.product_id}&name=${data.title}');" class="col-6 cey-btn-box fw-bold">PURCHASE</button>
+        <button onclick="toPage('purchase?productId=${data.product_id}&name=${data.title}'); triggerMetaPurchase(${data.price});" class="col-6 cey-btn-box fw-bold">PURCHASE</button>
         <button class="col-6 cey-bg-darker cey-text-white fw-bold">ADD TO WATCH LIST</button>
       </div>
     </div>

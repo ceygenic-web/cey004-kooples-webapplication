@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     buildLandingPageS3SwiperInitiator();
   });
+
+  setTimeout(() => {
+    fbq("track", "PageView");
+  }, 500);
 });
 
 const buildLandingPageS3SwiperInitiator = () => {
