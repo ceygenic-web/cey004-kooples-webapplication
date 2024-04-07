@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   // meta
-  fbq("track", "Purchase", { currency: "USD", value: 30.0 });
+  setTimeout(() => {
+    fbq("track", "PageView");
+  }, 500);
 });
 
 const buildProductPageS1SwiperInitiator = () => {
@@ -126,4 +128,9 @@ function loadRelatedProduct() {
       }
     }
   );
+}
+
+// meta purchase triiger
+function triggerMetaPurchase(price) {
+  fbq("track", "Purchase", { currency: "LKR", value: price });
 }
