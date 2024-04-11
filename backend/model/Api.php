@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . "/../model/DataValidator.php");
-require_once(__DIR__ . "/../model/SessionManager.php");
+require_once(__DIR__ . "../model/SessionManager.php");
 
 class Api
 {
