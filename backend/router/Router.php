@@ -56,6 +56,18 @@ final class Router extends Controller
                 $this->view("purchase", "Kooples Sri Lanka | Purchase", ["purchase"], []);
                 break;
 
+            case 'terms-and-conditions':
+                $this->view("terms-&-condition", "Kooples Sri Lanka | T&C", [], []);
+                break;
+
+            case 'refund-policy':
+                $this->view("refund-policy", "Kooples Sri Lanka | Refund and Returns", [], []);
+                break;
+
+            case 'privacy-policy':
+                $this->view("privacy-policy", "Kooples Sri Lanka | Privacy", [], []);
+                break;
+
             default:
                 $this->view("404", "Kooples Sri Lanka | 404 Not found");
                 break;
