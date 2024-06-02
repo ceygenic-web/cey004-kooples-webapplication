@@ -22,8 +22,9 @@
             <hr class="footer-hr">
         </div>
         <div class="w-100 gap-lg-3 gap-md-3 footer-terms">
-            <div>Terms & Condition</div>
-            <div>Privacy Policy</div>
+            <a class="cey-text-white" href="/terms-and-conditions">Terms & Condition</a>
+            <a class="cey-text-white" href="/privacy-policy">Privacy Policy</a>
+            <a class="cey-text-white" href="/refund-policy">Refund and Return Policy</a>
         </div>
         <div class="w-md-100 footer-social-icons d-flex flex-column justify-content-between">
 
