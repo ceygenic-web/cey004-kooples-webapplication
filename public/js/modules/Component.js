@@ -17,11 +17,11 @@ class Component {
       return false;
     }
     const designHtml = await response.text();
+    console.log(designHtml);
     await this.createComponent(designHtml, this.callback);
   }
 
   async createComponent(compoenntHtml, compoennUpdateCallback) {
-    console.log(designHtml);
     await compoennUpdateCallback(this.createDOMbyHTML(compoenntHtml));
   }
 
