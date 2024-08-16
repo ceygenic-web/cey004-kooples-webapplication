@@ -28,7 +28,6 @@ class Router extends Controller
               // find the URL paths have a api
               if ($this->urlPaths[0] === 'api') {
                      array_shift($this->urlPaths);
-                     var_dump($this->urlPaths);
                      $this->callApi($this->urlPaths);
               } else if ($this->urlPaths[0] === 'comp') {
                      array_shift($this->urlPaths);
@@ -47,6 +46,7 @@ class Router extends Controller
               //upper case first character url path
               $API = ucfirst(($URLPath[0]) ?? null);
               // check if file path is exist
+              var_dump($API);
               if (file_exists($filePath = $this->apiPath . $API . ".php")) {
                      require_once $filePath;
                      array_shift($URLPath);
