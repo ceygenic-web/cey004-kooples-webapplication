@@ -29,7 +29,9 @@ class Api extends Controller
        {
               $process = array_shift($this->apiPath);
               $callBackMethod = array($object, $process);
+              var_dump($callBackMethod);
               if (is_callable($callBackMethod)) {
+                     var_dump("can");
                      $response = call_user_func($callBackMethod, $this->apiPath);
                      global $IS_RESPONSE_TEXT;
                      if (true === $IS_RESPONSE_TEXT) {
@@ -38,6 +40,7 @@ class Api extends Controller
                             $this->sendJson($response);
                      }
               } else {
+                     var_dump("can't");
                      $this->sendJson(self::response(2, API_404_MESSAGE));
               }
        }
