@@ -3,7 +3,7 @@
 date_default_timezone_set('Asia/Colombo');
 
 // server config
-define("ROOT", "http://dev.kooplesclothing.com/public/");
+define("ROOT", "https://dev.kooplesclothing.com/public/");
 define("SESSION_VARIABLE_ADMIN", "cey004_admin");
 define("SESSION_VARIABLE_USER", "cey004_user");
 
