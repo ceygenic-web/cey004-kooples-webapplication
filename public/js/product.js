@@ -93,7 +93,7 @@ const loadRelatedProducts = () => {
   relatedProductContainer.innerHTML = "";
 
   for (let x = 1; x <= 5; x++) {
-    new Component("product-card", async (comp) => {
+    new Component("productcard", async (comp) => {
       comp.querySelector(
         ".product-card"
       ).style.backgroundImage = `url('/public/resources/images/products/product-${x}.jpg')`;
