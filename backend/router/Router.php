@@ -46,13 +46,13 @@ class Router extends Controller
               //upper case first character url path
               $API = ucfirst(($URLPath[0]) ?? null);
               // check if file path is exist
-              var_dump($API);
               if (file_exists($filePath = $this->apiPath . $API . ".php")) {
                      require_once $filePath;
                      array_shift($URLPath);
                      //create a related api object
                      new $API($URLPath);
               } else {
+                     var_dump("failed!");
                      $this->sendJson(self::response(2, API_404_MESSAGE));
               }
        }
