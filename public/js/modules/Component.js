@@ -13,6 +13,11 @@ class Component {
     const response = await fetch(
       "/public/view/component/custom/" + this.compoenntName + ".comp.php"
     );
+
+    console.log(
+      "/public/view/component/custom/" + this.compoenntName + ".comp.php"
+    );
+
     if (!response.ok) {
       return false;
     }
