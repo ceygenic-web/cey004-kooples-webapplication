@@ -1,0 +1,122 @@
+/* section 2 - brand  values */
+.aup-s2-values {
+  z-index: 100;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  height: 250px;
+  font-size: 64px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aup-s2-values span {
+  font-family: var(--main-font);
+  z-index: 200;
+}
+
+.aup-s2-values::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.25;
+}
+
+/* section 3 - introduction section */
+.aup-s3-content {
+  max-width: 700px;
+  min-width: 300px;
+  color: var(--white);
+  font-size: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-weight: bold;
+}
+
+/* section 5 - our story */
+.aup-s5 {
+  z-index: 100;
+  height: 400px;
+  background-image: url("../resources/images/category2.jpg");
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  position: relative;
+  filter: saturate(0);
+  -webkit-filter: saturate(0);
+}
+
+.aup-s5::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--dark);
+  opacity: 40%;
+}
+
+.aup-s5-title {
+  z-index: 300;
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.aup-s5-description {
+  z-index: 300;
+  width: 600px;
+  text-align: center;
+}
+
+/* section 6 - delivery section */
+.aup-s6-box {
+  font-size: 128px;
+}
+
+.aup-s6-description {
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+@media (max-width: 1440px) {
+  /* section 2 - brand  values */
+  .aup-s2-values {
+    height: 150px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 425px) {
+  /* section 2 - brand  values */
+  .aup-s2-values {
+    font-size: 14px;
+    height: 70px;
+  }
+
+  /* section 5 - our story */
+  .aup-s5-title {
+    font-size: 32px;
+  }
+
+  .aup-s5-description {
+    width: 300px;
+    font-size: 12px;
+  }
+
+  /* section 6 - delivery section */
+  .aup-s6-box {
+    font-size: 64px;
+  }
+
+  .aup-s6-description {
+    font-size: 14px;
+  }
+}
