@@ -1,5 +1,5 @@
 // common js will goes here that are applicable for entire application
-const APIR = new APIRequestHandler("http://localhost:9001/");
+const APIR = new APIRequestHandler("https://dev.kooplesclothing.com/");
 
 const res = async () => {
   const formData = new FormData();
