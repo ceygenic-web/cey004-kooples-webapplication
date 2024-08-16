@@ -1,32 +1,32 @@
 <?php
 
-class Test
+/**
+ * @author : Janith Nirmal
+ * @description : this is the test API for system updates.
+ */
+
+// import statements
+require_once __DIR__ . '/../router/Api.php';
+require_once __DIR__ . '/../model/DatabaseBackupHandler.php';
+
+class Test extends Api
 {
+       public function __construct($apiPath)
+       {
+              //pares apiPath parent class constructor
+              parent::__construct($apiPath);
+              $this->init($this);
+       }
 
-    private mixed $function;
-
-    public function __construct(array $apiCall)
-    {
-        $this->function = ($apiCall[2]) ?? null;
-    }
-
-
-
-    public  function callFunction(): mixed
-    {
-        if ($this->function) {
-            switch ($this->function) {
-                case 'print':
-                    $test = null;
-                    return [var_dump($test), false];
-                    break;
-
-                default:
-                    return false;
-                    break;
-            }
-        } else {
-            return false;
-        }
-    }
+       //data method
+       protected function process()
+       {
+              // $operator = new DatabaseBackup($this->databaseDriver->connection, DB_DATABASE);
+              // $operator->createBackup();
+              $dbResults = $this->crudOperator->select("user", ["user_id" => 20]);
+              if (count($dbResults)) {
+                     return self::response(1, $dbResults);
+              }
+              return self::response(2, "no result found");
+       }
 }

@@ -1,240 +1,208 @@
 <?php
-require_once(__DIR__ . "/../model/Api.php");
-require_once(__DIR__ . "/../model/RequestHandler.php");
+
+/**
+ * @author : Janith Nirmal
+ * @description : This API handles requests for products related processes
+ */
+
+// import statements
+require_once __DIR__ . '/../router/Api.php';
+require_once __DIR__ . '/../api/Admin.php';
+require_once __DIR__ . '/../model/FileManger.php';
 
 class Product extends Api
 {
 
-    private mixed $function;
+       private Admin $admin;
 
-    public function __construct(array $apiCall)
-    {
-        $this->function = ($apiCall[2]) ?? null;
-    }
+       public function __construct($apiPath)
+       {
+              //pares apiPath parent class constructor
+              parent::__construct($apiPath);
+              $this->admin = new Admin([], false);
+              $this->init($this);
+       }
 
+       // add products data process
+       protected function add()
+       {
+              if (!self::isPostMethod())
+                     return self::response(2, INVALID_REQUEST_METHOD);
 
-
-    public function callFunction(): mixed
-    {
-        if ($this->function) {
-            switch ($this->function) {
-                case 'view':
-                    return [$this->view(($_SERVER["REQUEST_METHOD"] === "GET") ? $_GET : []), false];
-                    break;
-                case 'get-related':
-                    return [$this->getRelated(($_SERVER["REQUEST_METHOD"] === "GET") ? $_GET : []), false];
-                    break;
-
-                case 'add':
-                    return [$this->add(), true];
-                    break;
-
-                case 'update':
-                    return [$this->update(), true];
-                    break;
-
-                case 'delete':
-                    return [$this->delete(), true];
-                    break;
-
-                default:
-                    return false;
-                    break;
-            }
-        } else {
-            return false;
-        }
-    }
-
-    // load products details
-    public function view($params)
-    {
-        $query = "SELECT * FROM `product` 
-                    INNER JOIN `category` ON `product`.`category_category_id` = `category`.`category_id` 
-                    INNER JOIN `sub_categories` ON `product`.`sub_categories_sub_categories_id` = `sub_categories`.`sub_categories_id` ";
-        if (isset($params["id"]) && !empty($params["id"])) {
-            $query .= " WHERE `product`.`product_id` = '" . $params["id"] . "' ";
-        } else if ($params) {
-            $query .= (isset($params["search"])) ? " WHERE (`product`.`title` LIKE '%" . $params["search"] . "%' OR `product`.`description` LIKE '%" . $params["search"] . "%' OR `category`.`category` LIKE '%" . $params["search"] . "%') " : " ";
-            $query .= (isset($params["product"]) && !isset($params["search"])) ? " WHERE `product`.`product_id` = '" . $params["product"] . "' " : " ";
-            $query .= (isset($params["category"])  && !isset($params["search"])) ? " WHERE `category`.`category` = '" . $params["category"] . "' " : " ";
-            $query .= (isset($params["category"])  && isset($params["search"])) ? " AND `category`.`category` = '" . $params["category"] . "' " : " ";
-            $query .= (isset($params["limit"])) ? " LIMIT " . $params["limit"] . "  " : " ";
-        }
-        $results = $this->getData($query);
-
-        // get images
-        foreach ($results as $key => $value) {
-            $productId = $value['product_id'];
-            $results[$key]["images"] = $this->getData("SELECT * FROM `product_images` WHERE `product_product_id` = '$productId' ");
-        }
-        return (object)["status" => "success", "results" => $results];
-    }
-
-    public function getRelated($params)
-    {
-        $parameters["search"] = ($params["search"]) ?? null;
-        $parameters["limit"] = 4;
-        return $this->view($parameters);
-    }
+              if (!$this->admin->is_logged()) {
+                     return self::response(2, INVALID_ADMIN_ACCESS);
+              }
 
 
-    // add products to the server
-    public  function add()
-    {
-        if (!RequestHandler::isPostMethod()) {
-            return (object)["status" => "failed", "error" => "invalid request"];
-        }
+              $id = random_int(111111, 999999);
+              $title = $_POST["title"] ?? null;
+              $description = $_POST["description"] ?? null;
+              $promotion = $_POST["promotion"] ?? null;
+              $category = $_POST["category"] ?? null;
+              $images = $_FILES ?? null;
+              $addedTime = date("Y-m-d H:i:s");
 
-        $title = $_POST["title"];
-        $description = $_POST["description"];
-        $category = $_POST["category"];
-        $price = $_POST["price"];
-        $subCategories = $_POST["sub_category"];
-        $other_data = $_POST["other_data"];
-        $images = $_FILES;
+              // validation
+              $errors = $this->validateData([
+                     "text_255" => ["title" => $title, "description" => $description],
+                     "id_int" => ["category" => $category, "promotion" => $promotion]
+              ]);
+              if (is_array($errors))
+                     return self::response(3, $errors);
 
-
-        if (
-            (!isset($title) || empty($title)) ||
-            (!isset($description) || empty($description)) ||
-            (!isset($category) || empty($category)) ||
-            (!isset($subCategories) || empty($subCategories)) ||
-            (!isset($price) || empty($price)) ||
-            (!isset($other_data) || empty($other_data))
-        ) {
-            return (object)["status" => "failed", "error" => "Empty Input field!"];
-        }
-
-        if (!floatval($price)) {
-            return (object)["status" => "failed", "error" => "invalid price"];
-        }
-
-        if (count($images) === 0) {
-            return (object)["status" => "failed", "error" => "No Image Provided"];
-        }
-
-        $categoryId = $this->getData("SELECT * FROM `category` WHERE `category` ='" .  $category . "' ")[0]["category_id"];
-        $subCategoryId = $this->getData("SELECT * FROM `sub_categories` WHERE `sub_category` ='" .  $subCategories . "' ")[0]["sub_categories_id"];
-        if ($categoryId === null) {
-            return (object)["status" => "failed", "error" => "invalid Category"];
-        }
-        if ($subCategoryId === null) {
-            return (object)["status" => "failed", "error" => "invalid Sub Category"];
-        }
-
-        $id = mt_rand(100000, 999999);
-        $this->updateData("INSERT INTO `product` 
-                                    (`product_id`,`category_category_id`, `title`, `description`, `price`, `sub_categories_sub_categories_id`, `other_data`) 
-                                    VALUES (?,?,?,?,?,?,?)", "sisssss", array($id, $categoryId, $title, $description, $price, $subCategoryId, $other_data));
-
-        $uploadedImageCount = 0;
-        foreach ($images as $key => $value) {
-            $fileName = "resources/images/products/$id-image-$key.jpeg";
-            move_uploaded_file($value["tmp_name"], __DIR__ . "/../../$fileName");
-            $this->updateData("INSERT INTO `product_images` (`filename`, `product_product_id`) VALUES ('$fileName', '$id') ");
-            $uploadedImageCount++;
-        }
-        return (object)["status" => "success", "results" => $uploadedImageCount];
-    }
-
-    public function update()
-    {
-        if (!RequestHandler::isPostMethod()) {
-            return (object)["status" => "failed", "error" => "invalid request method"];
-        }
-
-        if (RequestHandler::postMethodHasError("id")) {
-            return (object)["status" => "failed", "error" => "Product ID is not provided"];
-        }
+              $duplicates = $this->dbCall("SELECT `product_id`, `product_title` FROM `product` WHERE `product_id` = $id OR `product_title` = ?", "s", [$title]);
+              if (count($duplicates) && $duplicates[0]["product_title"] === $title)
+                     return self::response(2, "Product Title is already in use!");
+              else if (count($duplicates) && $duplicates[0]["product_id"] === $id)
+                     return self::response(2, "Something went Wrong, Please Try Again!");
 
 
-        // set the update query
-        $updateQuery = "UPDATE `product` SET ";
-        $queryDataTypes = "";
-        $queryData = [];
+              // insert data to database
+              $this->crudOperator->insert("product", [
+                     "product_id" => $id,
+                     "product_title" => $title,
+                     "description" => $description,
+                     "promotion_promotion_id" => $promotion,
+                     "category_category_id" => $category,
+                     "product_status_product_status_id" => 1,
+                     "product_added_datetime" => $addedTime
+              ]);
+              //image uploading logic
+              if ($images) {
 
-        $isFirstCollumSet = false;
+                     foreach ($images as $key => $value) {
+                            //check if product has maximum five images
+                            $imageCount = $this->dbCall("SELECT COUNT(`product_product_id`) as `count` FROM `product_images` WHERE `product_product_id` = ?", "i", [$id]);
+                            if ($imageCount[0]["count"] >= 5) {
+                                   return self::response(2, "Product can have maximum 5 images");
+                            }
+                            $imageId = rand(111111, 999999);
 
-        if ($title  = $_POST["title"] ?? null) {
-            $updateQuery .= " `title`= ? ";
-            $queryDataTypes .= "s";
-            array_push($queryData, $title);
-            $isFirstCollumSet = true;
-        }
+                            $fileManger = new FileManger();
+                            $uploadFile = $fileManger->writeFile('./resources/images/products/', $imageId, $value);
+                            if ($uploadFile) {
+                                   $this->crudOperator->insert("product_images", [
+                                          "image_name" => $imageId,
+                                          "product_product_id" => $id,
 
-        if ($description = $_POST["description"] ?? null) {
-            $updateQuery .= ($isFirstCollumSet) ? ", `description`= ? " : " `description`= ? ";
-            $queryDataTypes .= "s";
-            array_push($queryData, $description);
-            $isFirstCollumSet = true;
-        };
-
-        if ($price = $_POST["price"] ?? null) {
-            $updateQuery .=  ($isFirstCollumSet) ? ", `price`= ? " : " `price`= ? ";
-            $queryDataTypes .= "s";
-            array_push($queryData, $price);
-            $isFirstCollumSet = true;
-        };
-
-        if ($categoryId = $_POST["category_id"] ?? null) {
-            $categoryFromDb = $this->getData("SELECT * FROM `category` WHERE `category_id`=? ", "i", [$categoryId]);
-            if (count($categoryFromDb) == 0) {
-                return (object)["status" => "failed", "error" => "Invalid Category Id"];
-            }
-
-            $updateQuery .= ($isFirstCollumSet) ?  ", `category_category_id`= ? " : " `category_category_id`= ? ";
-            $queryDataTypes .= "i";
-            array_push($queryData, $categoryId);
-            $isFirstCollumSet = true;
-        }
+                                   ]);
+                            } else {
+                                   return self::response(2, "Image upload failed");
+                            }
+                     }
+              }
 
 
-        if ($subCategoryId = $_POST["sub_category"] ?? null) {
-            $subCategoryFromDb = $this->getData("SELECT * FROM `sub_categories` WHERE `sub_categories_id`=? ", "i", [$subCategoryId]);
-            if (count($subCategoryFromDb) == 0) {
-                return (object)["status" => "failed", "error" => "Invalid Sub Category Id"];
-            }
 
-            $updateQuery .= ($isFirstCollumSet) ? ", `sub_categories_sub_categories_id`= ? " : " `sub_categories_sub_categories_id`= ? ";
-            $queryDataTypes .= "i";
-            array_push($queryData, $subCategoryId);
-            $isFirstCollumSet = true;
-        }
+              return self::response(1, "new product added"); // json response
+       }
 
-        // set where clueue 
-        $updateQuery .= " WHERE `product_id` = ? ";
-        $queryDataTypes .= "i";
-        array_push($queryData, $_POST["id"]);
+       // get products data process
+       protected function get()
+       {
+              if (!self::isGetMethod()) {
+                     return self::response(2, INVALID_REQUEST_METHOD);
+              }
 
-        try {
-            $this->updateData($updateQuery, $queryDataTypes, $queryData);
-        } catch (\Throwable $th) {
-            return (object)["status" => "failed", "error" => "Something Went Wrong at Database Level!"];
-        }
-        return (object)["status" => "success"];
-    }
+              $id = $_GET["id"] ?? null; // product id
+
+              // validation
+              $errors = $this->validateData(["id_int" => ["id" => $id]]);
+              if (is_array($errors))
+                     return self::response(2, $errors);
 
 
-    public function delete()
-    {
-        if (RequestHandler::isPostMethod()) {
-            $id = ($_POST["id"]) ?? null;
-            $images = $this->getData("SELECT * FROM `product_images` WHERE `product_product_id`='$id' ");
-            if (count($images) === 0) {
-                return (object)["status" => "failed", "error" => "Image Not Found!"];
-            }
+              // create search query
+              $query = "SELECT * FROM `product`";
 
-            foreach ($images as $value) {
-                if (unlink($value["filename"])) {
-                    $imageId = $value['product_images_id'];
-                    $this->updateData("DELETE FROM `product_images` WHERE `product_images_id`='$imageId'");
-                };
-            }
+              if ($id) {
+                     $query .= " WHERE `product_id` = '$id' ";
+              }
 
-            $this->updateData("DELETE FROM `product` WHERE `product_id`='$id'");
-            return (object)["status" => "success"];
-        }
-        return (object)["status" => "failed", "error" => "invalid request"];
-    }
+              $results = $this->dbCall($query);
+              return self::response(1, $results); // json response
+       }
+
+       // update product data process
+       protected function update()
+       {
+              if (!$this->admin->is_logged()) {
+                     return self::response(2, INVALID_ADMIN_ACCESS);
+              }
+
+              if (!self::isPostMethod()) {
+                     return self::response(2, INVALID_REQUEST_METHOD);
+              }
+              //catch post data
+              $id = $_POST["id"] ?? null;
+              $title = $_POST["title"] ?? null;
+              $description = $_POST["description"] ?? null;
+              $promotion = $_POST["promotion"] ?? null;
+              $category = $_POST["category"] ?? null;
+              $status = $_POST["status"] ?? null;
+              $images = $_FILES ?? null;
+
+              //create associative array with all parameters without id key will be coloumn name
+              $updateData = [
+                     "product_title" => $title,
+                     "description" => $description,
+                     "promotion_promotion_id" => $promotion,
+                     "category_category_id" => $category,
+                     "product_status_product_status_id" => $status
+              ];
+
+
+
+              $this->crudOperator->update("product", $updateData, ["product_id" => $id]);
+
+              //handle images
+              if ($images) {
+                     foreach ($images as $key => $value) {
+                            //check if product has maximum five images
+                            $imageCount = $this->dbCall("SELECT COUNT(`product_product_id`) as `count` FROM `product_images` WHERE `product_product_id` = ?", "i", [$id]);
+                            if ($imageCount[0]["count"] >= 5) {
+                                   return self::response(2, "Product can have maximum 5 images");
+                            }
+                            $imageId = rand(111111, 999999);
+
+                            $fileManger = new FileManger();
+                            $uploadFile = $fileManger->writeFile('./resources/images/products/', $imageId, $value);
+                            if ($uploadFile) {
+                                   $this->crudOperator->insert("product_images", [
+                                          "image_name" => $imageId,
+                                          "product_product_id" => $id,
+
+                                   ]);
+                            } else {
+                                   return self::response(2, "Image upload failed");
+                            }
+                     }
+              }
+              
+              return self::response(1, "product updated"); // json response
+       }
+
+       // product remove process
+       protected function delete()
+       {
+              if (!self::isPostMethod()) {
+                     return self::response(2, INVALID_REQUEST_METHOD);
+              }
+
+              // access check
+              if (!$this->admin->is_logged())
+                     return self::response(2, INVALID_ADMIN_ACCESS);
+
+
+              $id = $_POST["id"] ?? null; // product id
+
+              // validation
+              $errors = $this->validateData(["id_int" => ["id" => $id]]);
+              if (is_array($errors))
+                     return self::response(2, $errors);
+
+              $this->dbCall("DELETE FROM `product` WHERE `product_id` = ? ", "i", [$id]);
+
+              return self::response(1, "product deleted!"); // json response
+       }
 }

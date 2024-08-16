@@ -1,5 +1,5 @@
 <?php
-class RequestHandler
+trait RequestHandler
 {
     // validate the request methods
     // post

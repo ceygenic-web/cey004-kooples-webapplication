@@ -4,7 +4,7 @@ class PasswordHash
 {
     // Encryption method using SHA-256
 
-    private static string $salt = "1h23j4h5ythf7d6r";
+    private static string $salt = "1h2369h5ythf7d6r"; // your hash
 
     public static function hash($password)
     {

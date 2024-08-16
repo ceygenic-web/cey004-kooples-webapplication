@@ -2,7 +2,7 @@
 
 class SessionManager
 {
-    private $sessionVariable = "cey004_user";
+    private $sessionVariable = SESSION_VARIABLE_USER;
 
     public function __construct()
     {
@@ -18,7 +18,7 @@ class SessionManager
             $path = '/'; // Cookie path
             $domain = ''; // Cookie domain (leave empty for current domain)
             $secure = false; // Set to true if using HTTPS
-            $httponly = false; // Set to true to make the cookie accessible only through HTTP
+            $httponly = true; // Set to true to make the cookie accessible only through HTTP
 
             // Set the session cookie parameters
             session_set_cookie_params($expire, $path, $domain, $secure, $httponly);
@@ -34,7 +34,7 @@ class SessionManager
 
     public function isLoggedIn()
     {
-        return isset($_SESSION[$this->sessionVariable]);
+        return (isset($_SESSION[$this->sessionVariable]) &&  $_SESSION[$this->sessionVariable] !== null);
     }
 
     public function login($userId)
@@ -44,10 +44,10 @@ class SessionManager
 
     public function logout()
     {
-        unset($_SESSION[$this->sessionVariable]);
+        $_SESSION[$this->sessionVariable] = null;
     }
 
-    public function getUserId()
+    public function getSessionData()
     {
         if ($this->isLoggedIn()) {
             return $_SESSION[$this->sessionVariable];

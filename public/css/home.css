@@ -1,0 +1,169 @@
+/* home page css */
+.hp-s1 {
+  background-color: var(--light-main);
+  background-image: url("/public/resources/branding/home/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hp-s1 * {
+  transition: 400ms;
+}
+
+.hp-s1 .container {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.hp-s1-search-bar {
+  background-color: var(--light-main);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 30px;
+  border-radius: 1000px;
+  box-shadow: var(--shadow-1);
+}
+
+.hp-s1-search-bar input {
+  border: none;
+  outline: none;
+}
+
+.hp-s1 h1 {
+  color: var(--primary-400);
+  font-family: "Raleway";
+  font-size: 54px;
+}
+
+/* large screen size */
+@media screen and (min-width: 1440px) {
+  .hp-s1 .container {
+    min-height: 768px;
+  }
+}
+
+/* section 2 - promotion */
+.hp-s1-promotion {
+  background-image: url("/public/resources/branding/home/promotion.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  box-shadow: var(--shadow-1);
+  margin: 30px 0;
+}
+
+/* section 3 - category section */
+.hp-s3-category {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--rounded-1);
+  background-color: var(--primary-100);
+  color: var(--primary-300);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hp-s3-category i {
+  font-size: 54px;
+}
+
+/* section 4 - best seller */
+.hp-s4 {
+  min-height: 500px;
+}
+
+.swiper {
+  min-height: 100%;
+}
+
+.hp-s4 .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* section 5 - OUR STORY  */
+.hp-s5 {
+  background-color: var(--light-main);
+  height: 478px;
+}
+
+.hp-s5-left-panel {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: var(--primary-400);
+  left: 0;
+}
+
+.hp-s5-left-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -200px; /* Adjust the angle by changing this value */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 478px 0 0 200px; /* Adjust the angle by changing these values */
+  border-color: transparent transparent transparent var(--primary-400); /* Border color of the angled side */
+  transform: rotate(0deg); /* Adjust the angle by changing this value */
+}
+
+.hp-s5-logo {
+  width: 270px;
+  height: 200px;
+  object-fit: contain;
+}
+
+/* section 6 - reveiw */
+.hp-s6-review-box {
+  padding: 30px;
+  background-color: var(--primary-100);
+  color: var(--primary-400);
+  flex-grow: 1;
+  border-radius: var(--rounded-2);
+}
+
+/* section 7 - conatcts */
+.hp-s7-detail-box {
+  display: flex;
+}
+
+.hp-s7-left-box {
+  flex-grow: 1;
+}
+.hp-s7-right-box {
+  flex-grow: 1;
+}
+.hp-s7-icon {
+  font-size: 3em;
+}
+
+@media (max-width: 767px) {
+  /* section 7 - conatcts */
+  .hp-s7-detail-box {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 425px) {
+  /* section 7 - conatcts */
+  .hp-s7-contacts {
+    font-size: var(--font-p);
+  }
+  .hp-s7 h6 {
+    font-size: var(--font-p);
+  }
+  .hp-s7-icon {
+    font-size: 2em;
+  }
+}

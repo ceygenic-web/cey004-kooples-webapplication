@@ -11,88 +11,39 @@
 final class DataValidator
 {
 
-    private $data;
+    private $dataArray;
     private $errorObject;
 
-    function __construct($data)
+    function __construct()
     {
-        $this->data = $data;
         $this->errorObject = new stdClass();
     }
 
-    public function validate()
+    public function validate($dataArray)
     {
-        foreach ($this->data as $key => $valueArray) {
-
-            // validate as an int or null
-            if ($key == "int_or_null") {
-                foreach ($valueArray as $valueObject) {
-                    $this->int_or_null_validator($valueObject);
-                }
-            }
-
-            // validate as a string or null
-            if ($key == "string_or_null") {
-                foreach ($valueArray as $valueObject) {
-                    $this->string_or_null_validator($valueObject);
-                }
-            }
-
-            // validate as an integer
-            if ($key == "id_int") {
-                foreach ($valueArray as $valueObject) {
-                    $this->id_int_validator($valueObject);
-                }
-            }
-
-            // validate as an email
-            if ($key == "email") {
-                foreach ($valueArray as $valueObject) {
-                    $this->email_validator($valueObject);
-                }
-            }
-
-            // validate as an email
-            if ($key == "text_255") {
-                foreach ($valueArray as $valueObject) {
-                    $this->text_255_validator($valueObject);
-                }
-            }
-
-            // validate as an name
-            if ($key == "name") {
-                foreach ($valueArray as $valueObject) {
-                    $this->name_validator($valueObject);
-                }
-            }
-
-            // validate as a date
-            if ($key == "date") {
-                foreach ($valueArray as $valueObject) {
-                    $this->date_validator($valueObject);
-                }
-            }
-
-            // validate as a password
-            if ($key == "password") {
-                foreach ($valueArray as $valueObject) {
-                    $this->password_validator($valueObject);
+        $this->dataArray = $dataArray;
+        foreach ($this->dataArray as $datatype => $dataSet) {
+            foreach ($dataSet as $key => $value) {
+                $validatorFunctionName = $datatype . "_validator";
+                try {
+                    $this->$validatorFunctionName($key, $value);
+                } catch (\Throwable $th) {
+                    throw new Exception("Invalid Data Type : at $datatype", 69);
                 }
             }
         }
-
         return $this->errorObject;
     }
 
 
     // string or null validator as integer
-    private function string_or_null_validator($dataToValidate)
+    private function string_or_null_validator(...$dataToValidate)
     {
-        $key = $dataToValidate->datakey;
-        $value = $dataToValidate->value;
+        $key = $dataToValidate[0];
+        $value = $dataToValidate[1];
 
         // Trim and remove any whitespace
-        $value = trim($value);
+        $value = trim($value ?? "");
 
         // Check if the value is empty, including an empty string
         if (!is_string($value)) {
@@ -101,13 +52,13 @@ final class DataValidator
     }
 
     // int or null validator as integer
-    private function int_or_null_validator($dataToValidate)
+    private function int_or_null_validator(...$dataToValidate)
     {
-        $key = $dataToValidate->datakey;
-        $value = $dataToValidate->value;
+        $key = $dataToValidate[0];
+        $value = $dataToValidate[1];
 
         // Trim and remove any whitespace
-        $value = trim($value);
+        $value = trim($value  ?? "");
 
         // Check if the value is empty, including an empty string
         if (!is_numeric($value) && ($value !== '' || $value !== '0')) {
@@ -124,10 +75,10 @@ final class DataValidator
     }
 
     // password validator as integer
-    private function password_validator($dataToValidate)
+    private function password_validator(...$dataToValidate)
     {
-        $key = $dataToValidate->datakey;
-        $value = $dataToValidate->value;
+        $key = $dataToValidate[0];
+        $value = $dataToValidate[1];
 
         // Check if the password is at least 8 characters long and not longer than 20 characters
         $length = strlen($value);
@@ -147,10 +98,10 @@ final class DataValidator
     }
 
     // date validator as integer
-    private function date_validator($dataToValidate)
+    private function date_validator(...$dataToValidate)
     {
-        $key = $dataToValidate->datakey;
-        $value = $dataToValidate->value;
+        $key = $dataToValidate[0];
+        $value = $dataToValidate[1];
 
         // Check if the date is not empty
         if (empty($value)) {
@@ -170,10 +121,10 @@ final class DataValidator
     }
 
     // name validator as integer
-    private function name_validator($dataToValidate)
+    private function name_validator(...$dataToValidate)
     {
-        $key = $dataToValidate->datakey;
-        $value = $dataToValidate->value;
+        $key = $dataToValidate[0];
+        $value = $dataToValidate[1];
 
         // Check if the name is not empty
         if (empty($value)) {
@@ -192,10 +143,10 @@ final class DataValidator
     }
 
     // id validator as integer
-    private function id_int_validator($dataToValidate)
+    private function id_int_validator(...$dataToValidate)
     {
-        $key = $dataToValidate->datakey;
-        $value = $dataToValidate->value;
+        $key = $dataToValidate[0];
+        $value = $dataToValidate[1];
 
         // Check if the text is empty
         if (empty($value)) {
@@ -210,14 +161,13 @@ final class DataValidator
     }
 
     // id validator as integer
-    private function email_validator($dataToValidate)
+    private function email_validator(...$dataToValidate)
     {
-        $key = $dataToValidate->datakey;
-        $value = $dataToValidate->value;
-
+        $key = $dataToValidate[0];
+        $value = $dataToValidate[1];
 
         // Remove leading/trailing white spaces
-        $email = trim($value);
+        $email = trim($value ?? "");
 
         // Check if the text is empty
         if (empty($email)) {
@@ -231,14 +181,14 @@ final class DataValidator
     }
 
     // id validator as integer
-    private function text_255_validator($dataToValidate)
+    private function text_255_validator(...$dataToValidate)
     {
-        $key = $dataToValidate->datakey;
-        $value = $dataToValidate->value;
+        $key = $dataToValidate[0];
+        $value = $dataToValidate[1];
 
 
         // Remove leading/trailing white spaces
-        $text = trim($value);
+        $text = trim($value ?? "");
 
         // Check if the text is empty
         if (empty($text)) {

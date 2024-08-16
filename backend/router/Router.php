@@ -1,76 +1,78 @@
 <?php
+//import statement
+require_once(__DIR__ . "/View.php");
+require_once(__DIR__ . "/MiddleWares.php");
 
-require_once("Controller.php");
-
-final class Router extends Controller
+/**
+ * this class initializes the application routes and identify API or View instances
+ * @author: jantih nirmal
+ */
+class Router extends Controller
 {
+       use ResponseSender;
 
-    private string $request;
+       protected  $urlPaths = [];
+       protected $apiPath = __DIR__ . "/../api/";
+       protected $URL = "";
+       // initialize request - jantih nirmal
+       public function routerInit()
+       {
+              // middelware implimentation - #bug
+              // $middleware = new MiddleWares();
+              // $middleware->security_layer_1();
 
-    public function __construct(array $server)
-    {
-        $this->request = $server["REQUEST_URI"];
-    }
+              // get the URL
+              $this->URL = explode('?', trim($_SERVER['REQUEST_URI'], '/'))[0];
+              // get the url path
+              $this->urlPaths = explode('/', $this->URL);
+              // find the URL paths have a api
+              if ($this->urlPaths[0] === 'api') {
+                     array_shift($this->urlPaths);
+                     $this->callApi($this->urlPaths);
+              } else if ($this->urlPaths[0] === 'comp') {
+                     array_shift($this->urlPaths);
+                     $this->loadComp($this->URL);
+              } else {
+                     $this->loadView($this->URL);
+              }
+       }
 
-    public function init()
-    {
+       /**
+        * call related api class
+        * @param array $URLPath
+        */
+       public function callApi(array $URLPath)
+       {
+              //upper case first character url path
+              $API = ucfirst(($URLPath[0]) ?? null);
+              // check if file path is exist
+              if (file_exists($filePath = $this->apiPath . $API . ".php")) {
+                     require_once $filePath;
+                     array_shift($URLPath);
+                     //create a related api object
+                     new $API($URLPath);
+              } else {
+                     $this->sendJson(self::response(2, API_404_MESSAGE));
+              }
+       }
 
-        $uri = explode("?", $this->request);
-        $routes = explode("/", substr($uri[0], 1));
+       /**
+        * call page view class
+        * @param string $URL
+        */
+       public function loadView(string $URL)
+       {
+              //initialize View class and pass the URL to View constructor
+              new View($URL);
+       }
 
-        switch ($routes[0]) {
-            case 'api':
-                $this->api($routes);
-                break;
-
-            case 'admin':
-                $this->admin($routes);
-                break;
-
-
-            case '':
-                $this->view("landing", "Kooples Sri Lanka", ["landing"], ["landing"]);
-                break;
-
-            case "home":
-                $this->view("landing", "Kooples Sri Lanka", ["landing"], ["landing"]);
-                break;
-
-            case 'shop':
-                $this->view("shop", "Kooples Sri Lanka | Shop", ["shop"], ["shop"]);
-                break;
-
-            case 'product':
-                $this->view("product", "Kooples Sri Lanka | Product", ["product", "modules/uiBuilder"], ["product"]);
-                break;
-
-            case 'about':
-                $this->view("about", "Kooples Sri Lanka | About Us", [], ["about"]);
-                break;
-
-            case 'contact':
-                $this->view("contact", "Kooples Sri Lanka | Contact", [], ["contact"]);
-                break;
-
-            case 'purchase':
-                $this->view("purchase", "Kooples Sri Lanka | Purchase", ["purchase"], []);
-                break;
-
-            case 'terms-and-conditions':
-                $this->view("terms-&-condition", "Kooples Sri Lanka | T&C", [], []);
-                break;
-
-            case 'refund-policy':
-                $this->view("refund-policy", "Kooples Sri Lanka | Refund and Returns", [], []);
-                break;
-
-            case 'privacy-policy':
-                $this->view("privacy-policy", "Kooples Sri Lanka | Privacy", [], []);
-                break;
-
-            default:
-                $this->view("404", "Kooples Sri Lanka | 404 Not found");
-                break;
-        }
-    }
+       /**
+        * load components
+        * @param string $URL
+        */
+       public function loadComp(string $URL)
+       {
+              //initialize View class and pass the URL to View constructor
+              new View($URL, true);
+       }
 }

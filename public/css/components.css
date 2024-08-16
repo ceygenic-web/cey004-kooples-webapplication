@@ -1,0 +1,228 @@
+/* header */
+.header-logo {
+  width: 120px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* footer */
+.footer-main-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-terms {
+  display: flex;
+  align-items: end;
+}
+.footer-icon {
+  font-size: 23px;
+}
+.footer-develop {
+  width: 150px;
+}
+.footer-hr {
+  display: none;
+}
+
+/* buttons */
+/* button - primary */
+.cey-btn-primary {
+  padding: 7px 28px;
+  background-color: var(--primary-400);
+  color: var(--light-main);
+  border: none;
+  border-radius: 100px;
+  box-shadow: var(--shadow-2);
+}
+
+.cey-btn-primary:hover {
+  background-color: var(--primary-300);
+  color: var(--light-main);
+}
+
+.cey-btn-primary:focus {
+  outline: var(--primary-200);
+}
+
+/*  button - dark */
+.cey-btn-dark {
+  padding: 7px 28px;
+  background-color: var(--dark-main);
+  color: var(--light-main);
+  border: none;
+  border-radius: 100px;
+  box-shadow: var(--shadow-2);
+}
+
+.cey-btn-dark:hover {
+  background-color: var(--primary-300);
+  color: var(--light-main);
+}
+
+.cey-btn-dark:focus {
+  outline: var(--primary-200);
+}
+
+/*  button - secondary */
+.cey-btn-secondary {
+  padding: 7px 28px;
+  background-color: var(--primary-300);
+  color: var(--light-main);
+  border: none;
+  border-radius: 100px;
+  box-shadow: var(--shadow-2);
+}
+
+.cey-btn-secondary:hover {
+  background-color: var(--primary-200);
+  color: var(--light-main);
+}
+
+.cey-btn-secondary:focus {
+  outline: var(--primary-200);
+}
+
+/* input */
+.cey-input-primary {
+  width: 100%;
+  padding: 7px 28px;
+  background-color: var(--light-main);
+  color: var(--dark-main);
+  border: 2px var(--primary-400) solid;
+  border-radius: 100px;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-2);
+}
+
+.cey-input-primary:focus {
+  transition: var(--transition-2);
+  border: 2px var(--primary-200) solid;
+  outline: var(--primary-200);
+}
+
+/* product card */
+.product-card-container {
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card {
+  cursor: pointer;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--light-secondary);
+  border-radius: var(--rounded-2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  /* footer */
+  .footer-main-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-contact-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-contact-secondary-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-terms {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-social-icons {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-hr {
+    display: flex;
+    border-width: 3px;
+    width: 100%;
+  }
+}
+
+/* test  */
+
+/* Custom table styling */
+table.dataTable {
+  border-radius: 15px;
+  overflow: hidden;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+table.dataTable thead th {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: #ddd;
+}
+
+table.dataTable tbody td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  float: right;
+  margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  float: right;
+  margin-top: 10px;
+  background-color: red;
+}
+
+.dataTables_wrapper .dataTables_info {
+  float: left;
+  margin-top: 10px;
+}
+
+.dataTables_wrapper .dataTables_length {
+  float: left;
+  margin-bottom: 10px;
+}
+
+.dt-paging-button {
+  background-color: red !important;
+  font-weight: bold;
+  color: white;
+}
+
+/* Custom button styling */
+table.dataTable button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+table.dataTable button:hover {
+  background-color: #45a049;
+}
