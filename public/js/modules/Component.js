@@ -21,6 +21,7 @@ class Component {
   }
 
   async createComponent(compoenntHtml, compoennUpdateCallback) {
+    console.log(designHtml);
     await compoennUpdateCallback(this.createDOMbyHTML(compoenntHtml));
   }
 
