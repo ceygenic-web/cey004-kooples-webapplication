@@ -80,10 +80,12 @@ class View
               $path = __DIR__ . "/../../public/view/component/custom/$component.comp.php";
               try {
                      if (is_file($path)) {
+                            var_dump("is file");
                             return file_get_contents($path);
                      }
                      return null;
               } catch (\Throwable $th) {
+                     var_dump($th->getMessage());
                      return null;
               }
        }
