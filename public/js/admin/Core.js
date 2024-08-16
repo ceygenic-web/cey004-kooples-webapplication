@@ -7,7 +7,7 @@ class Core {
 
   constructor() {
     Core.EM = new EventManager();
-    Core.APIR = new APIRequestHandler("http://localhost:9001");
+    Core.APIR = new APIRequestHandler("https://dev.kooplesclothing.com");
     Core.EDT = new ExtendedDatatables();
     Core.toast = new ToastManager();
   }
