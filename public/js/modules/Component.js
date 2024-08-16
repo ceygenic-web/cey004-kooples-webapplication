@@ -10,19 +10,12 @@ class Component {
   }
 
   async fetchDesign() {
-    const response = await fetch(
-      "/public/view/component/custom/" + this.compoenntName + ".comp.php"
-    );
-
-    console.log(
-      "/public/view/component/custom/" + this.compoenntName + ".comp.php"
-    );
+    const response = await fetch("/comp/" + this.compoenntName);
 
     if (!response.ok) {
       return false;
     }
     const designHtml = await response.text();
-    console.log(designHtml);
     await this.createComponent(designHtml, this.callback);
   }
 
