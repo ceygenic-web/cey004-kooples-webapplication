@@ -1,7 +1,7 @@
 # **CEY005**
 
 Project Name : Blanks Clothing Store Web Application
-Version : 0.0.0
+Version : 1.2.0
 Updated : 30-03-2024
 
 > #### authors

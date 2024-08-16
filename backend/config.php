@@ -3,15 +3,15 @@
 date_default_timezone_set('Asia/Colombo');
 
 // server config
-define("ROOT", "https://dev.kooplesclothing.com/public/");
-define("SESSION_VARIABLE_ADMIN", "cey004_admin");
-define("SESSION_VARIABLE_USER", "cey004_user");
+define("ROOT", "http://localhost:9001/public/");
+define("SESSION_VARIABLE_ADMIN", "cey001_admin");
+define("SESSION_VARIABLE_USER", "cey001_user");
 
 // database config
-define("DB_SERVER", "kooplesclothing.com");
-define("DB_USERNAME", "kooplesc_kooples");
-define("DB_PASSWORD", "SwFMjz5a1VCe");
-define("DB_DATABASE", "kooplesc_kooples");
+define("DB_SERVER", "localhost");
+define("DB_USERNAME", "root");
+define("DB_PASSWORD", "JanithNirmal12#$");
+define("DB_DATABASE", "cey005_db");
 
 //constants
 global $IS_RESPONSE_TEXT;
