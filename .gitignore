@@ -1,3 +1,4 @@
+node_modules
 backend/model/log/logs.txt
 backend/config.php
 resources/images/products/*
