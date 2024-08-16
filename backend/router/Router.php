@@ -23,6 +23,7 @@ class Router extends Controller
 
               // get the URL
               $this->URL = explode('?', trim($_SERVER['REQUEST_URI'], '/'))[0];
+              var_dump($this->URL);
               // get the url path
               $this->urlPaths = explode('/', $this->URL);
               // find the URL paths have a api
