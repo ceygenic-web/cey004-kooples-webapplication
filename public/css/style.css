@@ -34,7 +34,7 @@
 /* main navigation bar */
 .logo {
   cursor: pointer;
-  background-image: url("../resources/images/logo.png");
+  background-image: url("/public/resources/images/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 150px;

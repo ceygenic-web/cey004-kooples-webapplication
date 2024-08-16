@@ -1,7 +1,7 @@
 /* section 1 - hero section */
 .lp-s1 {
   min-height: 678px;
-  background-image: url("../resources/images/hero.jpg");
+  background-image: url("/public/resources/images/hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -123,7 +123,7 @@
 /* section 5 - promotion section */
 .lp-s5-promotion {
   flex-grow: 1;
-  background-image: url("../resources/images/promotion.jpg");
+  background-image: url("/public/resources/images/promotion.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -155,7 +155,7 @@
 /* section 7 - handloom section */
 .lp-s7 {
   height: 400px;
-  background-image: url("../resources/images/handloom.jpg");
+  background-image: url("/public/resources/images/handloom.jpg");
   background-size: cover;
 }
 

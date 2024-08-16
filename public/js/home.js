@@ -1,56 +1,99 @@
-//  custom js for each page
+// landing page initiator
 document.addEventListener("DOMContentLoaded", () => {
-  const swiper = initiateBestSellerSwiper();
-  for (let x = 1; x <= 5; x++) {
-    new Component("productcard", async (comp) => {
-      comp.querySelector(
-        ".product-card"
-      ).style.backgroundImage = `url('/public/resources/images/products/product-${x}.jpg')`;
-      comp.querySelector(".product-card-name").innerHTML = "The Product " + x;
-      comp.querySelector(".product-card-description").innerHTML =
-        "Simple description...";
-      comp.querySelector(".product-card-price").innerHTML = "3000.00 LKR";
+  // load latest collection
+  loadLatestCollection();
 
-      if (x == 3 || x == 4) {
-        comp.querySelector(".product-wholesale").classList.remove("d-none");
-        comp.querySelector(".product-wholesale").classList.add("d-inline");
-      }
+  window.addEventListener("resize", () => {
+    buildLandingPageS3SwiperInitiator();
+  });
 
-      document.getElementById("bestSellerContainer").appendChild(comp);
-      swiper.update();
-    });
-  }
+  setTimeout(() => {
+    fbq("track", "PageView");
+  }, 500);
 });
 
-const initiateBestSellerSwiper = () => {
-  return new Swiper(".swiper", {
-    speed: 400,
-    allowTouchMove: true,
-    autoplay: {
-      delay: 3000,
-    },
+const buildLandingPageS3SwiperInitiator = () => {
+  if (window.innerWidth > 1400) {
+    buildLandingPageS3Swiper(4, 30);
+    buildLandingPageS10Swiper(1, 30);
+  } else if (window.innerWidth <= 1400 && window.innerWidth > 998) {
+    buildLandingPageS3Swiper(3, 20);
+    buildLandingPageS10Swiper(1, 30);
+  } else if (window.innerWidth <= 998 && window.innerWidth > 600) {
+    buildLandingPageS3Swiper(2, 10);
+    buildLandingPageS10Swiper(1, 30);
+  } else if (window.innerWidth <= 600) {
+    buildLandingPageS3Swiper(1, 5);
+    buildLandingPageS10Swiper(1, 30);
+  }
+};
 
-    // navigation
+const buildLandingPageS3Swiper = (perView, space) => {
+  const swiper = new Swiper(".lpLatestProductSwiper", {
+    slidesPerView: perView,
+    spaceBetween: space,
     navigation: {
-      prevEl: ".hp-s4-prev",
-      nextEl: ".hp-s4-next",
-    },
-
-    // Default parameters
-    slidesPerView: 1,
-
-    // Responsive breakpoints
-    breakpoints: {
-      // when window width is >= 320px
-      520: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      // when window width is >= 640px
-      998: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
+      nextEl: ".lp-s3-swiper-control-right",
+      prevEl: ".lp-s3-swiper-control-left",
     },
   });
 };
+
+const buildLandingPageS10Swiper = (perView, space) => {
+  const swiper = new Swiper(".lptestamonialSwiper", {
+    slidesPerView: perView,
+    spaceBetween: space,
+    navigation: {
+      nextEl: ".lp-s3-swiper-control-right",
+      prevEl: ".lp-s3-swiper-control-left",
+    },
+  });
+};
+
+// hero search bar
+function heroSearch() {
+  const search = document.getElementById("heroSearch").value;
+  toPage("shop?search=" + search);
+}
+
+// load latest collection
+function loadLatestCollection() {
+  sendRequest("api/product/get?id=6", "GET", null, {}, true, (data) => {
+    const container = document.getElementById("latestCollectionContainer");
+    container.innerHTML = "";
+    if (data.status == "success") {
+      if (!data.results.length) {
+        document
+          .getElementById("latestCollectionSection")
+          .classList.add("d-none");
+      }
+
+      data.results.forEach((element) => {
+        let minmizedDescription =
+          element.description.split(" ").slice(0, 10).join(" ") + "...";
+
+        // discount UI
+        let priceComponent = discountUIComponent(
+          element.price,
+          element.discount
+        );
+
+        const imageName = element.images[0].filename;
+        container.innerHTML += `
+                <div class="swiper-slide cey-product-item-card cey-shadow-light cey-cursor-pointer">
+                    <img class="lp-card-img" src="${SERVER_URL}${imageName}" height="100%" width="100%">
+                    <div onclick="toProduct('${element.product_id}')" class="card-backdrop"></div>
+                    <div class="content">
+                        <h6 class="fw-bold">${element.title}</h6>
+                        <p>${minmizedDescription}</p>
+                        <span>${priceComponent}</span>
+                    </div>
+                </div>
+              `;
+      });
+
+      //build landing page swiper
+      buildLandingPageS3SwiperInitiator();
+    }
+  });
+}

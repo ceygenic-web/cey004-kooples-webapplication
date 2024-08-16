@@ -155,7 +155,7 @@
 <!-- section 3 - Video -->
 <section class="lp-s8 cey-bg-darker px-5">
     <div class="container d-flex justify-content-center py-4">
-        <!-- <video loop height="678" src="../../resources/video/main.mp4" autoplay></video> -->
+        <!-- <video loop height="678" src="/public/resources/video/main.mp4" autoplay></video> -->
         <div style="position: relative; height: 400px; width: 100%;" class="overflow-hidden">
             <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/i0sUNC8Bylg?si=yEnvZ21On6fkD82f&rel=0&version=3&mute=1&autoplay=1&controls=0&&showinfo=0&loop=1&iv_load_policy=3&playlist=i0sUNC8Bylg" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe>
             <!-- <iframe style="scale: 140%;width: 100%; height: 100%; top: 0; left: 0;" src="https://www.youtube.com/embed/QTdl4LazLdI?si=nTtt-VfpUHzTMwpE&rel=0?version=3&autoplay=1&controls=0&&showinfo=0&modestbranding=1&color=white" title="YouTube video player" frameborder="0" allow="autoplay;"></iframe> -->
@@ -167,7 +167,7 @@
 
 
 <!-- section 9 - vision mission -->
-<?php include(__DIR__ . "/../components/visionmission.php") ?>
+<?php include(__DIR__ . "/../component/custom/visionmission.php") ?>
 
 
 <!-- section 10 - testamonials -->
@@ -232,4 +232,4 @@
 
 
 <!-- section 12 - newsletter subscription  -->
-<?php include(__DIR__ . "/../components/newsletter.php") ?>
+<?php include(__DIR__ . "/../component/custom/newsletter.php") ?>

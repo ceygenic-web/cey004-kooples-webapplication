@@ -1,7 +1,7 @@
 /* section 1 - category banner */
 .sp-s1 {
   height: 150px;
-  /* background-image: url('../resources/images/promotion.jpg'); */
+  /* background-image: url('/public/resources/images/promotion.jpg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
