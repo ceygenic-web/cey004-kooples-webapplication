@@ -9,9 +9,9 @@
 <!-- section 2 - brand values -->
 <section class="cey-bg-darker">
     <div class="py-4 d-flex">
-        <div style="background-image: url('resources/images/blog1.jpg');" class="col-4 aup-s2-values"><span>DIGNITY</span></div>
-        <div style="background-image: url('resources/images/ourstory-left.jpg');" class="col-4 aup-s2-values"><span>GRACE</span></div>
-        <div style="background-image: url('resources/images/ourstory-right.jpg');" class="col-4 aup-s2-values"><span>IDENTITY</span></div>
+        <div style="background-image: url('/public/resources/images/blog1.jpg');" class="col-4 aup-s2-values"><span>DIGNITY</span></div>
+        <div style="background-image: url('/public/resources/images/ourstory-left.jpg');" class="col-4 aup-s2-values"><span>GRACE</span></div>
+        <div style="background-image: url('/public/resources/images/ourstory-right.jpg');" class="col-4 aup-s2-values"><span>IDENTITY</span></div>
     </div>
 </section>
 

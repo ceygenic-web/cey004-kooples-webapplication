@@ -1,16 +1,16 @@
 @font-face {
   font-family: "incompleeta";
-  src: url("../resources/fonts/IncompleetaRegular.ttf");
+  src: url("/public/resources/fonts/IncompleetaRegular.ttf");
 }
 
 @font-face {
   font-family: "incompleeta-reveal";
-  src: url("../resources/fonts/IncompleetaRegularReveal.ttf");
+  src: url("/public/resources/fonts/IncompleetaRegularReveal.ttf");
 }
 
 @font-face {
   font-family: "incompleeta-light";
-  src: url("../resources/fonts/IncompleetaLightReveal.ttf");
+  src: url("/public/resources/fonts/IncompleetaLightReveal.ttf");
 }
 
 :root {
