@@ -1,6 +1,6 @@
 # **CEY005**
 
-Project Name : Blanks Clothing Store Web Application
+Project Name : Kooples Clothing Store Web Application
 Version : 1.2.0
 Updated : 30-03-2024
 

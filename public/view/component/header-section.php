@@ -1,3 +1,4 @@
+<!-- header -->
 <!-- sidebar -->
 <section class="sidebar cey-text-white">
     <div>
@@ -115,5 +116,3 @@
         </div>
     </nav>
 </header>
-
-<?php

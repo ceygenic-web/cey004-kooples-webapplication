@@ -3,8 +3,8 @@ class ExtendedDatatables {
     this.tables = {};
   }
 
-  createTable(selector, columns, options = {}) {
-    const tableElement = document.querySelector(selector);
+  createTable(container, selector, columns, options = {}) {
+    const tableElement = container.querySelector(selector);
     if (!tableElement) {
       throw new Error(`Table with selector ${selector} not found.`);
     }

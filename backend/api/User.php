@@ -147,7 +147,7 @@ class User extends Api
 
               //send verification number
               $mailSender = new MailSender($email);
-              $mailSender->mailInitiate("Blanks Clothing | User Verification", "Verification Code", "Here is your verification code : $verificationCode . Note that this code will be expired after 5 minutes!");
+              $mailSender->mailInitiate("Kooples Clothing | User Verification", "Verification Code", "Here is your verification code : $verificationCode . Note that this code will be expired after 5 minutes!");
               if (!$mailSender->sendMail()) {
                      return self::response(2, "Varification Code Sending failed!"); // json response
               }

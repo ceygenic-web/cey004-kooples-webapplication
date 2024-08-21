@@ -1,0 +1,56 @@
+/* components */
+/* containers */
+[data-admin-container] {
+  margin: 15px 0;
+  border: var(--primary-100) 3px solid;
+  border-radius: var(--rounded-3);
+  background-color: var(--light-main);
+  box-shadow: var(--shadow-2);
+  padding: 20px;
+}
+
+/* inputs */
+[data-admin-container] input,
+select,
+textarea {
+  background-color: var(--light-secondary);
+  color: var(--dark-main);
+  margin: 10px 0;
+  padding: 7px 28px;
+  border: var(--primary-400) 1px solid;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--rounded-3);
+}
+
+[data-admin-container] input:focus,
+select:focus,
+textarea:focus {
+  border: transparent 1px solid;
+  outline: var(--primary-200) 2px solid;
+}
+
+[data-admin-container] button {
+  margin: 10px 0;
+  padding: 7px 28px;
+  border: none;
+  box-shadow: var(--shadow-2);
+  border-radius: var(--rounded-3);
+
+  background-color: var(--dark-main);
+  color: var(--light-main);
+}
+
+[data-admin-container] button:hover {
+  background-color: var(--dark-secondary);
+  color: var(--light-secondary);
+}
+
+[data-admin-container] button.ceyad-primary-btn {
+  background-color: var(--primary-400);
+  color: var(--light-main);
+}
+
+[data-admin-container] button.ceyad-primary-btn:hover {
+  background-color: var(--primary-200);
+  box-shadow: var(--shadow-2);
+}

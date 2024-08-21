@@ -24,7 +24,7 @@ class Panel {
     this.addListner(`${this.#name}_switch`, () => {
       AdminPanel.switchPanel(this.#name);
     });
-    this.#_bootstrap();
+    this.#_init_processes();
     this.init();
   }
 
@@ -32,7 +32,7 @@ class Panel {
    * @description panel instantiating time executable programmes for all panels
    * this will work regardless of the panel
    */
-  #_bootstrap() {
+  #_init_processes() {
     // your code
   }
 
@@ -42,12 +42,29 @@ class Panel {
   init() {}
 
   /**
-   * get the current panel name
-   * @returns {string} - name of the panel
+   * all the boot level hardcode registers and workers for a panel
    */
-  getName() {
-    return this.#name;
+  #_boot() {
+    this.#eventRegister();
+    this.#_boot_processes();
+    this.boot();
   }
+
+  /**
+   * @description custom panel switching actions
+   * this will work regardless of the panel
+   */
+  #_boot_processes() {
+    // your code
+  }
+
+  /**
+   *
+   * all the boot level registers and workers for a specific panel
+   *
+   * @override
+   */
+  boot() {}
 
   async render() {
     const container = document.getElementById(this.#mainContainerId);
@@ -57,25 +74,6 @@ class Panel {
     this.#_boot();
     this.eventDispatch(`${this.#name}_launch`);
   }
-
-  /**
-   * all the boot level hardcode registers and workers for a panel
-   */
-  #_boot() {
-    // your code - required boot progarmmes
-    this.#eventRegister();
-    this.#autoActionTrigger();
-
-    this.boot();
-  }
-
-  /**
-   *
-   * all the boot level registers and workers for a panel
-   *
-   * @override
-   */
-  boot() {}
 
   /**
    * get the panel HTML code from server
@@ -88,6 +86,14 @@ class Panel {
         AdminPanel.getInstance().toast.prompt("Something Went Wrong!");
         console.error("Panel template loading failed! : html fetch failed");
       });
+  }
+
+  /**
+   * get the current panel name
+   * @returns {string} - name of the panel
+   */
+  getName() {
+    return this.#name;
   }
 
   /**
@@ -109,9 +115,6 @@ class Panel {
     Core.EM.emit(event);
   }
 
-  // busines process related codes
-  #autoActionTrigger() {}
-
   /**
    * register all the events for a panel on render
    */
@@ -120,11 +123,34 @@ class Panel {
 
     // add event listners
     const containers = document.querySelectorAll("[data-admin-container]");
+    let actionName = "";
+    let actionTrigger = null;
+
     containers.forEach((container) => {
-      const actionBtn = container.querySelector("[data-btn-action]");
+      if (container.dataset.isView) {
+        this.viewProcessEventAction(container); //  automated view process
+        return;
+      } else {
+        actionTrigger = container.querySelector("[data-btn-action]");
+        actionName = actionTrigger ? actionTrigger.dataset.btnAction : "";
+      }
+
+      this.#loadSelectors(container);
+
+      // image picker register
+      container
+        .querySelectorAll("[data-image-picker]")
+        .forEach((imagePickerElement) => {
+          Core.ImageInputManager.createImagePicker(imagePickerElement, {
+            id: "1",
+            duplicatePolicy: { type: "limited", max: 2 },
+            style: "app",
+            theme: defaultTheme,
+          });
+        });
 
       const action = () => {
-        switch (actionBtn.dataset.btnAction) {
+        switch (actionName) {
           case "add":
             this.addProcessEventAction(container); //  automated add process
             break;
@@ -138,13 +164,46 @@ class Panel {
         }
       };
 
-      actionBtn.addEventListener("click", action);
+      if (actionTrigger) {
+        actionTrigger.addEventListener("click", action);
+        this.#activeEvents.push({
+          event: "click",
+          btn: actionTrigger,
+          action: action,
+        });
+      }
+    });
+  }
 
-      this.#activeEvents.push({
-        event: "click",
-        btn: actionBtn,
-        action: action,
-      });
+  /**
+   *
+   * @param {Element} container container of the selectors
+   */
+  #loadSelectors(container) {
+    container.querySelectorAll("select[data-options]").forEach((selector) => {
+      Core.AO.stopObserving(selector, "data-options");
+      function loadSelector() {
+        selector.innerHTML = "";
+        try {
+          JSON.parse(selector.dataset.options).forEach((data) => {
+            const option = document.createElement("option");
+            option.value = data[0];
+            option.text = data[1];
+
+            
+            selector.appendChild(option);
+          });
+        } catch (error) {
+          throw new Error(
+            "Invalid Selector Configuration at :" +
+            container.dataset.adminContainer
+          );
+        }
+      }
+      loadSelector();
+      
+      // option update observer
+      Core.AO.observeAttribute(selector, "data-options", loadSelector);
     });
   }
 
@@ -164,23 +223,68 @@ class Panel {
   }
 
   /**
-   * hadnle the request
+   * hadnle the request actions for common usecases
    *
    * @param {Element} container object to use when creating form
    * @param {Object} options object to use when creating form
    */
-  async actionHandler(container, options) {
-    if (!options || !"method" in options) {
-      throw new Error("Invalid Request Configuration at action handler");
+  async requestActionProcess(type, container, options = {}) {
+    if (!container || !type) {
+      throw new Error("Invalid Action Process");
     }
 
-    const form = Core.APIR.createFormData(this.scrapeData(container)); // build form object by data
-    const response = await Core.APIR.request(
-      options.method,
-      container.dataset.endpoint ?? "/",
-      {
+    const METHOD = type === "view" || type === "get" ? "GET" : "POST";
+
+    if (type !== "view" && type !== "get") {
+      const form = Core.APIR.createFormData(this.scrapeData(container)); // build form object by data
+
+      const imagePicekrList = container.querySelectorAll("[data-image-picker]");
+      imagePicekrList.forEach((pickerElement) => {
+        let count = 1;
+        Core.ImageInputManager.getPicker(pickerElement)
+          .picker.getImageFiles()
+          .forEach((file) => {
+            let name = pickerElement.dataset.name + "_" + count ?? "";
+            console.log(name);
+
+            form.append(name, file); // add images to form
+            count++;
+          });
+
+        console.log(
+          Core.ImageInputManager.getPicker(pickerElement).picker.getImageFiles()
+        );
+      });
+
+      options = {
         body: form,
         ...options,
+      };
+      console.log("options is modified" + type);
+    }
+
+    const successActions = [() => this.clearInputs(container)];
+    const failedActions = [];
+    if (container.dataset.onsuccess) {
+      container.dataset.onsuccess.split(" ").forEach((item) => {
+        successActions.push(this[item] ? this[item] : () => {});
+      });
+    }
+    if (container.dataset.onfailed) {
+      container.dataset.onfailed.split(" ").forEach((item) => {
+        failedActions.push(this[item] ? this[item] : () => {});
+      });
+    }
+
+    console.log(options);
+
+    const response = await Core.APIR.request(
+      METHOD,
+      container.dataset.endpoint ?? "/",
+      options,
+      {
+        success: successActions,
+        failed: failedActions,
       }
     ); // build form object by data
 
@@ -188,18 +292,75 @@ class Panel {
   }
 
   /**
-   * scrape data from inputs in a container
+   * scrape data from inputs and fileds in a container
    *
    */
   scrapeData(container) {
     const inputs = container.querySelectorAll(
-      "input[name], textarea[name], select[name]"
+      "input[name], textarea[name], select[name], [data-custom-data]"
     );
     const values = {};
     inputs.forEach((input) => {
-      values[input.name] = input.value;
+      values[input.name] = input.value ?? "";
     });
     return values;
+  }
+
+  /**
+   * clear input values of all inputs
+   *
+   * @param {Element} container
+   */
+  clearInputs(container = null) {
+    const inputs = container.querySelectorAll(
+      "input[name], textarea[name], select[name]"
+    );
+    inputs.forEach((input) => {
+      input.value = "";
+    });
+
+    const imagePickerObject = Core.ImageInputManager.getPicker(container);
+    if (imagePickerObject) {
+      imagePickerObject.picker.clear();
+    }
+  }
+
+  /**
+   *  peraped view event action for a container
+   *
+   * @param {Element} container container object
+   */
+  async viewProcessEventAction(container) {
+    const response = await this.requestActionProcess("view", container);
+    switch (container.dataset.viewType) {
+      case "table":
+        // Core.EDT.createTable(
+        //   container,
+        //   "[data-table-container]",
+        //   container.dataset.field
+        //     ? container.dataset.field.split(" ")
+        //     : ["Header"],
+        //   {}
+        // );
+
+        const property = container.dataset.field.split(" ");
+        response.forEach((element) => {
+          container.innerHTML +=
+            element[property[1]] + " : " + element[property[0]] + "<br>";
+        });
+        break;
+
+      case "list":
+        console.log(response);
+        break;
+
+      default:
+        break;
+    }
+
+    console.log(
+      "proform viewing operations : " + container.dataset.adminContainer
+    );
   }
 
   /**
@@ -208,7 +369,10 @@ class Panel {
    * @param {Element} container container object
    */
   async addProcessEventAction(container) {
-    console.log(await this.actionHandler(container, { method: "POST" }));
+    const response = await this.requestActionProcess("add", container);
+    if (response !== false) {
+      Core.toast.prompt(response, 1);
+    }
     console.log(
       "proform adding operations : " + container.dataset.adminContainer
     );
@@ -220,7 +384,10 @@ class Panel {
    * @param {Element} container container object
    */
   async updateProcessEventAction(container) {
-    console.log(await this.actionHandler(container, { method: "POST" }));
+    const response = await this.requestActionProcess(container, {
+      method: "POST",
+    });
+    Core.toast.prompt(response);
     console.log(
       "proform updating operations : " + container.dataset.adminContainer
     );

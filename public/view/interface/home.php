@@ -21,11 +21,11 @@
 <!-- section2 - new product countdown section -->
 <section class="lp-s2 cey-bg-darker">
     <div class="container h-100">
-        <div class="w-100 h-100 py-3 d-flex justify-content-between align-items-center">
-            <div class="w-75">
+        <div class="w-100 h-100 py-3 d-flex flex-column flex-lg-row justify-content-between align-items-center">
+            <div class="col-12 col-lg-8">
                 <h3 class="cey-main-font-light">NEW ARRAIVAL RELATED TEXT...</h3>
             </div>
-            <div class="w-25">
+            <div class="col-12 col-lg-4">
                 <h3 class="text-end cey-main-font-light">00:00:00</h3>
             </div>
         </div>
@@ -131,9 +131,9 @@
 
 <!-- section 7 - handloom -->
 <section class="lp-s7 cey-bg-white">
-    <div class="cey-text-white container h-100 d-flex flex-column justify-content-center align-items-center py-5 text-center">
+    <div class="cey-text-white container h-100 d-flex flex-column justify-content-center align-items-center py-5 text-center w-100">
         <h3 class="py-3 cey-main-font">HANDLOOM INDUSTRY</h3>
-        <p class="lp-s7-description">The Sri Lankan handloom industry is a vibrant sector that has a historical connection to handlooms, with records of the country trading vividly designed cotton textiles with India and China as far as 1000 years ago1. Today, it is primarily a cottage industry, with a few large manufacturers leading the way</p>
+        <p class="lp-s7-description w-100">The Sri Lankan handloom industry is a vibrant sector that has a historical connection to handlooms, with records of the country trading vividly designed cotton textiles with India and China as far as 1000 years ago1. Today, it is primarily a cottage industry, with a few large manufacturers leading the way</p>
         <button class="cey-btn-box lp-s7-btn">LEARN MORE</button>
     </div>
 </section>
@@ -173,8 +173,8 @@
 <!-- section 10 - testamonials -->
 <section class="lp-s10 cey-bg-dark">
     <div class="container py-3">
-        <div class="swiper">
-            <div class="swiper lptestamonialSwiper">
+        <div class="w-100">
+            <div class="swiper lptestamonialSwiper position-relative w-100">
                 <div class="lp-s3-controls w-100 d-flex justify-content-between position-absolute p-3 h-100 align-items-center">
                     <!-- <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-left fs-1 cey-text-white bi bi-arrow-left-circle"></i></div> -->
                     <!-- <div class="lp-s3-swiper-control"><i class="lp-s3-swiper-control-right fs-1 cey-text-white bi bi-arrow-right-circle"></i></div> -->
@@ -184,6 +184,21 @@
                         <h4 class="pb-4">TESTAMONIALS</h4>
                         <p class="text-center">Love the collection, keep up the great service. Appreciate l👍👍👍</p>
                         <p class="pt-3">- Umanga de Zoysa</p>
+                    </div>
+                    <div class="swiper-slide cey-testamonial-card">
+                        <h4 class="pb-4">TESTAMONIALS</h4>
+                        <p class="text-center">Good quality and stunning looks 👍</p>
+                        <p class="pt-3">- Wathsala Gunawardana</p>
+                    </div>
+                    <div class="swiper-slide cey-testamonial-card">
+                        <h4 class="pb-4">TESTAMONIALS</h4>
+                        <p class="text-center">Good quality and stunning looks 👍</p>
+                        <p class="pt-3">- Wathsala Gunawardana</p>
+                    </div>
+                    <div class="swiper-slide cey-testamonial-card">
+                        <h4 class="pb-4">TESTAMONIALS</h4>
+                        <p class="text-center">Good quality and stunning looks 👍</p>
+                        <p class="pt-3">- Wathsala Gunawardana</p>
                     </div>
                     <div class="swiper-slide cey-testamonial-card">
                         <h4 class="pb-4">TESTAMONIALS</h4>
@@ -202,7 +217,7 @@
 <section class="cey-bg-white lp-s11 p-5">
     <div class="container">
         <h3 class="cey-main-font pb-3">CONATCTS</h3>
-        <div class="lp-s11-detail-box gap-3 col-lg-12 col-md-12">
+        <div class="lp-s11-detail-box gap-3 col-lg-12 col-md-12 d-flex flex-column  flex-lg-row">
             <div class="d-flex flex-column cey-text-white ls-s11-left-box gap-3 col-lg-6 col-md-6">
                 <div class="cey-bg-dark p-1 d-flex align-items-center gap-lg-3 gap-md-3 gap-1">
                     <i class="bi bi-telephone-fill mx-1"></i>

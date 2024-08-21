@@ -29,9 +29,22 @@ class RequestManager {
 class APIRequestHandler {
   constructor(baseURL) {
     this.baseURL = baseURL;
+    this.callbacks = {
+      success: [
+        () => {
+          console.log("callback success worked");
+        },
+      ],
+      failed: [
+        () => {
+          console.log("callback failed worked");
+        },
+      ],
+    };
   }
 
-  async request(method, endpoint, options = {}) {
+  async request(method, endpoint, options = {}, callbacks = {}) {
+    this.callbacks = { ...this.callbacks, ...callbacks };
     let url = `${this.baseURL}${endpoint}`;
     let config = {
       method: method,
@@ -57,6 +70,8 @@ class APIRequestHandler {
       }
     }
 
+    console.log(config);
+
     try {
       const response = await fetch(url, config);
       const text = await response.text();
@@ -77,6 +92,12 @@ class APIRequestHandler {
     }
   }
 
+  /**
+   * generate FormData object based on a reguler Object
+   *
+   * @param {Object} obj object that has to be used to create form
+   * @returns {FormData}
+   */
   createFormData(obj) {
     const formData = new FormData();
     Object.keys(obj).forEach((key) => {
@@ -85,8 +106,15 @@ class APIRequestHandler {
     return formData;
   }
 
+  /**
+   * hanle the custom response protocol
+   *
+   * @param {Object} data response object
+   * @returns {any|false}
+   */
   handleJSONResponse(data) {
     if (data.status === "success") {
+      this.#runCallbacks("success", data.results, 1);
       return data.results || true; // success toast if needed
     } else if (data.status === "failed") {
       if (Array.isArray(data.errors)) {
@@ -99,11 +127,25 @@ class APIRequestHandler {
         Core.toast.prompt("API Error"); // error toast
         console.log(data);
       }
+      this.#runCallbacks("failed");
       return false;
     } else {
       console.error("Unexpected JSON response:", data);
+      this.#runCallbacks("failed");
       return false;
     }
+  }
+
+  /**
+   * run the callback functions list based on action type
+   *
+   * @param {string} name name of the action type
+   * @param {any} arugs data that will be passed as the arguments to the functions
+   */
+  #runCallbacks(name, arugs = null) {
+    this.callbacks[name].forEach((func) => {
+      func(arugs);
+    });
   }
 
   async get(endpoint, params) {

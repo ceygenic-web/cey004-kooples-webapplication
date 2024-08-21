@@ -3,7 +3,7 @@
     <div class="container cey-text-light-main d-flex justify-content-center align-items-center flex-column">
 
         <div class="text-center">
-            <h1>Blanks Clothing | Admin</h1>
+            <h1>Kooples Clothing | Admin</h1>
             <h2 class="fs-4">Admin Log In</h2>
         </div>
 

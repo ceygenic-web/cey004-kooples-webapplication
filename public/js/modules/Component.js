@@ -10,7 +10,9 @@ class Component {
   }
 
   async fetchDesign() {
-    const response = await fetch("/comp/" + this.compoenntName);
+    const response = await fetch(
+      "/public/view/component/custom/" + this.compoenntName + ".comp.php"
+    );
     if (!response.ok) {
       return false;
     }

@@ -12,10 +12,17 @@ class CategoryPanel extends Panel {
 
   boot() {
     console.log("Category panel rendered");
-    this.loadCategories();
   }
 
-  loadCategories() {
-    console.log("Category data loaded");
+  successProcess() {
+    console.log("Successfuly added 🫡");
+  }
+
+  failedProcess() {
+    console.log("failed added 😒");
+  }
+  
+  otherAction() {
+    console.log("hmmmm 🤔");
   }
 }

@@ -8,19 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   setTimeout(() => {
-    fbq("track", "PageView");
+    // fbq("track", "PageView");
   }, 500);
 });
 
 const buildLandingPageS3SwiperInitiator = () => {
   if (window.innerWidth > 1400) {
     buildLandingPageS3Swiper(4, 30);
-    buildLandingPageS10Swiper(1, 30);
+    buildLandingPageS10Swiper(3, 30);
   } else if (window.innerWidth <= 1400 && window.innerWidth > 998) {
     buildLandingPageS3Swiper(3, 20);
-    buildLandingPageS10Swiper(1, 30);
+    buildLandingPageS10Swiper(2, 30);
   } else if (window.innerWidth <= 998 && window.innerWidth > 600) {
-    buildLandingPageS3Swiper(2, 10);
+    buildLandingPageS3Swiper(1, 10);
     buildLandingPageS10Swiper(1, 30);
   } else if (window.innerWidth <= 600) {
     buildLandingPageS3Swiper(1, 5);

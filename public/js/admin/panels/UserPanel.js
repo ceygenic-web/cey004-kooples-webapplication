@@ -16,6 +16,6 @@ class UserPanel extends Panel {
   }
 
   loadUsers() {
-    console.log("user data loaded");
+    console.log("user data loaded 🥰");
   }
 }

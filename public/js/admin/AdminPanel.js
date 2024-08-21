@@ -53,7 +53,7 @@ class AdminPanel extends Core {
     this.info = {
       started_time: new Date(),
       state: "live",
-      activePanelName: "product",
+      activePanelName: "category",
     };
 
     this.activePanel = null;
@@ -94,6 +94,7 @@ class AdminPanel extends Core {
       new ProductPanel({ name: "product" }),
       new StockPanel({ name: "stock" }),
       new CategoryPanel({ name: "category" }),
+      new TestPanel({ name: "test" }),
     ];
 
     return panels;
